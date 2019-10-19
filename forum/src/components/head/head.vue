@@ -1,22 +1,25 @@
 <template>
     <div id="head">
-        <div class="word">{{word}}</div>
-        <div class="nav">
-            <div class="li1">
-                <div>{{nav1}}</div>
+        <div id="head1">
+            <div class="word">{{word}}</div>
+            <div class="nav">
+                <div class="li1">
+                    <div>{{nav1}}</div>
+                </div>
+                <div class="li2">
+                    <div>{{nav2}}</div>
+                </div>
+                <div class="li3">
+                    <div>{{nav3}}</div>
+                </div>
             </div>
-            <div class="li2">
-                <div>{{nav2}}</div>
-            </div>
-            <div class="li3">
-                <div>{{nav3}}</div>
+            <input type="search" class="search" placeholder="搜贴">
+            <div class="tail">
+                <button class="tail1">{{t1}}</button>
+                <button class="tail1">{{t2}}</button>
             </div>
         </div>
-        <input type="search" class="search" placeholder="搜贴">
-        <div class="tail">
-            <button class="tail1">{{t1}}</button>
-            <button class="tail1">{{t2}}</button>
-        </div>
+        <div id="head2"></div>
     </div>
 </template>
 <script>
@@ -34,13 +37,20 @@ export default {
 }
 </script>
 <style scoped>
-#head{
+#head1{
     width: 100%;
     height: 40px;
     /* background-color: #cccccc; */
     margin-top: 15px;
     position: relative;
     top: 0;
+}
+#head2{
+    width: 100%;
+    height: 15px;
+    background-color: #f0f0f0;
+    margin-top: 4px;
+    border-bottom: 1px solid #c5c5c5;
 }
 .word{
     position: absolute;
@@ -124,5 +134,12 @@ export default {
     line-height: 30px;
     text-align: center;
     margin-right: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tail1:hover,.tail2:hover{
+    border: 0;
+    background-color:#478cce;
+    color: white;
 }
 </style>
