@@ -1,5 +1,7 @@
 <template>
-    <div id="head"></div>
+    <div id="head">
+        <div class="word"></div>
+    </div>
 </template>
 <script>
 export default {
@@ -11,5 +13,12 @@ export default {
 }
 </script>
 <style scoped>
-
+#head{
+    width: 100%;
+    height: 60px;
+    background-color: #cccccc;
+    margin-top: 10px;
+    position: relative;
+    top: 0;
+}
 </style>
