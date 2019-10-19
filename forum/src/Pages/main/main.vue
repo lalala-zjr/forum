@@ -1,6 +1,6 @@
 <template>
     <div add="main">
-        <!-- <head></head> -->
+        <head></head>
     </div>
 </template>
 <script>
@@ -14,5 +14,4 @@ export default{
 }
 </script>
 <style scored>
-
 </style>
