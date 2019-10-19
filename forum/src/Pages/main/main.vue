@@ -1,9 +1,10 @@
 <template>
     <div add="main">
-        <p>啦啦啦</p>
+        <!-- <head></head> -->
     </div>
 </template>
 <script>
+// import head from './../components/head/head.vue'
 export default{
   data () {
     return {

@@ -117,10 +117,12 @@ export default {
 .search::-moz-placeholder{
     text-align: center;
 }
+.search::-webkit-input-placeholder{
+    text-align: center;
+}
 .tail{
     width: 20%;
     height: 30px;
-    /* background-color: skyblue; */
     position: absolute;
     right: 0;
     bottom: 0;
@@ -130,15 +132,14 @@ export default {
     width: 60px;
     height: 30px;
     background-color: #fff;
-    border: 1px solid black;
+    border: 0;
     line-height: 30px;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 14px;
-    cursor: pointer;
+    overflow: hidden;
 }
 .tail1:hover,.tail2:hover{
-    border: 0;
     background-color:#478cce;
     color: white;
 }
