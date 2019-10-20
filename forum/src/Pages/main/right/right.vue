@@ -9,11 +9,21 @@
            <div class="month">{{d3}}</div>
        </div>
        <div class="rightSort">
-           <div class="sort1">123</div>
-           <div class="sort2">234</div>
-           <div class="sort3">35</div>
-           <div class="sort4">345</div>
-           <div class="sort5">567</div>
+           <div class="sort1">
+               <p>1</p>
+           </div>
+           <div class="sort2">
+               <p>2</p>
+           </div>
+           <div class="sort3">
+               <p>3</p>
+           </div>
+           <div class="sort4">
+               <p>4</p>
+           </div>
+           <div class="sort5">
+               <p>5</p>
+           </div>
        </div>
    </div>
 </template>
@@ -118,5 +128,23 @@ export default{
     font-size: 14px;
     line-height: 40px;
     text-align: left;
+}
+p{
+    margin: 0;
+    position: absolute;
+    top: 8px;
+    width: 10%;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+.sort1 p{
+    background-color: red;
+}
+.sort2 p{
+    background-color: #ff8d1a;
+}
+.sort3 p{
+    background-color: #ffeb3b;
 }
 </style>
