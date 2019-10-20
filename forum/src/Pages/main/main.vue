@@ -2,11 +2,13 @@
     <div id="main">
       <router-view/>
       <left></left>
+      <right></right>
       <div class="empty"></div>
     </div>
 </template>
 <script>
 import left from './left/left.vue'
+import right from './right/right.vue'
 export default{
   data () {
     return {
@@ -14,7 +16,8 @@ export default{
     }
   },
   components: {
-    left
+    left,
+    right
   }
 }
 </script>
