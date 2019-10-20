@@ -2,6 +2,7 @@
     <div id="main">
       <router-view/>
       <left></left>
+      <div class="empty"></div>
     </div>
 </template>
 <script>
@@ -19,6 +20,11 @@ export default{
 </script>
 <style scored>
 #main{
+  background-color: #f0f0f0;
+}
+.empty{
+  width: 100%;
+  height: 100px;
   background-color: #f0f0f0;
 }
 </style>

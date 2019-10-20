@@ -25,6 +25,14 @@
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <div class="pages">
+           <div class="pageShow">
+               <div class="back">{{b}}</div>
+               <div class="content"></div>
+               <div class="forword">></div>
+           </div>
+       </div>
    </div>
 </template>
 <script>
@@ -36,7 +44,8 @@ export default{
       yesterday: 160,
       sum: 1500,
       s1: '全部',
-      s2: '热门'
+      s2: '热门',
+      b: 123
     }
   },
   components: {
@@ -122,5 +131,43 @@ export default{
     position: absolute;
     top: 17px;
     left: 30%;
+}
+.pages{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+.pageShow{
+    width: 54%;
+    height: 30px;
+    position: absolute;
+    left: 23%;
+    margin-top: 14px;
+}
+.back{
+    width: 8%;
+    height: 30px;
+    color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+}
+.content{
+    position: absolute;
+    top: 0;
+    left: 8%;
+    width: 84%;
+    height: 30px;
+}
+.forword{
+    position: absolute;
+    width: 8%;
+    height: 30px;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 30px;
+    /* color: #005fbc; */
 }
 </style>
