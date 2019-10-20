@@ -52,6 +52,7 @@ export default {
     top: 0;
 }
 #head2{
+    position: relative;
     width: 100%;
     height: 5px;
     background-color: #f0f0f0;
