@@ -15,6 +15,7 @@
                <option value="4">2016</option>
            </select>
        </div>
+       <router-view/>
    </div>
 </template>
 <script>
@@ -35,18 +36,17 @@ export default{
     width: 55%;
     height: 600px;
     margin-left: 10%;
-    /* background-color:#eee; */
     position: relative;
     top: 80px;
     border: 1px solid black;
 }
 .headShow{
-    box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 80%;
     height: 30px;
-    top: 20px;
+    margin-top: 20px;
     left: 10%;
+    box-sizing: border-box;
     background-color:#f0f0f0;
     border: 1px solid #d9d9d9;
 }
@@ -70,11 +70,12 @@ export default{
     left: 36%;
 }
 .sort{
-    position: absolute;
+    position: relative;
     width: 80%;
-    height: 50px;
-    top: 50px;
-    margin: 10px 10%;
+    box-sizing: border-box;
+    height: 60px;
+    /* top: 10px; */
+    margin: 0 10%;
     font-size: 18px;
     border-bottom: 1px solid #ccc;
 }
@@ -82,9 +83,10 @@ export default{
     position: absolute;
     width: 10%;
     height: 26px;
-    top: 12px;
+    top: 17px;
     text-align: center;
     line-height: 26px;
+    cursor: pointer;
 }
 .sort1{
     left: 0;
@@ -97,7 +99,7 @@ export default{
     width: 20%;
     height: 26px;
     position: absolute;
-    top: 12px;
+    top: 17px;
     left: 30%;
 }
 </style>

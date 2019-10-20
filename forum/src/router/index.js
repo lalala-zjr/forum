@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import main from '../Pages/main/main.vue'
 import head from '../components/head/head.vue'
 import left from '../Pages/left/left.vue'
+import leftTitle from '../Pages/left/leftTitle/leftTitle.vue'
 
 Vue.use(Router)
 
@@ -21,7 +22,14 @@ export default new Router({
     {
       path: '/left',
       name: 'left',
-      component: left
+      component: left,
+      children: [
+        {
+          path: '/',
+          name: 'leftTitle',
+          component: leftTitle
+        }
+      ]
     }
   ]
 })
