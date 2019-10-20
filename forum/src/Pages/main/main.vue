@@ -1,7 +1,7 @@
 <template>
     <div id="main">
       <head></head>
-      <div>123</div>
+      <div>{{a}}</div>
     </div>
 </template>
 <script>
@@ -12,7 +12,9 @@ export default{
       a: 10
     }
   },
-  component: {
+  methods: {
+  },
+  components: {
     head
   }
 }
