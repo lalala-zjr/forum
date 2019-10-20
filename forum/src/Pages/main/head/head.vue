@@ -46,14 +46,14 @@ export default {
 #head1{
     width: 100%;
     height: 40px;
-    /* background-color: #cccccc; */
+    background-color: #fff;
     margin-top: 15px;
     position: relative;
     top: 0;
 }
 #head2{
     width: 100%;
-    height: 15px;
+    height: 5px;
     background-color: #f0f0f0;
     margin-top: 4px;
     border-bottom: 1px solid #c5c5c5;

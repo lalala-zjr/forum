@@ -1,26 +1,24 @@
 <template>
     <div id="main">
-      <head></head>
-      <div>{{a}}</div>
+      <router-view/>
+      <left></left>
     </div>
 </template>
 <script>
-import head from '../../components/head/head.vue'
+import left from './left/left.vue'
 export default{
   data () {
     return {
       a: 10
     }
   },
-  methods: {
-  },
   components: {
-    head
+    left
   }
 }
 </script>
 <style scored>
 #main{
-  background-color:#f0f0f0;
+  background-color: #f0f0f0;
 }
 </style>

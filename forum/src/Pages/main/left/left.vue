@@ -1,5 +1,6 @@
 <template>
    <div id="left">
+       <div class="empty"></div>
        <div class="headShow">
            <div class="today">今日：{{today}}</div>
            <div class="yesterday">昨日：{{yesterday}}</div>
@@ -15,10 +16,13 @@
                <option value="4">2016</option>
            </select>
        </div>
-       <router-view/>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
    </div>
 </template>
 <script>
+import leftTitle from './leftTitle/leftTitle.vue'
 export default{
   data () {
     return {
@@ -28,17 +32,27 @@ export default{
       s1: '全部',
       s2: '热门'
     }
+  },
+  components: {
+    leftTitle
   }
 }
 </script>
 <style scoped>
 #left{
+    background-color: #fff;
     width: 55%;
     height: 600px;
     margin-left: 10%;
     position: relative;
-    top: 80px;
-    border: 1px solid black;
+    top: 30px;
+    /* border: 1px solid black; */
+}
+.empty{
+    width: 100%;
+    height:20px;
+    position: relative;
+    background-color: white;
 }
 .headShow{
     position: relative;
