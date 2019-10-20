@@ -1,13 +1,19 @@
 <template>
    <div id="leftTitle">
-       <img src="../../../../assets/img/user.png" alt="">
+       <img src="../../../../assets/img/user.png" alt="" class="user">
        <div class="title">数学建模的应用场景</div>
        <div class="information">
            <div class="username">{{name}}</div>
            <div class="time">{{time}}</div>
        </div>
-       <div class="eye"></div>
-        <div class="com"></div>
+       <div class="eye">
+           <img src="../../../../assets/img/eye.png" alt="" class="eyeShow">
+           <div class="eyeCount">{{c1}}</div>
+       </div>
+        <div class="com">
+            <img src="../../../../assets/img/com.png" alt="" class="comShow">
+            <div class="comCount">{{c2}}</div>
+        </div>
    </div>
 </template>
 <script>
@@ -15,7 +21,9 @@ export default{
   data () {
     return {
       name: 'Angel 肆^',
-      time: '2019-10-20 13:19'
+      time: '2019-10-20 13:19',
+      c1: 120,
+      c2: 12
     }
   }
 }
@@ -28,7 +36,7 @@ export default{
     position: relative;
     border-bottom: 1px solid #ccc;
 }
-img{
+.user{
     width: 7%;
     height: 40px;
     z-index: 5;
@@ -37,14 +45,16 @@ img{
     left: 1%;
 }
 .title{
-    width:50%;
+    width: 50%;
     height: 40px;
     position: absolute;
     left: 14%;
     text-align: left;
     line-height: 40px;
     font-size: 16px;
-    /* background-color: aqua; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .title:hover{
     color: #005fbc;
@@ -70,7 +80,6 @@ img{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    /* background-color: red; */
 }
 .information .time{
     width: 60%;
@@ -78,22 +87,41 @@ img{
     position: absolute;
     top: 5px;
     left: 40%;
-    /* background-color: rebeccapurple; */
 }
 .eye{
     position: absolute;
     width: 10%;
-    height: 20px;
+    height: 16px;
     right: 20%;
     bottom: 5px;
-    background-color: #005fbc;
+    /* background-color: yellow; */
 }
 .com{
     position: absolute;
     width: 10%;
-    height: 20px;
-    right: 10%;
+    height: 16px;
+    right: 8%;
     bottom: 5px;
-    background-color: red;
+    /* background-color: red; */
+}
+.eyeShow,.comShow{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 16px;
+    z-index: 5;
+    text-align: right;
+    /* background-color: aquamarine; */
+}
+.eyeCount,.comCount{
+    position: absolute;
+    width: 60%;
+    height: 16px;
+    top: 0;
+    left: 40%;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
 }
 </style>

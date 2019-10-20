@@ -19,6 +19,12 @@
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
+       <leftTitle></leftTitle>
    </div>
 </template>
 <script>
@@ -42,10 +48,10 @@ export default{
 #left{
     background-color: #fff;
     width: 55%;
-    height: 600px;
     margin-left: 10%;
     position: relative;
     top: 30px;
+    bottom: 10px;
     /* border: 1px solid black; */
 }
 .empty{
@@ -105,6 +111,7 @@ export default{
 .sort1{
     left: 0;
     border-right: 2px solid #ababab;
+    color: #005fbc;
 }
 .sort2{
     left: 10%;
