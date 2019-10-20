@@ -104,6 +104,10 @@ export default {
 .li1{
     left: 0;
 }
+.li1 div{
+    color: white;
+    background-color: #005fbc;
+}
 .li2{
     left: 33.33%;
 }

@@ -11,20 +11,27 @@
        <div class="rightSort">
            <div class="sort1">
                <p>1</p>
+               <div class="sort1Word">{{w1}}</div>
            </div>
            <div class="sort2">
                <p>2</p>
+               <div class="sort2Word">{{w2}}</div>
            </div>
            <div class="sort3">
                <p>3</p>
+               <div class="sort3Word">{{w3}}</div>
            </div>
            <div class="sort4">
                <p>4</p>
+               <div class="sort4Word">{{w4}}</div>
            </div>
            <div class="sort5">
                <p>5</p>
+               <div class="sort5Word">{{w5}}</div>
            </div>
        </div>
+       <div class="footer"></div>
+       <div class="FootWord">数模协会</div>
    </div>
 </template>
 <script>
@@ -36,7 +43,12 @@ export default{
       word2: '热搜排名',
       d1: '今日',
       d2: '本周',
-      d3: '本月'
+      d3: '本月',
+      w1: '全国大学生数学建模比赛优秀论文合集',
+      w2: '互联网下的出租资源配置',
+      w3: '煤矿瓦斯和煤尘的监测与控制模型',
+      w4: '太阳影子定位',
+      w5: '基于非线性曲线拟合的经纬度测量方法'
     }
   }
 }
@@ -47,7 +59,7 @@ export default{
     top: 80px;
     right: 4%;
     width: 28%;
-    height: 700px;
+    height: 760px;
     box-sizing: border-box;
     background-color: white;
     border-radius: 20px;
@@ -91,25 +103,26 @@ export default{
     height: 24px;
     position: relative;
     left: 10%;
-    text-align: left;
+    text-align: center;
     line-height: 24px;
     font-size: 14px;
 }
 .w3 div{
     position: absolute;
     top: 0;
-    width: 14%;
+    width: 12%;
     height: 24px;
     cursor: pointer;
 }
 .day{
     left: 0;
+    border-bottom: 2px solid #478cce;
 }
 .week{
-    left: 14%;
+    left: 12%;
 }
 .month{
-    left: 28%;
+    left: 24%;
 }
 .rightSort{
     margin-top: 10px;
@@ -119,7 +132,7 @@ export default{
     width: 80%;
     height: 200px;
 }
-.rightSort div{
+.sort1,.sort2,.sort3,.sort4,.sort5{
     width: 100%;
     height: 40px;
     position: relative;
@@ -128,6 +141,9 @@ export default{
     font-size: 14px;
     line-height: 40px;
     text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 p{
     margin: 0;
@@ -146,5 +162,29 @@ p{
 }
 .sort3 p{
     background-color: #ffeb3b;
+}
+.sort1Word,.sort2Word,.sort3Word,.sort4Word,.sort5Word{
+    position: absolute;
+    width: 85%;
+    height: 40px;
+    top: 0;
+    left: 15%;
+    cursor: pointer;
+}
+.footer{
+    margin-top: 30px;
+    width: 60%;
+    margin-left: 20%;
+    height: 200px;
+    border: black 1px solid;
+}
+.FootWord{
+    width: 80%;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-left: 10%;
 }
 </style>
