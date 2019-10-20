@@ -6,6 +6,8 @@
            <div class="username">{{name}}</div>
            <div class="time">{{time}}</div>
        </div>
+       <div class="eye"></div>
+        <div class="com"></div>
    </div>
 </template>
 <script>
@@ -42,6 +44,7 @@ img{
     text-align: left;
     line-height: 40px;
     font-size: 16px;
+    /* background-color: aqua; */
 }
 .title:hover{
     color: #005fbc;
@@ -58,21 +61,39 @@ img{
     line-height: 20px;
 }
 .information .username{
-    width: 30%;
+    width: 40%;
     height: 20px;
     position: absolute;
-    top: 5%;
+    top: 5px;
     left: 0;
     border-right: 1px solid #ccc;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    /* background-color: red; */
 }
 .information .time{
-    width: 50%;
+    width: 60%;
     height: 20px;
     position: absolute;
-    top: 5%;
-    left: 30%;
+    top: 5px;
+    left: 40%;
+    /* background-color: rebeccapurple; */
+}
+.eye{
+    position: absolute;
+    width: 10%;
+    height: 20px;
+    right: 20%;
+    bottom: 5px;
+    background-color: #005fbc;
+}
+.com{
+    position: absolute;
+    width: 10%;
+    height: 20px;
+    right: 10%;
+    bottom: 5px;
+    background-color: red;
 }
 </style>
