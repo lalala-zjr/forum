@@ -8,6 +8,13 @@
            <div class="week">{{d2}}</div>
            <div class="month">{{d3}}</div>
        </div>
+       <div class="rightSort">
+           <div class="sort1">123</div>
+           <div class="sort2">234</div>
+           <div class="sort3">35</div>
+           <div class="sort4">345</div>
+           <div class="sort5">567</div>
+       </div>
    </div>
 </template>
 <script>
@@ -74,7 +81,7 @@ export default{
     height: 24px;
     position: relative;
     left: 10%;
-    text-align: center;
+    text-align: left;
     line-height: 24px;
     font-size: 14px;
 }
@@ -93,5 +100,23 @@ export default{
 }
 .month{
     left: 28%;
+}
+.rightSort{
+    margin-top: 10px;
+    position: relative;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 200px;
+}
+.rightSort div{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom:1px solid #ccc;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: left;
 }
 </style>
