@@ -28,9 +28,9 @@
        <leftTitle></leftTitle>
        <div class="pages">
            <div class="pageShow">
-               <div class="back">{{b}}</div>
+               <div class="back"><img src="../../../assets/img/b1.png" alt=""></div>
                <div class="content"></div>
-               <div class="forword">></div>
+               <div class="forword"><img src="../../../assets/img/b2.png" alt=""></div>
            </div>
        </div>
    </div>
@@ -61,7 +61,6 @@ export default{
     position: relative;
     top: 30px;
     bottom: 10px;
-    /* border: 1px solid black; */
 }
 .empty{
     width: 100%;
@@ -147,10 +146,11 @@ export default{
 .back{
     width: 8%;
     height: 30px;
-    color: red;
     position: absolute;
     top: 0;
     left: 0;
+    text-align: center;
+    line-height: 30px;
     font-size: 20px;
 }
 .content{
@@ -168,6 +168,5 @@ export default{
     right: 0;
     text-align: center;
     line-height: 30px;
-    /* color: #005fbc; */
 }
 </style>
