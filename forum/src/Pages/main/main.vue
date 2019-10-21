@@ -5,7 +5,7 @@
       <right v-show="flag2"></right>
       <person v-show="flag3"></person>
       <div class="empty"></div>
-      <register v-show="reg"></register>
+      <register v-show="reg" v-on:can="cancel"></register>
     </div>
 </template>
 <script>
@@ -41,6 +41,9 @@ export default{
         this.flag2 = true
         this.flag3 = false
       }
+    },
+    cancel () {
+      this.reg = false
     }
   }
 }
