@@ -3,6 +3,10 @@
         <div class="reg">
             <p>×</p>
             <div class="div1">登录</div>
+            <div class="div2">
+                <div class="message">短信登陆</div>
+                <div class="password">密码登陆</div>
+            </div>
         </div>
     </div>
 </template>
@@ -45,6 +49,37 @@ p{
     font-size: 18px;
     line-height: 40px;
     text-align: center;
-    background-color: red;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -40px;
+    /* background-color: rebeccapurple; */
+}
+.div2{
+    width: 180px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    left: 110px;
+    /* background-color: red; */
+}
+.div2 div{
+    width: 50%;
+    height: 24px;
+    line-height: 20px;
+    position: absolute;
+    top: 3px;
+}
+.message{
+    /* background-color: yellow; */
+    left: 0;
+    border-right: 1px solid #ccc;
+    color: #005fbc;
+}
+.password{
+    /* background-color: beige; */
+    left: 50%;
 }
 </style>
