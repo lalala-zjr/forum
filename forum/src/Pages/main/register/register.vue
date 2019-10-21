@@ -9,17 +9,18 @@
             </div>
             <div class="phone">
                 <div class="p1">0086</div>
-                <input type="text" placeholder="手机号" class="p2">
+                <input type="text" placeholder="手机号" class="p2" ref="f1">
             </div>
             <!-- <div class="error" v-show="error">输入格式出错</div> -->
             <div class="pass" v-show="s">
-                <input type="text" placeholder="请输入验证码" class="p3">
+                <input type="text" placeholder="请输入验证码" class="p3" ref="f2">
                 <button class="p4" ref="get" @click="send">{{time}}</button>
             </div>
             <div v-show="p" class="pass2">
-                <input type="password" placeholder="请输入密码" class="p3">
+                <input type="password" placeholder="请输入密码" class="p3" ref="f3">
             </div>
             <div class="sure" @click="save">登录</div>
+            <div class="forget" v-show="f">忘记密码?</div>
         </div>
     </div>
 </template>
@@ -31,7 +32,8 @@ export default{
       time: '获取验证码',
       s: true,
       p: false,
-      timer: 0
+      timer: 0,
+      f: true
     }
   },
   methods: {
@@ -55,21 +57,29 @@ export default{
       this.$refs.pas.style.color = 'black'
       this.s = true
       this.p = false
+      this.f = false
     },
     pass () {
       this.$refs.mes.style.color = 'black'
       this.$refs.pas.style.color = '#005fbc'
       this.s = false
       this.p = true
+      this.f = true
     },
     cancel () {
       this.time = '获取验证码'
       window.clearTimeout(this.timer)
+      this.$refs.f1.value = ''
+      this.$refs.f2.value = ''
+      this.$refs.f3.value = ''
       this.$emit('can', 1)
     },
     save () {
       this.time = '获取验证码'
       window.clearTimeout(this.timer)
+      this.$refs.f1.value = ''
+      this.$refs.f2.value = ''
+      this.$refs.f3.value = ''
       this.$emit('can', 2)
     }
   }
@@ -87,11 +97,11 @@ export default{
 }
 .reg{
     width: 400px;
-    height: 340px;
+    height: 360px;
     background-color: white;
     position: absolute;
     left: 50%;
-    top: 100px;
+    top: 80px;
     margin-left: -200px;
 }
 p{
@@ -173,7 +183,7 @@ p{
     background-color: #005fbc;
     color: white;
     position: absolute;
-    bottom: 40px;
+    bottom: 50px;
     left: 15%;
     font-size: 16px;
     text-align: center;
@@ -222,13 +232,18 @@ p{
     cursor: pointer;
     background-color: white;
 }
-/* .error{
-    width: 70%;
-    height: 15px;
-    color: red;
-    font-size: 12px;
+.forget{
+    width: 100px;
+    height: 20px;
+    /* background-color: red; */
     position: absolute;
-    top: 170px;
-    left: 35%;
-} */
+    bottom: 20px;
+    left: 50%;
+    margin-left: -50px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 20px;
+    color: #005fbc;
+    cursor: pointer;
+}
 </style>

@@ -6,6 +6,7 @@ import left from '../Pages/main/left/left.vue'
 import right from '../Pages/main/right/right.vue'
 import person from '../Pages/main/person/person.vue'
 import register from '../Pages/main/register/register.vue'
+import login from '../Pages/main/login/login.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 
 Vue.use(Router)
@@ -26,6 +27,11 @@ export default new Router({
           path: '/register',
           name: 'register',
           component: register
+        },
+        {
+          path: '/login',
+          name: 'login',
+          component: login
         },
         {
           path: '/left',
