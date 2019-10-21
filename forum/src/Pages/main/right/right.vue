@@ -130,7 +130,7 @@ export default{
 .w3 div{
     position: absolute;
     top: 0;
-    width: 10%;
+    width: 12%;
     height: 24px;
     cursor: pointer;
 }
@@ -139,10 +139,10 @@ export default{
     border-bottom: 2px solid #478cce;
 }
 .week{
-    left: 15%;
+    left: 17%;
 }
 .month{
-    left: 30%;
+    left: 34%;
 }
 .rightSort{
     margin-top: 10px;
