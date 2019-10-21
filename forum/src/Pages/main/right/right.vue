@@ -4,9 +4,9 @@
        <div class="w1">{{word1}}</div>
        <div class="w2">{{word2}}</div>
        <div class="w3">
-           <div class="day">{{d1}}</div>
-           <div class="week">{{d2}}</div>
-           <div class="month">{{d3}}</div>
+           <div class="day" @click="border1()" ref="b1">{{d1}}</div>
+           <div class="week" @click="border2()" ref="b2">{{d2}}</div>
+           <div class="month" @click="border3()" ref="b3">{{d3}}</div>
        </div>
        <div class="rightSort">
            <div class="sort1">
@@ -54,6 +54,22 @@ export default{
     }
   },
   methods: {
+    border1 () {
+      this.$refs.b1.style.borderBottom = '2px solid #478cce'
+      this.$refs.b2.style.borderBottom = '0'
+      this.$refs.b3.style.borderBottom = '0'
+    },
+    border2 () {
+      this.$refs.b2.style.borderBottom = '2px solid #478cce'
+      this.$refs.b1.style.borderBottom = '0'
+      this.$refs.b3.style.borderBottom = '0'
+      console.log(123)
+    },
+    border3 () {
+      this.$refs.b3.style.borderBottom = '2px solid #478cce'
+      this.$refs.b2.style.borderBottom = '0'
+      this.$refs.b1.style.borderBottom = '0'
+    }
   }
 }
 </script>
@@ -114,7 +130,7 @@ export default{
 .w3 div{
     position: absolute;
     top: 0;
-    width: 12%;
+    width: 10%;
     height: 24px;
     cursor: pointer;
 }
@@ -123,10 +139,10 @@ export default{
     border-bottom: 2px solid #478cce;
 }
 .week{
-    left: 12%;
+    left: 15%;
 }
 .month{
-    left: 24%;
+    left: 30%;
 }
 .rightSort{
     margin-top: 10px;
