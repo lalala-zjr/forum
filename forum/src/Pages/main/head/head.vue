@@ -86,8 +86,8 @@ export default {
     position: relative;
     width: 100%;
     height: 5px;
+    box-sizing: border-box;
     background-color: #f0f0f0;
-    margin-top: 4px;
     border-bottom: 1px solid #c5c5c5;
 }
 .word{
@@ -98,7 +98,6 @@ export default {
     height: 40px;
     font-size: 30px;
     line-height: 40px;
-    /* background-color:beige; */
     color: #0c66bf;
     text-align: center;
 }

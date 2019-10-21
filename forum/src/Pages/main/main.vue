@@ -1,5 +1,5 @@
 <template>
-    <div id="main">
+    <div id="main" ref="main">
       <router-view v-on:personShow="listen"></router-view>
       <left v-show="flag1"></left>
       <right v-show="flag2"></right>
@@ -42,16 +42,13 @@ export default{
         this.flag3 = false
       }
     }
-    // showREG (data) {
-    //   // this.$refs.regist
-    //   console.log(data)
-    // }
   }
 }
 </script>
 <style scored>
 #main{
   background-color: #f0f0f0;
+  height: 850px;
 }
 .empty{
   width: 100%;
