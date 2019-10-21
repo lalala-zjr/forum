@@ -30,7 +30,9 @@
                <div class="sort5Word">{{w5}}</div>
            </div>
        </div>
-       <div class="footer"></div>
+       <!-- <div class="footer"> -->
+           <img src="../../../assets/img/weixin.jpg" alt="" class="footer">
+       <!-- </div> -->
        <div class="FootWord">数模协会</div>
    </div>
 </template>
@@ -50,16 +52,18 @@ export default{
       w4: '太阳影子定位',
       w5: '基于非线性曲线拟合的经纬度测量方法'
     }
+  },
+  methods: {
   }
 }
 </script>
 <style scoped>
 #right{
     position: absolute;
-    top: 80px;
+    top: 90px;
     right: 4%;
     width: 28%;
-    height: 760px;
+    height: 730px;
     box-sizing: border-box;
     background-color: white;
     border-radius: 20px;
@@ -176,7 +180,7 @@ p{
     width: 60%;
     margin-left: 20%;
     height: 200px;
-    border: black 1px solid;
+    /* border: black 1px solid; */
 }
 .FootWord{
     width: 80%;

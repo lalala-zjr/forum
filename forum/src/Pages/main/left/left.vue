@@ -23,9 +23,6 @@
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
        <div class="pages">
            <div class="pageShow">
                <div class="back"><img src="../../../assets/img/b1.png" alt=""></div>
