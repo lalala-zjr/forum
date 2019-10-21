@@ -5,6 +5,7 @@ import head from '../Pages/main/head/head.vue'
 import left from '../Pages/main/left/left.vue'
 import right from '../Pages/main/right/right.vue'
 import person from '../Pages/main/person/person.vue'
+import register from '../Pages/main/register/register.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 
 Vue.use(Router)
@@ -20,6 +21,11 @@ export default new Router({
           path: '/',
           name: 'head',
           component: head
+        },
+        {
+          path: '/register',
+          name: 'register',
+          component: register
         },
         {
           path: '/left',
