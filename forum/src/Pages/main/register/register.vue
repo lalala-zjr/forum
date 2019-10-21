@@ -7,6 +7,9 @@
                 <div class="message">短信登陆</div>
                 <div class="password">密码登陆</div>
             </div>
+            <div class="phone"></div>
+            <div class="pass"></div>
+            <div class="sure">登陆</div>
         </div>
     </div>
 </template>
@@ -24,7 +27,7 @@
 }
 .reg{
     width: 400px;
-    height: 300px;
+    height: 340px;
     background-color: white;
     position: absolute;
     left: 50%;
@@ -79,5 +82,32 @@ p{
 }
 .password{
     left: 50%;
+}
+.phone,.pass{
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    box-sizing: border-box;
+    left: 15%;
+    border-bottom: 1.5px solid #f2f2f2;
+}
+.phone{
+    top: 100px;
+}
+.pass{
+    top: 150px;
+}
+.sure{
+    width: 70%;
+    height: 50px;
+    background-color: #005fbc;
+    color: white;
+    position: absolute;
+    /* top: 220px; */
+    bottom: 40px;
+    left: 15%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
 }
 </style>
