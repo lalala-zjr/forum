@@ -7,8 +7,8 @@
            <div class="sum">帖子：{{sum}}</div>
        </div>
        <div class="sort">
-           <div class="sort1">{{s1}}</div>
-           <div class="sort2">{{s2}}</div>
+           <div class="sort1" ref="s1" @click="sort1()">{{s1}}</div>
+           <div class="sort2" ref="s2" @click="sort2()">{{s2}}</div>
            <select id="Search">
                <option value="1">2019</option>
                <option value="2">2018</option>
@@ -47,6 +47,16 @@ export default{
   },
   components: {
     leftTitle
+  },
+  methods: {
+    sort1 () {
+      this.$refs.s1.style.color = '#005fbc'
+      this.$refs.s2.style.color = 'black'
+    },
+    sort2 () {
+      this.$refs.s2.style.color = '#005fbc'
+      this.$refs.s1.style.color = 'black'
+    }
   }
 }
 </script>

@@ -1,8 +1,9 @@
 <template>
     <div id="main">
       <router-view/>
-      <left></left>
-      <right></right>
+      <left v-show="flag1"></left>
+      <right v-show="flag2"></right>
+      <!-- <person></person> -->
       <div class="empty"></div>
     </div>
 </template>
@@ -12,7 +13,8 @@ import right from './right/right.vue'
 export default{
   data () {
     return {
-      a: 10
+      flag1: true,
+      flag2: true
     }
   },
   components: {

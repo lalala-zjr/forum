@@ -192,7 +192,7 @@ p{
     cursor: pointer;
 }
 .footer{
-    margin-top: 30px;
+    margin-top: 10px;
     width: 60%;
     margin-left: 20%;
     height: 200px;
@@ -200,11 +200,10 @@ p{
 }
 .FootWord{
     width: 80%;
-    height: 20px;
+    height: 16px;
     font-size: 12px;
     text-align: center;
-    line-height: 20px;
-    margin-top: 5px;
+    line-height: 16px;
     margin-left: 10%;
 }
 </style>
