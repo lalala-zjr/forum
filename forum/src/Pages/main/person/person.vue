@@ -98,7 +98,6 @@ export default{
   width: 60%;
   height: 30px;
   left: 20px;
-  /* background-color: skyblue; */
 }
 .user{
   top: 5%;

@@ -12,7 +12,7 @@
 </template>
 <script>
 </script>
-<style scored>
+<style scoped>
 #register{
     width: 100%;
     height: 790px;
@@ -24,11 +24,11 @@
 }
 .reg{
     width: 400px;
-    height: 260px;
+    height: 300px;
     background-color: white;
     position: absolute;
     left: 50%;
-    top: 120px;
+    top: 100px;
     margin-left: -200px;
 }
 p{
@@ -73,13 +73,11 @@ p{
     top: 3px;
 }
 .message{
-    /* background-color: yellow; */
     left: 0;
     border-right: 1px solid #ccc;
     color: #005fbc;
 }
 .password{
-    /* background-color: beige; */
     left: 50%;
 }
 </style>
