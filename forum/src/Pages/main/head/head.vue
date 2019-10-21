@@ -44,6 +44,7 @@ export default {
       this.$refs.nav2.style.backgroundColor = 'white'
       this.$refs.nav3.style.color = 'black'
       this.$refs.nav3.style.backgroundColor = 'white'
+      this.$emit('personShow', 1)
     },
     navChoose2 () {
       this.$refs.nav2.style.color = 'white'
@@ -52,6 +53,7 @@ export default {
       this.$refs.nav1.style.backgroundColor = 'white'
       this.$refs.nav3.style.color = 'black'
       this.$refs.nav3.style.backgroundColor = 'white'
+      this.$emit('personShow', 2)
     },
     navChoose3 () {
       this.$refs.nav3.style.color = 'white'
@@ -60,6 +62,7 @@ export default {
       this.$refs.nav2.style.backgroundColor = 'white'
       this.$refs.nav1.style.color = 'black'
       this.$refs.nav1.style.backgroundColor = 'white'
+      this.$emit('personShow', 3)
     }
     // oIn () {
     //   this.flag = false
