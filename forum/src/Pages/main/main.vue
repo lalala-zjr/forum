@@ -5,11 +5,11 @@
       <right v-show="flag2"></right>
       <person v-show="flag3"></person>
       <detail v-show='d'></detail>
-      <div class="empty"></div>
       <register v-show="reg" v-on:can="cancel"></register>
       <login v-show="log" v-on:can="cancel"></login>
       <forget v-show="f" v-on:can="cancel"></forget>
       <forget2 v-show="f2" v-on:can="cancel"></forget2>
+      <div class="empty"></div>
     </div>
 </template>
 <script>

@@ -5,7 +5,10 @@
             <div class="headword">扬扬叉会腰</div>
         </div>
         <div class="body">写的写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错真不错</div>
-        <div class="foot"></div>
+        <div class="foot">
+            <div class="like"></div>
+            <div class="com"></div>
+        </div>
     </div>
 </template>
 <script>
@@ -57,5 +60,18 @@ img{
     bottom: 0;
     left: 0;
     /* background-color: red; */
+}
+.like,.com{
+    width: 10%;
+    height: 26px;
+    position: absolute;
+    bottom: 6px;
+    background-color: skyblue;
+}
+.like{
+    right: 18%;
+}
+.com{
+    right: 5%;
 }
 </style>

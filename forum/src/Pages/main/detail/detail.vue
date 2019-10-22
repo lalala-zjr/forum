@@ -17,7 +17,15 @@
         <div class="commentContend">
             <div class="word">评论区</div>
             <detailComment></detailComment>
+            <detailComment></detailComment>
+            <img src="../../../assets/img/jian.png" alt="" class="pic">
         </div>
+        <div class="userCom">
+            <div class="userN">{{user}}</div>
+            <textarea placeholder="说点什么？" maxlength="200"></textarea>
+            <div class="ComSend">发表评论</div>
+        </div>
+        <div class="emp"></div>
     </div>
 </template>
 <script>
@@ -25,6 +33,7 @@ import detailComment from './detailComment/detailComment.vue'
 export default {
   data () {
     return {
+      user: '可怜且轩轩',
       l1: true,
       l2: false
     }
@@ -151,7 +160,7 @@ export default {
 }
 .commentContend{
     width: 80%;
-    height: 400px;
+    /* height: 400px; */
     position: relative;
     left: 10%;
     top: 10%;
@@ -162,6 +171,49 @@ export default {
     box-sizing: border-box;
     border-bottom: 1px solid #ccc;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 44px;
+}
+.emp{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    background-color: white;
+}
+.pic{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 5px;
+    left: 50%;
+    margin-left: -15px;
+}
+.userCom{
+    width: 90%;
+    /* border: 1px solid rosybrown; */
+    margin:5% 5%;
+    position: relative;
+}
+.userN{
+    color: #005fbc;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 14px;
+    resize: none;
+}
+.ComSend{
+    width: 12%;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align:center;
+    background-color: #005fbc;
+    color: white;
+    margin: 5px 88%;
+    border-radius: 12px;
+    cursor: pointer;
 }
 </style>
