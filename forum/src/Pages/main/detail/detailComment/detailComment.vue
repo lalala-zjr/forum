@@ -1,6 +1,5 @@
 <template>
     <div id="detailComment">
-        <p>123</p>
     </div>
 </template>
 <script>
@@ -12,5 +11,9 @@ export default {
 }
 </script>
 <style scoped>
-
+#detailComment{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+}
 </style>
