@@ -20,7 +20,7 @@
                 <input type="password" placeholder="请输入密码" class="p3" ref="f3">
             </div>
             <div class="sure" @click="save">登录</div>
-            <div class="forget" v-show="f">忘记密码?</div>
+            <div class="forget" v-show="f" @click="Fsend">忘记密码?</div>
         </div>
     </div>
 </template>
@@ -33,7 +33,7 @@ export default{
       s: true,
       p: false,
       timer: 0,
-      f: true
+      f: false
     }
   },
   methods: {
@@ -72,6 +72,11 @@ export default{
       this.$refs.f1.value = ''
       this.$refs.f2.value = ''
       this.$refs.f3.value = ''
+      this.$refs.mes.style.color = '#005fbc'
+      this.$refs.pas.style.color = 'black'
+      this.s = true
+      this.p = false
+      this.f = false
       this.$emit('can', 1)
     },
     save () {
@@ -81,6 +86,14 @@ export default{
       this.$refs.f2.value = ''
       this.$refs.f3.value = ''
       this.$emit('can', 2)
+    },
+    Fsend () {
+      this.time = '获取验证码'
+      window.clearTimeout(this.timer)
+      this.$refs.f1.value = ''
+      this.$refs.f2.value = ''
+      this.$refs.f3.value = ''
+      this.$emit('can', 0)
     }
   }
 }
