@@ -18,6 +18,7 @@ import person from './person/person.vue'
 import register from './register/register.vue'
 import login from './login/login.vue'
 import forget from './forget/forget.vue'
+import forget2 from './forget2/forget2.vue'
 export default{
   data () {
     return {
@@ -36,7 +37,8 @@ export default{
     person,
     register,
     login,
-    forget
+    forget,
+    forget2
   },
   methods: {
     listen (data) {
@@ -74,12 +76,21 @@ export default{
           this.log = false
           break
         }
-        case 5: { //  忘记密码 取消
+        case 5: { //  重置密码 取消
           this.f = false
           break
         }
         case 6: { //  重置密码 确定
           this.f = false
+          this.f2 = true
+          break
+        }
+        case 7: { //  重置密码2 取消
+          this.f2 = false
+          break
+        }
+        case 8: { //  重置密码2 确定
+          this.f2 = false
           break
         }
       }

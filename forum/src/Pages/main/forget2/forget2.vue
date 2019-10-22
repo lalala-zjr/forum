@@ -19,43 +19,18 @@
 export default{
   data () {
     return {
-      time: '获取验证码',
-      timer: 0
     }
   },
   methods: {
-    send: function () {
-      var t = 59
-      var this2 = this
-      this2.time = t + 's'
-      this2.$refs.get.disabled = false
-      var timer = window.setInterval(function () {
-        this2.time = --t + 's'
-        if (t === 0) {
-          this2.time = '获取验证码'
-          window.clearTimeout(timer)
-          this2.$refs.get.disabled = 'disabled'
-        }
-      }, 1000)
-      this.timer = timer
-    },
     cancel () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.q1.value = ''
-      this.$refs.q2.value = ''
       this.$refs.q3.value = ''
       this.$refs.q4.value = ''
-      this.$emit('can', 3)
+      this.$emit('can', 7)
     },
     save () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.q1.value = ''
-      this.$refs.q2.value = ''
       this.$refs.q3.value = ''
       this.$refs.q4.value = ''
-      this.$emit('can', 4)
+      this.$emit('can', 8)
     }
   }
 }
@@ -72,7 +47,7 @@ export default{
 }
 .log{
     width: 400px;
-    height: 360px;
+    height: 320px;
     background-color: white;
     position: absolute;
     left: 50%;
@@ -99,7 +74,7 @@ p{
     line-height: 40px;
     text-align: center;
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: 50%;
     margin-left: -60px;
 }
@@ -109,7 +84,7 @@ p{
     position: absolute;
     box-sizing: border-box;
     left: 15%;
-    top: 170px;
+    top: 100px;
     border-bottom: 1.5px solid #f2f2f2;
 }
 .pass3{
@@ -118,51 +93,22 @@ p{
     position: absolute;
     box-sizing: border-box;
     left: 15%;
-    top: 220px;
+    top: 150px;
     border-bottom: 1.5px solid #f2f2f2;
 }
 .sure{
     width: 70%;
-    height: 36px;
+    height: 46px;
     background-color: #005fbc;
     color: white;
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     left: 15%;
     font-size: 16px;
     text-align: center;
-    line-height: 36px;
+    line-height: 46px;
 }
-.p1{
-    width: 15%;
-    height: 50px;
-    box-sizing: border-box;
-    position:absolute;
-    top: 0;
-    left: 5%;
-    font-size: 14px;
-    line-height:50px;
-}
-.p2{
-    width: 70%;
-    height: 40px;
-    box-sizing: border-box;
-    padding: 5px;
-    position: absolute;
-    top: 5px;
-    right: 0;
-    border: 0;
-    line-height: 40px;
-}
-.p3{
-    width: 60%;
-    height: 30px;
-    border: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 0;
-}
-.p4,.t1,.t2{
+.t1,.t2{
     width: 35%;
     height: 30px;
     border: 0;
