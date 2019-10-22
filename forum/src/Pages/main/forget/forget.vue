@@ -2,7 +2,7 @@
     <div id="forget">
         <div class="for">
             <p @click="cancel">×</p>
-            <div class="div1">密码重置</div>
+            <div class="div1">忘记密码</div>
             <div class="phone">
                 <div class="p1">0086</div>
                 <input type="text" placeholder="手机号" class="p2" ref="f1">

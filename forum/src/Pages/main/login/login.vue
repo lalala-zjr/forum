@@ -80,11 +80,11 @@ export default{
 }
 .log{
     width: 400px;
-    height: 360px;
+    height: 380px;
     background-color: white;
     position: absolute;
     left: 50%;
-    top: 80px;
+    top: 60px;
     margin-left: -200px;
 }
 p{
@@ -145,7 +145,7 @@ p{
 }
 .sure{
     width: 70%;
-    height: 36px;
+    height: 46px;
     background-color: #005fbc;
     color: white;
     position: absolute;
@@ -153,7 +153,7 @@ p{
     left: 15%;
     font-size: 16px;
     text-align: center;
-    line-height: 36px;
+    line-height: 46px;
 }
 .p1{
     width: 15%;
