@@ -110,11 +110,14 @@ export default{
 <style scored>
 #main{
   background-color: #f0f0f0;
-  height: 850px;
+  /* height: 850px; */
 }
 .empty{
   width: 100%;
-  height: 50px;
+  height: 80px;
+  position: relative;
+  bottom: 0;
+  left: 0;
   background-color: #f0f0f0;
 }
 </style>
