@@ -62,16 +62,14 @@ export default{
       window.clearTimeout(this.timer)
       this.$refs.f1.value = ''
       this.$refs.f2.value = ''
-      this.$refs.f3.value = ''
-      this.$emit('can', -1)
+      this.$emit('can', 5)
     },
     save () {
       this.time = '获取验证码'
       window.clearTimeout(this.timer)
       this.$refs.f1.value = ''
       this.$refs.f2.value = ''
-      this.$refs.f3.value = ''
-      this.$emit('can', 2)
+      this.$emit('can', 6)
     }
   }
 }

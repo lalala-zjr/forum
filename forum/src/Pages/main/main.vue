@@ -56,22 +56,30 @@ export default{
     },
     cancel (data) {
       switch (data) {
-        case 0: {
+        case 0: { // 点击登录的忘记密码
           this.reg = false
           this.f = true
           break
         }
-        case -1: {
+        case 1: //  登陆取消
+        case 2: { //  登陆保存
           this.reg = false
+          break
+        }
+        case 3: //  注册取消
+        case 4: {
+          //  注册保存
+          this.log = false
+          break
+        }
+        case 5: { //  忘记密码 取消
           this.f = false
           break
         }
-      }
-      if (data === 1 || data === 2) {
-        this.reg = false
-      }
-      if (data === 3 || data === 4) {
-        this.log = false
+        case 6: { //  重置密码 确定
+          this.f = false
+          break
+        }
       }
     }
   }
