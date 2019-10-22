@@ -1,6 +1,6 @@
 <template>
     <div id="detail">
-        <div>123</div>
+        <div class="head"></div>
     </div>
 </template>
 <script>
@@ -20,5 +20,13 @@ export default {
     position: relative;
     top: 30px;
     bottom: 10px;
+}
+.head{
+    width: 80%;
+    height: 100px;
+    position: relative;
+    background-color: rebeccapurple;
+    left: 10%;
+    top: 2%;
 }
 </style>

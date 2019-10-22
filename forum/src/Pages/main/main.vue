@@ -1,9 +1,10 @@
 <template>
     <div id="main" ref="main">
       <router-view v-on:personShow="listen"></router-view>
-      <left v-show="flag1"></left>
+      <left v-show="flag1" v-on:see="go"></left>
       <right v-show="flag2"></right>
       <person v-show="flag3"></person>
+      <detail v-show='d'></detail>
       <div class="empty"></div>
       <register v-show="reg" v-on:can="cancel"></register>
       <login v-show="log" v-on:can="cancel"></login>
@@ -18,6 +19,7 @@ import person from './person/person.vue'
 import register from './register/register.vue'
 import login from './login/login.vue'
 import forget from './forget/forget.vue'
+import detail from './detail/detail.vue'
 import forget2 from './forget2/forget2.vue'
 export default{
   data () {
@@ -28,7 +30,8 @@ export default{
       reg: false,
       log: false,
       f: false,
-      f2: false
+      f2: false,
+      d: false
     }
   },
   components: {
@@ -38,7 +41,8 @@ export default{
     register,
     login,
     forget,
-    forget2
+    forget2,
+    detail
   },
   methods: {
     listen (data) {
@@ -57,6 +61,7 @@ export default{
         this.flag2 = true
         this.flag3 = false
       }
+      this.d = false
     },
     cancel (data) {
       switch (data) {
@@ -94,6 +99,10 @@ export default{
           break
         }
       }
+    },
+    go () {
+      this.flag1 = false
+      this.d = true
     }
   }
 }

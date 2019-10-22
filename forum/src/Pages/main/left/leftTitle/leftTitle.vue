@@ -1,7 +1,7 @@
 <template>
    <div id="leftTitle">
        <img src="../../../../assets/img/user.png" alt="" class="user">
-       <div class="title">数学建模的应用场景</div>
+       <div class="title" @click="enter">{{title}}</div>
        <div class="information">
            <div class="username">{{name}}</div>
            <div class="time">{{time}}</div>
@@ -22,8 +22,14 @@ export default{
     return {
       name: 'Angel 肆^',
       time: '2019-10-20 13:19',
+      title: '数学建模的应用场景',
       c1: 120,
       c2: 12
+    }
+  },
+  methods: {
+    enter () {
+      this.$emit('Into', 1)
     }
   }
 }

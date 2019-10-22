@@ -16,7 +16,7 @@
                <option value="4">2016</option>
            </select>
        </div>
-       <leftTitle></leftTitle>
+       <leftTitle v-on:Into="see"></leftTitle>
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
        <leftTitle></leftTitle>
@@ -56,6 +56,9 @@ export default{
     sort2 () {
       this.$refs.s2.style.color = '#005fbc'
       this.$refs.s1.style.color = 'black'
+    },
+    see () {
+      this.$emit('see', 1)
     }
   }
 }
