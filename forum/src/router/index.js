@@ -8,6 +8,7 @@ import person from '../Pages/main/person/person.vue'
 import register from '../Pages/main/register/register.vue'
 import login from '../Pages/main/login/login.vue'
 import forget from '../Pages/main/forget/forget.vue'
+import forget2 from '../Pages/main/forget2/forget2.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 
 Vue.use(Router)
@@ -38,6 +39,11 @@ export default new Router({
           path: '/forget',
           name: 'forget',
           component: forget
+        },
+        {
+          path: '/forget2',
+          name: 'forget2',
+          component: forget2
         },
         {
           path: '/left',

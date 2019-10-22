@@ -8,6 +8,7 @@
       <register v-show="reg" v-on:can="cancel"></register>
       <login v-show="log" v-on:can="cancel"></login>
       <forget v-show="f" v-on:can="cancel"></forget>
+      <forget2 v-show="f2" v-on:can="cancel"></forget2>
     </div>
 </template>
 <script>
@@ -25,7 +26,8 @@ export default{
       flag3: false,
       reg: false,
       log: false,
-      f: false
+      f: false,
+      f2: false
     }
   },
   components: {

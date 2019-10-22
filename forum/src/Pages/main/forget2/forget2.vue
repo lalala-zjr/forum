@@ -1,0 +1,187 @@
+<template>
+    <div id="login">
+        <div class="log">
+            <p @click="cancel">×</p>
+            <div class="div1">密码重置</div>
+            <div class="pass2">
+                <input type="password" placeholder="请输入新密码" class="p5" ref="q3">
+                <div class="t1">8-20个字符</div>
+            </div>
+            <div class="pass3">
+                <input type="password" placeholder="确认密码" class="p5" ref="q4">
+                <div class="t2">8-20个字符</div>
+            </div>
+            <div class="sure" @click="save">确定</div>
+        </div>
+    </div>
+</template>
+<script>
+export default{
+  data () {
+    return {
+      time: '获取验证码',
+      timer: 0
+    }
+  },
+  methods: {
+    send: function () {
+      var t = 59
+      var this2 = this
+      this2.time = t + 's'
+      this2.$refs.get.disabled = false
+      var timer = window.setInterval(function () {
+        this2.time = --t + 's'
+        if (t === 0) {
+          this2.time = '获取验证码'
+          window.clearTimeout(timer)
+          this2.$refs.get.disabled = 'disabled'
+        }
+      }, 1000)
+      this.timer = timer
+    },
+    cancel () {
+      this.time = '获取验证码'
+      window.clearTimeout(this.timer)
+      this.$refs.q1.value = ''
+      this.$refs.q2.value = ''
+      this.$refs.q3.value = ''
+      this.$refs.q4.value = ''
+      this.$emit('can', 3)
+    },
+    save () {
+      this.time = '获取验证码'
+      window.clearTimeout(this.timer)
+      this.$refs.q1.value = ''
+      this.$refs.q2.value = ''
+      this.$refs.q3.value = ''
+      this.$refs.q4.value = ''
+      this.$emit('can', 4)
+    }
+  }
+}
+</script>
+<style scoped>
+#login{
+    width: 100%;
+    height: 790px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgba(200, 200, 200, 0.8);
+    z-index: 10;
+}
+.log{
+    width: 400px;
+    height: 360px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    margin-left: -200px;
+}
+p{
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    font-size:30px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #a6a6a6;
+    cursor:pointer;
+}
+.div1{
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -60px;
+}
+.pass2{
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    box-sizing: border-box;
+    left: 15%;
+    top: 170px;
+    border-bottom: 1.5px solid #f2f2f2;
+}
+.pass3{
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    box-sizing: border-box;
+    left: 15%;
+    top: 220px;
+    border-bottom: 1.5px solid #f2f2f2;
+}
+.sure{
+    width: 70%;
+    height: 36px;
+    background-color: #005fbc;
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    left: 15%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 36px;
+}
+.p1{
+    width: 15%;
+    height: 50px;
+    box-sizing: border-box;
+    position:absolute;
+    top: 0;
+    left: 5%;
+    font-size: 14px;
+    line-height:50px;
+}
+.p2{
+    width: 70%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 5px;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    border: 0;
+    line-height: 40px;
+}
+.p3{
+    width: 60%;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
+.p4,.t1,.t2{
+    width: 35%;
+    height: 30px;
+    border: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #327ec9;
+    cursor: pointer;
+    background-color: white;
+}
+.p5{
+    width: 60%;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
+</style>
