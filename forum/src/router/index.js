@@ -11,6 +11,7 @@ import forget from '../Pages/main/forget/forget.vue'
 import detail from '../Pages/main/detail/detail.vue'
 import forget2 from '../Pages/main/forget2/forget2.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
+import detailComment from '../Pages/main/detail/detailComment/detailComment.vue'
 
 Vue.use(Router)
 
@@ -49,7 +50,14 @@ export default new Router({
         {
           path: '/detail',
           name: 'detail',
-          component: detail
+          component: detail,
+          children: [
+            {
+              path: '/',
+              name: 'detailComment',
+              component: detailComment
+            }
+          ]
         },
         {
           path: '/left',

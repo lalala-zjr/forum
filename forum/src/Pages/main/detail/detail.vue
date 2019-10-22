@@ -14,10 +14,14 @@
             <input type="text" placeholder="说点什么？">
             <div>快速评论</div>
         </div>
-        <div class="commentContend"></div>
+        <div class="commentContend">
+            <div class="word">评论区</div>
+            <detailComment></detailComment>
+        </div>
     </div>
 </template>
 <script>
+import detailComment from './detailComment/detailComment.vue'
 export default {
   data () {
     return {
@@ -34,13 +38,16 @@ export default {
       this.l2 = false
       this.l1 = true
     }
+  },
+  components: {
+    detailComment
   }
 }
 </script>
 <style scoped>
 #detail{
     background-color: #fff;
-    height: 1000px;
+    /* height: 1000px; */
     width: 55%;
     margin-left: 10%;
     position: relative;
@@ -60,7 +67,7 @@ export default {
     /* background-color: hotpink; */
     position: absolute;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 60px;
     text-align: left;
     top: 0;
     left: 0;
@@ -144,10 +151,17 @@ export default {
 }
 .commentContend{
     width: 80%;
-    height: 200px;
-    background-color: red;
+    height: 400px;
     position: relative;
     left: 10%;
     top: 10%;
+}
+.word{
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+    line-height: 50px;
 }
 </style>
