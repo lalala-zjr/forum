@@ -1,6 +1,6 @@
 <template>
    <div id="right">
-       <div class="word">{{word}}</div>
+       <div class="word" @click="send">{{word}}</div>
        <div class="w1">{{word1}}</div>
        <div class="w2">{{word2}}</div>
        <div class="w3">
@@ -69,6 +69,9 @@ export default{
       this.$refs.b3.style.borderBottom = '2px solid #478cce'
       this.$refs.b2.style.borderBottom = '0'
       this.$refs.b1.style.borderBottom = '0'
+    },
+    send () {
+      this.$emit('sendWord', '1')
     }
   }
 }

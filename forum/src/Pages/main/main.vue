@@ -2,7 +2,7 @@
     <div id="main" ref="main">
       <router-view v-on:personShow="listen"></router-view>
       <left v-show="flag1" v-on:see="go"></left>
-      <right v-show="flag2"></right>
+      <right v-show="flag2" v-on:sendWord="sendW"></right>
       <person v-show="flag3"></person>
       <detail v-show='d'></detail>
       <register v-show="reg" v-on:can="cancel"></register>
@@ -31,7 +31,8 @@ export default{
       log: false,
       f: false,
       f2: false,
-      d: false
+      d: false,
+      send: false
     }
   },
   components: {
@@ -63,6 +64,15 @@ export default{
       }
       this.d = false
     },
+    sendW (data) {
+      if (data === 1){
+        this.flag1 = false
+        this.flag2 = false
+        this.flag3 = false
+        this.d = false
+        this.send = true
+      }
+    }
     cancel (data) {
       switch (data) {
         case 0: { // 点击登录的忘记密码
