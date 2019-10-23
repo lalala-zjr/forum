@@ -11,7 +11,7 @@
             <img src="../../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
         </div>
         <div class="comment">
-            <input type="text" placeholder="说点什么？">
+            <input type="text" placeholder="说点什么？" maxlength="24">
             <div>快速评论</div>
         </div>
         <div class="commentContend">
@@ -21,7 +21,10 @@
             <img src="../../../assets/img/jian.png" alt="" class="pic">
         </div>
         <div class="userCom">
-            <div class="userN">{{user}}</div>
+            <div class="userN">
+                <img src="../../../assets/img/user.png" class="userPic" alt="">
+                <div class="userName">{{user}}</div>
+            </div>
             <textarea placeholder="说点什么？" maxlength="200"></textarea>
             <div class="ComSend">发表评论</div>
         </div>
@@ -194,25 +197,45 @@ export default {
     position: relative;
 }
 .userN{
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
     color: #005fbc;
 }
+.userPic{
+    width: 6%;
+    height: 36px;
+    position: relative;
+    top: 2px;
+    left: 0;
+}
+.userName{
+    width: 94%;
+    height: 36px;
+    position: absolute;
+    left: 8%;
+    top: 0;
+    line-height: 36px;
+}
 textarea{
-    width: 100%;
+    width: 86%;
+    margin-left: 8%;
     height: 100px;
     box-sizing: border-box;
     margin-top: 5px;
     font-size: 14px;
     resize: none;
+    padding: 1% 4px;
 }
 .ComSend{
-    width: 12%;
-    height: 24px;
+    width: 14%;
+    height: 28px;
     font-size: 12px;
-    line-height: 24px;
+    line-height: 28px;
     text-align:center;
     background-color: #005fbc;
     color: white;
-    margin: 5px 88%;
+    margin: 5px 80%;
     border-radius: 12px;
     cursor: pointer;
 }
