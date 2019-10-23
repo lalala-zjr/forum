@@ -115,9 +115,6 @@ export default{
 .empty{
   width: 100%;
   height: 80px;
-  position: relative;
-  bottom: 0;
-  left: 0;
   background-color: #f0f0f0;
 }
 </style>

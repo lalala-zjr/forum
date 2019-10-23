@@ -178,7 +178,7 @@ export default {
 }
 .emp{
     width: 100%;
-    height: 100px;
+    height: 50px;
     margin-top: 10px;
     background-color: white;
 }
