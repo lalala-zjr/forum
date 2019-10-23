@@ -10,6 +10,7 @@ import login from '../Pages/main/login/login.vue'
 import forget from '../Pages/main/forget/forget.vue'
 import detail from '../Pages/main/detail/detail.vue'
 import send from '../Pages/main/send/send.vue'
+import author from '../Pages/main/author/author.vue'
 import forget2 from '../Pages/main/forget2/forget2.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/main/detail/detailComment/detailComment.vue'
@@ -37,6 +38,11 @@ export default new Router({
           path: '/register',
           name: 'register',
           component: register
+        },
+        {
+          path: '/author',
+          name: 'author',
+          component: author
         },
         {
           path: '/login',

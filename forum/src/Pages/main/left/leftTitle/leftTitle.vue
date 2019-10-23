@@ -1,6 +1,6 @@
 <template>
    <div id="leftTitle">
-       <img src="../../../../assets/img/user.png" alt="" class="user">
+       <img src="../../../../assets/img/user.png" alt="" class="user" @click="watch">
        <div class="title" @click="enter">{{title}}</div>
        <div class="information">
            <div class="username">{{name}}</div>
@@ -30,6 +30,9 @@ export default{
   methods: {
     enter () {
       this.$emit('Into', 1)
+    },
+    watch () {
+      this.$emit('Into', 2)
     }
   }
 }

@@ -6,6 +6,7 @@
       <person v-show="flag3"></person>
       <detail v-show='d'></detail>
       <send v-show="send"></send>
+      <author v-show="auth"></author>
       <register v-show="reg" v-on:can="cancel"></register>
       <login v-show="log" v-on:can="cancel"></login>
       <forget v-show="f" v-on:can="cancel"></forget>
@@ -22,6 +23,7 @@ import login from './login/login.vue'
 import forget from './forget/forget.vue'
 import detail from './detail/detail.vue'
 import send from './send/send.vue'
+import author from './author/author.vue'
 import forget2 from './forget2/forget2.vue'
 export default{
   data () {
@@ -34,7 +36,8 @@ export default{
       f: false,
       f2: false,
       d: false,
-      send: false
+      send: false,
+      auth: false
     }
   },
   components: {
@@ -46,7 +49,8 @@ export default{
     forget,
     forget2,
     detail,
-    send
+    send,
+    author
   },
   methods: {
     listen (data) {
@@ -66,7 +70,11 @@ export default{
         this.flag3 = false
       }
       this.d = false
+      this.auth = false
     },
+    // turn () {
+    //   this.$router.go(-1)
+    // },
     sendW (data) {
       if (data === 1) {
         this.flag1 = false
@@ -113,9 +121,19 @@ export default{
         }
       }
     },
-    go () {
-      this.flag1 = false
-      this.d = true
+    go (data) {
+      if (data === 1) {
+        this.flag1 = false
+        this.d = true
+      }
+      if (data === 2) {
+        // this.auth = true
+        this.flag1 = false
+        this.flag2 = false
+        // this.$router.push({
+        //   path: '/author'
+        // })
+      }
     }
   }
 }

@@ -57,8 +57,13 @@ export default{
       this.$refs.s2.style.color = '#005fbc'
       this.$refs.s1.style.color = 'black'
     },
-    see () {
-      this.$emit('see', 1)
+    see (data) {
+      if (data === 1) {
+        this.$emit('see', 1)
+      }
+      if (data === 2) {
+        this.$emit('see', 2)
+      }
     }
   }
 }
