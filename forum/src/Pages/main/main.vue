@@ -5,6 +5,7 @@
       <right v-show="flag2" v-on:sendWord="sendW"></right>
       <person v-show="flag3"></person>
       <detail v-show='d'></detail>
+      <send v-show="send"></send>
       <register v-show="reg" v-on:can="cancel"></register>
       <login v-show="log" v-on:can="cancel"></login>
       <forget v-show="f" v-on:can="cancel"></forget>
@@ -20,6 +21,7 @@ import register from './register/register.vue'
 import login from './login/login.vue'
 import forget from './forget/forget.vue'
 import detail from './detail/detail.vue'
+import send from './send/send.vue'
 import forget2 from './forget2/forget2.vue'
 export default{
   data () {
@@ -43,7 +45,8 @@ export default{
     login,
     forget,
     forget2,
-    detail
+    detail,
+    send
   },
   methods: {
     listen (data) {
@@ -65,14 +68,14 @@ export default{
       this.d = false
     },
     sendW (data) {
-      if (data === 1){
+      if (data === 1) {
         this.flag1 = false
         this.flag2 = false
         this.flag3 = false
         this.d = false
         this.send = true
       }
-    }
+    },
     cancel (data) {
       switch (data) {
         case 0: { // 点击登录的忘记密码

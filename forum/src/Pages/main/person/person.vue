@@ -24,7 +24,7 @@
          </div>
          <div class="Birth">
            <p class="Pword">生日</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="10.22">
+           <input type="date" placeholder="输入内容" class="Pinput">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -136,14 +136,14 @@ export default{
 }
 .Pinput{
   box-sizing: border-box;
-  padding: 2% 5px;
+  padding: 5px;
   position: absolute;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 50%;
-  height: 20px;
+  height: 30px;
+  line-height: 15px;
   left: 20%;
-  top: 5px;
 }
 .save{
   position: absolute;

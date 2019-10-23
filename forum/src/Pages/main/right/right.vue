@@ -63,7 +63,6 @@ export default{
       this.$refs.b2.style.borderBottom = '2px solid #478cce'
       this.$refs.b1.style.borderBottom = '0'
       this.$refs.b3.style.borderBottom = '0'
-      console.log(123)
     },
     border3 () {
       this.$refs.b3.style.borderBottom = '2px solid #478cce'
@@ -71,7 +70,7 @@ export default{
       this.$refs.b1.style.borderBottom = '0'
     },
     send () {
-      this.$emit('sendWord', '1')
+      this.$emit('sendWord', 1)
     }
   }
 }
