@@ -1,13 +1,19 @@
 <template>
     <div id="detailComment">
         <div class="head">
-            <img src="../../../../assets/img/user.png" alt="">
+            <img src="../../../../assets/img/user.png" alt="" class="user">
             <div class="headword">扬扬叉会腰</div>
         </div>
         <div class="body">写的写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错真不错</div>
         <div class="foot">
-            <div class="like"></div>
-            <div class="com"></div>
+            <div class="like">
+                <img src="../../../../assets/img/likeC.png" alt="" class="likeC">
+                <div class="likeWord">12</div>
+            </div>
+            <div class="com">
+                <img src="../../../../assets/img/C.png" alt="" class="likeC">
+                <div class="likeWord">12</div>
+            </div>
         </div>
     </div>
 </template>
@@ -32,7 +38,7 @@ export default {
     position: relative;
     line-height: 40px;
 }
-img{
+.user{
     width: 6%;
     height: 30px;
     position: absolute;
@@ -62,16 +68,32 @@ img{
     /* background-color: red; */
 }
 .like,.com{
-    width: 10%;
+    width: 12%;
     height: 26px;
     position: absolute;
     bottom: 6px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 .like{
-    right: 18%;
+    right: 15%;
 }
 .com{
-    right: 5%;
+    right: 2%;
+}
+.likeC{
+    width: 30%;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+.likeWord{
+    width: 64%;
+    height: 26px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 26px;
 }
 </style>

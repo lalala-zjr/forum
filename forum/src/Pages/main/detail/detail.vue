@@ -24,6 +24,7 @@
             <div class="userN">
                 <img src="../../../assets/img/user.png" class="userPic" alt="">
                 <div class="userName">{{user}}</div>
+                <div class="lengthCom">0/200</div>
             </div>
             <textarea placeholder="说点什么？" maxlength="200"></textarea>
             <div class="ComSend">发表评论</div>
@@ -216,6 +217,18 @@ export default {
     left: 8%;
     top: 0;
     line-height: 36px;
+}
+.lengthCom{
+    width: 50px;
+    height: 30px;
+    /* background-color: rebeccapurple; */
+    position: absolute;
+    right: 6%;
+    top: 6px;
+    font-size: 12px;
+    line-height: 45px;
+    text-align: right;
+    color: #ccc;
 }
 textarea{
     width: 86%;
