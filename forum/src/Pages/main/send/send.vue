@@ -61,15 +61,8 @@ export default {
     height: 700px;
     margin-left: 10%;
     margin-top: 30px;
-    /* background-color: white; */
 }
 textarea{
     display: block;
 }
-/* #tinymce{
-    width: 100%;
-    height: 500px;
-    visibility: visible;
-    z-index: 15;
-} */
 </style>
