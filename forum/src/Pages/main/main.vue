@@ -127,7 +127,7 @@ export default{
         this.d = true
       }
       if (data === 2) {
-        // this.auth = true
+        this.auth = true
         this.flag1 = false
         this.flag2 = false
         // this.$router.push({
