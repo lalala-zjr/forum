@@ -12,6 +12,9 @@
                 <div class="li3">
                     <div ref="nav3" @click="navChoose3">{{nav3}}</div>
                 </div>
+                <div class="li4">
+                    <div ref="nav4" @click="navChoose3">{{nav4}}</div>
+                </div>
             </div>
             <input type="search" class="search" placeholder="搜贴">
             <div class="tail">
@@ -30,6 +33,7 @@ export default {
       nav1: '数模论文',
       nav2: '技术文',
       nav3: '个人信息',
+      nav4: '下载专区',
       t1: '注册',
       t2: '登录',
       flag: true
@@ -108,7 +112,7 @@ export default {
     height: 40px;
 }
 .nav div{
-    width: 33.33%;
+    width: 25%;
     height: 30px;
     position: absolute;
     top: 10px;
@@ -118,11 +122,11 @@ export default {
     text-align: center;
     border-right: 1px solid #ccc;
 }
-.li3 div:hover,.li2 div:hover,.li1 div:hover{
+/* .li3 div:hover,.li2 div:hover,.li1 div:hover{
     color: white;
     background-color:#005fbc;
-}
-.li3 div,.li2 div,.li1 div{
+} */
+.li4 div,.li3 div,.li2 div,.li1 div{
     width: 80%;
     height: 90%;
     position: absolute;
@@ -139,10 +143,13 @@ export default {
     background-color: #005fbc;
 }
 .li2{
-    left: 33.33%;
+    left: 25%;
 }
 .li3{
-    left: 66.66%;
+    left: 50%;
+}
+.li4{
+    left: 75%;
 }
 .search{
     width: 30%;
