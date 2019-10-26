@@ -26,7 +26,7 @@
 export default {
   data () {
     return {
-      word: 'xusm论坛',
+      word: 'xysm论坛',
       nav1: '数模论文',
       nav2: '技术文',
       nav3: '个人信息',
