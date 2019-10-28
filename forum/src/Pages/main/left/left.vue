@@ -16,13 +16,8 @@
                <option value="4">2016</option>
            </select>
        </div>
-       <leftTitle v-on:Into="see"></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
-       <leftTitle></leftTitle>
+       <leftTitle v-for="(add,index) in adds" :ad="adds[index]" :key="index"></leftTitle>
+        <!-- v-on:Into="see" -->
        <div class="pages">
            <div class="pageShow">
                <div class="back"><img src="../../../assets/img/b1.png" alt=""></div>
@@ -37,13 +32,25 @@ import leftTitle from './leftTitle/leftTitle.vue'
 export default{
   data () {
     return {
-      today: 150,
-      yesterday: 160,
-      sum: 1500,
+      today: 0,
+      yesterday: 0,
+      sum: 0,
       s1: '全部',
       s2: '热门',
-      b: 123
+      b: 123,
+      adds: ''
     }
+  },
+  created () {
+    console.log(1)
+    this.$http.get('/api/article/list').then(res => {
+      console.log(res.data)
+      this.today = res.data.sum.today
+      this.yesterday = res.data.sum.yesterday
+      this.sum = res.data.sum.total
+      this.adds = res.data.articles
+    })
+    console.log(3)
   },
   components: {
     leftTitle
@@ -74,6 +81,7 @@ export default{
     width: 55%;
     margin-left: 10%;
     position: relative;
+    height: 730px;
     top: 30px;
     bottom: 10px;
 }
@@ -149,7 +157,9 @@ export default{
 .pages{
     width: 100%;
     height: 100px;
+    position: absolute;
     background-color: white;
+    bottom: 0;
 }
 .pageShow{
     width: 54%;

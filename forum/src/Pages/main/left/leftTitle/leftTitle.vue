@@ -1,30 +1,37 @@
 <template>
    <div id="leftTitle">
        <img src="../../../../assets/img/user.png" alt="" class="user" @click="watch">
-       <div class="title" @click="enter">{{title}}</div>
+       <div class="title" @click="enter">{{ad.title}}</div>
        <div class="information">
-           <div class="username">{{name}}</div>
-           <div class="time">{{time}}</div>
+           <div class="username">{{ad.authorName}}</div>
+           <div class="time">{{ad.create}}</div>
        </div>
        <div class="eye">
            <img src="../../../../assets/img/eye.png" alt="" class="eyeShow">
-           <div class="eyeCount">{{c1}}</div>
+           <div class="eyeCount">{{ad.click}}</div>
        </div>
         <div class="com">
             <img src="../../../../assets/img/com.png" alt="" class="comShow">
-            <div class="comCount">{{c2}}</div>
+            <div class="comCount">{{ad.commentCount}}</div>
         </div>
    </div>
 </template>
 <script>
 export default{
+  props: {
+    ad: '',
+    index: ''
+  },
+  created () {
+    console.log(this.ad)
+  },
   data () {
     return {
-      name: 'Angel 肆^',
-      time: '2019-10-20 13:19',
-      title: '数学建模的应用场景',
-      c1: 120,
-      c2: 12
+    //   name: 'Angel 肆^',
+    //   time: '2019-10-20 13:19',
+    //   title: '数学建模的应用场景',
+    //   c1: 120,
+    //   c2: 12
     }
   },
   methods: {

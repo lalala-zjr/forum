@@ -37,11 +37,10 @@ export default{
       reg: false,
       log: false,
       f: false,
-      f2: false,
+      f2: false
       // d: false,
       // send: false,
       // auth: false,
-      data: ''
     }
   },
   components: {
@@ -56,13 +55,6 @@ export default{
     // detail,
     // send,
     // author
-  },
-  created () {
-    console.log(1)
-    this.$http.get('/api/article/list').then(res => {
-      this.data = res.data
-    })
-    console.log(3)
   },
   methods: {
     // listen (data) {

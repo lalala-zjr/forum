@@ -53,6 +53,17 @@ export default{
       w5: '基于非线性曲线拟合的经纬度测量方法'
     }
   },
+  created () {
+    console.log(1)
+    this.$http.get('/api/article/list').then(res => {
+      console.log(res.data)
+      this.today = res.data.sum.today
+      this.yesterday = res.data.sum.yesterday
+      this.sum = res.data.sum.total
+      this.adds = res.data.articles
+    })
+    console.log(3)
+  },
   methods: {
     border1 () {
       this.$refs.b1.style.borderBottom = '2px solid #478cce'
