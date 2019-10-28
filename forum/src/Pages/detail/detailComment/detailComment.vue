@@ -1,17 +1,17 @@
 <template>
     <div id="detailComment">
         <div class="head">
-            <img src="../../../../assets/img/user.png" alt="" class="user">
+            <img src="../../../assets/img/user.png" alt="" class="user">
             <div class="headword">扬扬叉会腰</div>
         </div>
         <div class="body">写的写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错真不错</div>
         <div class="foot">
             <div class="like">
-                <img src="../../../../assets/img/likeC.png" alt="" class="likeC">
+                <img src="../../../assets/img/likeC.png" alt="" class="likeC">
                 <div class="likeWord">12</div>
             </div>
             <div class="com">
-                <img src="../../../../assets/img/C.png" alt="" class="likeC">
+                <img src="../../../assets/img/C.png" alt="" class="likeC">
                 <div class="likeWord">12</div>
             </div>
         </div>

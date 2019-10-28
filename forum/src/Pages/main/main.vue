@@ -19,13 +19,13 @@
 import Header from '../../components/Header/Header.vue'
 import left from './left/left.vue'
 import right from './right/right.vue'
-import person from './person/person.vue'
+// import person from './person/person.vue'
 import register from './register/register.vue'
 import login from './login/login.vue'
 import forget from './forget/forget.vue'
-import detail from './detail/detail.vue'
-import send from './send/send.vue'
-import author from './author/author.vue'
+// import detail from './detail/detail.vue'
+// import send from './send/send.vue'
+// import author from './author/author.vue'
 import forget2 from './forget2/forget2.vue'
 // import qs from 'qs'
 export default{
@@ -33,14 +33,14 @@ export default{
     return {
       flag1: true,
       flag2: true,
-      flag3: false,
+      // flag3: false,
       reg: false,
       log: false,
       f: false,
       f2: false,
-      d: false,
-      send: false,
-      auth: false,
+      // d: false,
+      // send: false,
+      // auth: false,
       data: ''
     }
   },
@@ -48,14 +48,14 @@ export default{
     Header,
     left,
     right,
-    person,
+    // person,
     register,
     login,
     forget,
-    forget2,
-    detail,
-    send,
-    author
+    forget2
+    // detail,
+    // send,
+    // author
   },
   created () {
     console.log(1)
@@ -65,25 +65,25 @@ export default{
     console.log(3)
   },
   methods: {
-    listen (data) {
-      if (data === 3) {
-        this.flag3 = true
-        this.flag1 = false
-        this.flag2 = false
-      } else if (data === 5) {
-        this.reg = true
-        this.log = false
-      } else if (data === 4) {
-        this.reg = false
-        this.log = true
-      } else {
-        this.flag1 = true
-        this.flag2 = true
-        this.flag3 = false
-      }
-      this.d = false
-      this.auth = false
-    },
+    // listen (data) {
+    //   if (data === 3) {
+    //     this.flag3 = true
+    //     this.flag1 = false
+    //     this.flag2 = false
+    //   } else if (data === 5) {
+    //     this.reg = true
+    //     this.log = false
+    //   } else if (data === 4) {
+    //     this.reg = false
+    //     this.log = true
+    //   } else {
+    //     this.flag1 = true
+    //     this.flag2 = true
+    //     this.flag3 = false
+    //   }
+    //   this.d = false
+    //   this.auth = false
+    // },
     // turn () {
     //   this.$router.go(-1)
     // },

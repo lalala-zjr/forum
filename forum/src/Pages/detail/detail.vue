@@ -7,8 +7,8 @@
         <div class="content"></div>
         <div class="like">
             <div class="likeNum">+1985</div>
-            <img src="../../../assets/img/like1.png" alt="" class="likeImg" v-show="l1" @click="like1">
-            <img src="../../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
+            <img src="../../assets/img/like1.png" alt="" class="likeImg" v-show="l1" @click="like1">
+            <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
         </div>
         <div class="comment">
             <input type="text" placeholder="说点什么？" maxlength="24">
@@ -18,11 +18,11 @@
             <div class="word">评论区</div>
             <detailComment></detailComment>
             <detailComment></detailComment>
-            <img src="../../../assets/img/jian.png" alt="" class="pic">
+            <img src="../../assets/img/jian.png" alt="" class="pic">
         </div>
         <div class="userCom">
             <div class="userN">
-                <img src="../../../assets/img/user.png" class="userPic" alt="">
+                <img src="../../assets/img/user.png" class="userPic" alt="">
                 <div class="userName">{{user}}</div>
                 <div class="lengthCom">0/200</div>
             </div>
