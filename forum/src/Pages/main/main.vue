@@ -1,12 +1,13 @@
 <template>
     <div id="main" ref="main">
-      <router-view v-on:personShow="listen"></router-view>
+      <Header></Header>
+      <!-- <router-view v-on:personShow="listen"></router-view> -->
       <left v-show="flag1" v-on:see="go"></left>
       <right v-show="flag2" v-on:sendWord="sendW"></right>
-      <person v-show="flag3"></person>
+      <!-- <person v-show="flag3"></person>
       <detail v-show='d'></detail>
       <send v-show="send"></send>
-      <author v-show="auth"></author>
+      <author v-show="auth"></author> -->
       <register v-show="reg" v-on:can="cancel"></register>
       <login v-show="log" v-on:can="cancel"></login>
       <forget v-show="f" v-on:can="cancel"></forget>
@@ -15,6 +16,7 @@
     </div>
 </template>
 <script>
+import Header from '../../components/Header/Header.vue'
 import left from './left/left.vue'
 import right from './right/right.vue'
 import person from './person/person.vue'
@@ -25,6 +27,7 @@ import detail from './detail/detail.vue'
 import send from './send/send.vue'
 import author from './author/author.vue'
 import forget2 from './forget2/forget2.vue'
+// import qs from 'qs'
 export default{
   data () {
     return {
@@ -37,10 +40,12 @@ export default{
       f2: false,
       d: false,
       send: false,
-      auth: false
+      auth: false,
+      data: ''
     }
   },
   components: {
+    Header,
     left,
     right,
     person,
@@ -51,6 +56,13 @@ export default{
     detail,
     send,
     author
+  },
+  created () {
+    console.log(1)
+    this.$http.get('/api/article/list').then(res => {
+      this.data = res.data
+    })
+    console.log(3)
   },
   methods: {
     listen (data) {
@@ -127,12 +139,12 @@ export default{
         this.d = true
       }
       if (data === 2) {
-        this.auth = true
+        // this.auth = true
         this.flag1 = false
         this.flag2 = false
-        // this.$router.push({
-        //   path: '/author'
-        // })
+        this.$router.push({
+          path: '/author'
+        })
       }
     }
   }

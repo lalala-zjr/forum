@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import main from '../Pages/main/main.vue'
-import head from '../Pages/main/head/head.vue'
+import Header from '../components/Header/Header.vue'
 import left from '../Pages/main/left/left.vue'
 import right from '../Pages/main/right/right.vue'
 import person from '../Pages/main/person/person.vue'
@@ -20,15 +20,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/Header',
+      name: 'Header',
+      component: Header
+    },
+    {
       path: '/',
       name: 'main',
       component: main,
       children: [
-        {
-          path: '/',
-          name: 'head',
-          component: head
-        },
         {
           path: '/send',
           name: 'send',
@@ -72,7 +72,7 @@ export default new Router({
           ]
         },
         {
-          path: '/left',
+          path: '/',
           name: 'left',
           component: left,
           children: [

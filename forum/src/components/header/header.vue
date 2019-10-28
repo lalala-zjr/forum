@@ -1,5 +1,5 @@
 <template>
-    <div id="head">
+    <div id="header">
         <div id="head1">
             <div class="word">{{word}}</div>
             <div class="nav">
@@ -77,6 +77,9 @@ export default {
 }
 </script>
 <style scoped>
+#header{
+    height: 60px;
+}
 #head1{
     width: 100%;
     height: 40px;
@@ -122,10 +125,6 @@ export default {
     text-align: center;
     border-right: 1px solid #ccc;
 }
-/* .li3 div:hover,.li2 div:hover,.li1 div:hover{
-    color: white;
-    background-color:#005fbc;
-} */
 .li4 div,.li3 div,.li2 div,.li1 div{
     width: 80%;
     height: 90%;
