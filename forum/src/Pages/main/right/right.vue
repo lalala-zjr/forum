@@ -54,15 +54,9 @@ export default{
     }
   },
   created () {
-    console.log(1)
-    this.$http.get('/api/article/list').then(res => {
+    this.$http.get('/api/article/ranklist').then(res => {
       console.log(res.data)
-      this.today = res.data.sum.today
-      this.yesterday = res.data.sum.yesterday
-      this.sum = res.data.sum.total
-      this.adds = res.data.articles
     })
-    console.log(3)
   },
   methods: {
     border1 () {

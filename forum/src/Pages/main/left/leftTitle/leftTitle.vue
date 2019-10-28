@@ -22,16 +22,8 @@ export default{
     ad: '',
     index: ''
   },
-  created () {
-    console.log(this.ad)
-  },
   data () {
     return {
-    //   name: 'Angel 肆^',
-    //   time: '2019-10-20 13:19',
-    //   title: '数学建模的应用场景',
-    //   c1: 120,
-    //   c2: 12
     }
   },
   methods: {
