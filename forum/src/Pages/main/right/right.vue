@@ -55,7 +55,11 @@ export default{
   },
   created () {
     this.$http.get('/api/article/ranklist').then(res => {
-      console.log(res.data)
+      this.w1 = res.data.titles[0]
+      this.w2 = res.data.titles[1]
+      this.w3 = res.data.titles[2]
+      this.w4 = res.data.titles[3]
+      this.w5 = res.data.titles[4]
     })
   },
   methods: {
@@ -63,6 +67,13 @@ export default{
       this.$refs.b1.style.borderBottom = '2px solid #478cce'
       this.$refs.b2.style.borderBottom = '0'
       this.$refs.b3.style.borderBottom = '0'
+      this.$http.get('/api/article/ranklist').then(res => {
+        this.w1 = res.data.titles[0]
+        this.w2 = res.data.titles[1]
+        this.w3 = res.data.titles[2]
+        this.w4 = res.data.titles[3]
+        this.w5 = res.data.titles[4]
+      })
     },
     border2 () {
       this.$refs.b2.style.borderBottom = '2px solid #478cce'
