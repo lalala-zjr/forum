@@ -51,13 +51,15 @@ export default{
         }
       }, 1000)
       this.timer = timer
-      this.$http.get('/api/user/check',
-        this.qs.stringify({
+      console.log(123)
+      this.$http.get('/api/user/check', {
+        params: {
           phone: this.$refs.q1.value
-        })
-      ).then(res => {
-        console.log(res.data)
+        }
+      }).then(res => {
+        console.log(res)
       })
+      console.log(321)
     },
     cancel () {
       this.time = '获取验证码'

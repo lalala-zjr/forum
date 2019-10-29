@@ -75,7 +75,8 @@ export default {
       this.$router.push('/login')
     },
     tail2 () {
-      this.$emit('personShow', 5)
+    //   this.$emit('personShow', 5)
+      this.$router.push('/register')
     }
   }
 }
