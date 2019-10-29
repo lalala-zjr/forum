@@ -48,6 +48,7 @@ export default {
     //   this.$refs.nav3.style.color = 'black'
     //   this.$refs.nav3.style.backgroundColor = 'white'
     //   this.$emit('personShow', 1)
+      this.$router.push('/')
     },
     navChoose2 () {
     //   this.$refs.nav2.style.color = 'white'
@@ -57,6 +58,7 @@ export default {
     //   this.$refs.nav3.style.color = 'black'
     //   this.$refs.nav3.style.backgroundColor = 'white'
     //   this.$emit('personShow', 2)
+      this.$router.push('/')
     },
     navChoose3 () {
     //   this.$refs.nav3.style.color = 'white'
@@ -139,7 +141,11 @@ export default {
 .li1{
     left: 0;
 }
-.li1 div{
+/* .li1 div{
+    color: white;
+    background-color: #005fbc;
+} */
+.li1 div:hover,.li2 div:hover,.li3 div:hover,.li4 div:hover{
     color: white;
     background-color: #005fbc;
 }
