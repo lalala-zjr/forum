@@ -1,5 +1,6 @@
 <template>
     <div id="login">
+        <!-- <Header></Header> -->
         <div class="log">
             <p @click="cancel">×</p>
             <div class="div1">论坛账号注册</div>
@@ -24,12 +25,16 @@
     </div>
 </template>
 <script>
+import Header from '../../components/Header/Header.vue'
 export default{
   data () {
     return {
       time: '获取验证码',
       timer: 0
     }
+  },
+  components: {
+    Header
   },
   methods: {
     send: function () {

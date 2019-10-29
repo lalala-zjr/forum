@@ -79,11 +79,35 @@ export default{
       this.$refs.b2.style.borderBottom = '2px solid #478cce'
       this.$refs.b1.style.borderBottom = '0'
       this.$refs.b3.style.borderBottom = '0'
+      this.$http.get('/api/article/ranklist',
+        this.qs.stringify({
+          date: 2
+        })
+      ).then(res => {
+        // console.log(res.data)
+        this.w1 = res.data.titles[0]
+        this.w2 = res.data.titles[1]
+        this.w3 = res.data.titles[2]
+        this.w4 = res.data.titles[3]
+        this.w5 = res.data.titles[4]
+      })
     },
     border3 () {
       this.$refs.b3.style.borderBottom = '2px solid #478cce'
       this.$refs.b2.style.borderBottom = '0'
       this.$refs.b1.style.borderBottom = '0'
+      this.$http.get('/api/article/ranklist',
+        this.qs.stringify({
+          date: 3
+        })
+      ).then(res => {
+        // console.log(res.data)
+        this.w1 = res.data.titles[0]
+        this.w2 = res.data.titles[1]
+        this.w3 = res.data.titles[2]
+        this.w4 = res.data.titles[3]
+        this.w5 = res.data.titles[4]
+      })
     },
     send () {
       this.$emit('sendWord', 1)

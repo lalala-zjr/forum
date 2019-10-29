@@ -6,7 +6,7 @@ import left from '../Pages/main/left/left.vue'
 import right from '../Pages/main/right/right.vue'
 import person from '../Pages/person/person.vue'
 import register from '../Pages/main/register/register.vue'
-import login from '../Pages/main/login/login.vue'
+import login from '../Pages/login/login.vue'
 import forget from '../Pages/main/forget/forget.vue'
 import detail from '../Pages/detail/detail.vue'
 import send from '../Pages/send/send.vue'
@@ -25,6 +25,11 @@ export default new Router({
       component: Header
     },
     {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
       path: '/',
       name: 'main',
       component: main,
@@ -33,11 +38,6 @@ export default new Router({
           path: '/register',
           name: 'register',
           component: register
-        },
-        {
-          path: '/login',
-          name: 'login',
-          component: login
         },
         {
           path: '/forget',

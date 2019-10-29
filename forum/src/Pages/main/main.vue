@@ -9,7 +9,8 @@
       <send v-show="send"></send>
       <author v-show="auth"></author> -->
       <register v-show="reg" v-on:can="cancel"></register>
-      <login v-show="log" v-on:can="cancel"></login>
+      <!-- <login  ></login> -->
+      <!-- <router-view v-show="log"></router-view> -->
       <forget v-show="f" v-on:can="cancel"></forget>
       <forget2 v-show="f2" v-on:can="cancel"></forget2>
       <div class="empty"></div>
@@ -21,7 +22,7 @@ import left from './left/left.vue'
 import right from './right/right.vue'
 // import person from './person/person.vue'
 import register from './register/register.vue'
-import login from './login/login.vue'
+// import login from './login/login.vue'
 import forget from './forget/forget.vue'
 // import detail from './detail/detail.vue'
 // import send from './send/send.vue'
@@ -35,7 +36,7 @@ export default{
       flag2: true,
       // flag3: false,
       reg: false,
-      log: false,
+      // log: true,
       f: false,
       f2: false
       // d: false,
@@ -49,7 +50,7 @@ export default{
     right,
     // person,
     register,
-    login,
+    // login,
     forget,
     forget2
     // detail,
