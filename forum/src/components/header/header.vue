@@ -41,34 +41,35 @@ export default {
   },
   methods: {
     navChoose1 () {
-      this.$refs.nav1.style.color = 'white'
-      this.$refs.nav1.style.backgroundColor = '#005fbc'
-      this.$refs.nav2.style.color = 'black'
-      this.$refs.nav2.style.backgroundColor = 'white'
-      this.$refs.nav3.style.color = 'black'
-      this.$refs.nav3.style.backgroundColor = 'white'
-      this.$emit('personShow', 1)
+    //   this.$refs.nav1.style.color = 'white'
+    //   this.$refs.nav1.style.backgroundColor = '#005fbc'
+    //   this.$refs.nav2.style.color = 'black'
+    //   this.$refs.nav2.style.backgroundColor = 'white'
+    //   this.$refs.nav3.style.color = 'black'
+    //   this.$refs.nav3.style.backgroundColor = 'white'
+    //   this.$emit('personShow', 1)
     },
     navChoose2 () {
-      this.$refs.nav2.style.color = 'white'
-      this.$refs.nav2.style.backgroundColor = '#005fbc'
-      this.$refs.nav1.style.color = 'black'
-      this.$refs.nav1.style.backgroundColor = 'white'
-      this.$refs.nav3.style.color = 'black'
-      this.$refs.nav3.style.backgroundColor = 'white'
-      this.$emit('personShow', 2)
+    //   this.$refs.nav2.style.color = 'white'
+    //   this.$refs.nav2.style.backgroundColor = '#005fbc'
+    //   this.$refs.nav1.style.color = 'black'
+    //   this.$refs.nav1.style.backgroundColor = 'white'
+    //   this.$refs.nav3.style.color = 'black'
+    //   this.$refs.nav3.style.backgroundColor = 'white'
+    //   this.$emit('personShow', 2)
     },
     navChoose3 () {
-      this.$refs.nav3.style.color = 'white'
-      this.$refs.nav3.style.backgroundColor = '#005fbc'
-      this.$refs.nav2.style.color = 'black'
-      this.$refs.nav2.style.backgroundColor = 'white'
-      this.$refs.nav1.style.color = 'black'
-      this.$refs.nav1.style.backgroundColor = 'white'
-      this.$emit('personShow', 3)
+    //   this.$refs.nav3.style.color = 'white'
+    //   this.$refs.nav3.style.backgroundColor = '#005fbc'
+    //   this.$refs.nav2.style.color = 'black'
+    //   this.$refs.nav2.style.backgroundColor = 'white'
+    //   this.$refs.nav1.style.color = 'black'
+    //   this.$refs.nav1.style.backgroundColor = 'white'
+      this.$router.push('/person')
+      //   this.$emit('personShow', 3)
     },
     tail1 () {
-    //   this.$emit('personShow', 4)
+      //   this.$emit('personShow', 4)
       this.$router.push('/login')
     },
     tail2 () {

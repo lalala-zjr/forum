@@ -10,10 +10,7 @@
            <div class="sort1" ref="s1" @click="sort1()">{{s1}}</div>
            <div class="sort2" ref="s2" @click="sort2()">{{s2}}</div>
            <select id="Search">
-               <option value="1">2019</option>
-               <option value="2">2018</option>
-               <option value="3">2017</option>
-               <option value="4">2016</option>
+               <option v-for="(year,index) in years" :key="index">{{year}}</option>
            </select>
        </div>
        <leftTitle v-for="(add,index) in adds" :ad="adds[index]" :key="index"></leftTitle>
@@ -38,7 +35,8 @@ export default{
       s1: '全部',
       s2: '热门',
       b: 123,
-      adds: ''
+      adds: '',
+      years: ''
     }
   },
   created () {
@@ -48,6 +46,7 @@ export default{
       this.yesterday = res.data.sum.yesterday
       this.sum = res.data.sum.total
       this.adds = res.data.articles
+      this.years = res.data.sum.years
     })
   },
   components: {
@@ -61,6 +60,16 @@ export default{
     sort2 () {
       this.$refs.s2.style.color = '#005fbc'
       this.$refs.s1.style.color = 'black'
+      this.$http.get('/api/article/list',
+        this.qs.stringify({
+          ishot: true
+        })
+      ).then(res => {
+        // console.log(23)
+        // console.log(res.data)
+        this.adds = res.data.articles
+        this.years = res.data.sum.years
+      })
     },
     see (data) {
       if (data === 1) {

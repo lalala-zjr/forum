@@ -68,6 +68,8 @@ export default{
       this.$refs.b2.style.borderBottom = '0'
       this.$refs.b3.style.borderBottom = '0'
       this.$http.get('/api/article/ranklist').then(res => {
+        console.log(111)
+        console.log(res.data)
         this.w1 = res.data.titles[0]
         this.w2 = res.data.titles[1]
         this.w3 = res.data.titles[2]
@@ -84,7 +86,8 @@ export default{
           date: 2
         })
       ).then(res => {
-        // console.log(res.data)
+        console.log(222)
+        console.log(res.data)
         this.w1 = res.data.titles[0]
         this.w2 = res.data.titles[1]
         this.w3 = res.data.titles[2]
@@ -101,7 +104,8 @@ export default{
           date: 3
         })
       ).then(res => {
-        // console.log(res.data)
+        console.log(333)
+        console.log(res.data)
         this.w1 = res.data.titles[0]
         this.w2 = res.data.titles[1]
         this.w3 = res.data.titles[2]

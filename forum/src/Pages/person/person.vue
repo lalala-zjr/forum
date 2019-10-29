@@ -1,5 +1,6 @@
 <template>
    <div id="person">
+     <Header></Header>
        <p class="inf">&emsp;&emsp;&emsp;&emsp;&emsp;个人信息</p>
        <div class="peronShow">
          <div class="user">
@@ -67,10 +68,14 @@
    </div>
 </template>
 <script>
+import Header from '../../components/Header/Header.vue'
 export default{
   data () {
     return {
     }
+  },
+  components: {
+    Header
   }
 }
 </script>
