@@ -30,7 +30,8 @@ export default{
   data () {
     return {
       time: '获取验证码',
-      timer: 0
+      timer: 0,
+      f: ''
     }
   },
   components: {
@@ -57,9 +58,21 @@ export default{
           phone: this.$refs.q1.value
         }
       }).then(res => {
-        console.log(res)
+        console.log(res.status)
+        if (res.status === 200) {
+          console.log('000')
+          this.$http.post('/api/code/send',
+          // {
+          //   params: {
+          //     phone: this.$refs.q1.value
+          //   }
+          // }
+          
+          ).then(res => {
+            console.log(res)
+          })
+        }
       })
-      console.log(321)
     },
     cancel () {
       this.time = '获取验证码'
