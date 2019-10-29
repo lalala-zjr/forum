@@ -61,7 +61,7 @@ export default{
         console.log(res.status)
         if (res.status === 200) {
           this.$http.post('/api/code/send',
-            JSON.stringify({
+            this.qs.stringify({
               phone: this.$refs.q1.value
             })
           ).then(res => {
