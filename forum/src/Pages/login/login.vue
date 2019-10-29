@@ -60,11 +60,11 @@ export default{
       }).then(res => {
         console.log(res.status)
         if (res.status === 200) {
-          this.$http.post('/api/code/send', {
-            params: {
+          this.$http.post('/api/code/send',
+            JSON.stringify({
               phone: this.$refs.q1.value
-            }
-          }).then(res => {
+            })
+          ).then(res => {
             console.log(res)
           })
         }
