@@ -7,7 +7,7 @@
                 <div class="message" @click="mess" ref="mes">短信登陆</div>
                 <div class="password" @click="pass" ref="pas">密码登陆</div>
             </div>
-            <div class="phone">
+            <div class="phone" @click="phone">
                 <div class="p1">0086</div>
                 <input type="text" placeholder="手机号" class="p2" ref="f1">
             </div>
@@ -19,6 +19,7 @@
             <div v-show="p" class="pass2">
                 <input type="password" placeholder="请输入密码" class="p3" ref="f3">
             </div>
+            <div class="error" v-show="e">密码或手机错误</div>
             <div class="sure" @click="save">登录</div>
             <div class="forget" v-show="f" @click="Fsend">忘记密码?</div>
         </div>
@@ -33,7 +34,8 @@ export default{
       s: true,
       p: false,
       timer: 0,
-      f: false
+      f: false,
+      e: false
     }
   },
   methods: {
@@ -59,12 +61,16 @@ export default{
       this.p = false
       this.f = false
     },
+    phone () {
+      this.e = false
+    },
     pass () {
       this.$refs.mes.style.color = 'black'
       this.$refs.pas.style.color = '#005fbc'
       this.s = false
       this.p = true
       this.f = true
+      this.e = false
     },
     cancel () {
       this.time = '获取验证码'
@@ -96,8 +102,9 @@ export default{
           })
         ).then(res => {
           console.log(res)
+          // if(res.status)
         }).catch(
-          console.log(123)
+          this.e = true
         )
       }
     },
@@ -121,6 +128,13 @@ export default{
     left: 0;
     background-color: rgba(200, 200, 200, 0.8);
     z-index: 10;
+}
+.error{
+    position: absolute;
+    left: 15%;
+    top: 220px;
+    font-size: 12px;
+    color: red;
 }
 .reg{
     width: 400px;
