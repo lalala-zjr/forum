@@ -17,6 +17,7 @@
     </div>
 </template>
 <script>
+import password from '../../assets/password.js'
 export default{
   data () {
     return {
@@ -74,6 +75,7 @@ export default{
       this.$emit('can', 5)
     },
     save () {
+      password.$emit('phone', 'this.$refs.f1.value')
       // this.time = '获取验证码'
       // window.clearTimeout(this.timer)
       // this.$refs.f1.value = ''

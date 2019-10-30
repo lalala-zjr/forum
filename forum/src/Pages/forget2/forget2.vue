@@ -16,9 +16,11 @@
     </div>
 </template>
 <script>
+import password from '../../assets/password.js'
 export default{
   data () {
     return {
+      phone: ''
     }
   },
   methods: {
@@ -31,6 +33,11 @@ export default{
     //   this.$refs.q3.value = ''
     //   this.$refs.q4.value = ''
     //   this.$emit('can', 8)
+      password.$on('phone', (data) => {
+        this.phone = data
+        console.log(this.phone)
+        console.log(data)
+      })
       if (this.$refs.q3.value === this.$refs.q4.value) {
         console.log(123)
       }
