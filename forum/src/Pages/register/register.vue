@@ -80,12 +80,22 @@ export default{
       this.$emit('can', 1)
     },
     save () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.f1.value = ''
-      this.$refs.f2.value = ''
-      this.$refs.f3.value = ''
-      this.$emit('can', 2)
+    //   this.time = '获取验证码'
+    //   window.clearTimeout(this.timer)
+    //   this.$refs.f1.value = ''
+    //   this.$refs.f2.value = ''
+    //   this.$refs.f3.value = ''
+    //   this.$emit('can', 2)
+      if (!this.s) {
+        this.$http.post('/api/user/login',
+          this.qs.stringify({
+            phone: this.$refs.f1.value,
+            password: this.$refs.f3.value
+          })
+        ).then(res => {
+          console.log(res)
+        })
+      }
     },
     Fsend () {
       this.time = '获取验证码'

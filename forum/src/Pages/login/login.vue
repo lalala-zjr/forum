@@ -80,13 +80,27 @@ export default{
       this.$emit('can', 3)
     },
     save () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.q1.value = ''
-      this.$refs.q2.value = ''
-      this.$refs.q3.value = ''
-      this.$refs.q4.value = ''
-      this.$emit('can', 4)
+      // this.time = '获取验证码'
+      // window.clearTimeout(this.timer)
+      // this.$refs.q1.value = ''
+      // this.$refs.q2.value = ''
+      // this.$refs.q3.value = ''
+      // this.$refs.q4.value = ''
+      // this.$emit('can', 4)
+      // user/register
+      if (this.$refs.q3.value === this.$refs.q4.value) {
+        this.$http.post('/api/user/register',
+          this.qs.stringify({
+            phone: this.$refs.q1.value,
+            code: this.$refs.q2.value,
+            password: this.$refs.q3.value
+          })
+        ).then(res => {
+          console.log(res)
+        })
+      } else {
+        console.log('错误')
+      }
     }
   }
 }
