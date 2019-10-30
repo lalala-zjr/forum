@@ -23,6 +23,11 @@ export default{
       phone: ''
     }
   },
+  mounted () {
+    password.$on('phone', (data) => {
+      this.phone = data
+    })
+  },
   methods: {
     cancel () {
       this.$refs.q3.value = ''
@@ -33,13 +38,21 @@ export default{
     //   this.$refs.q3.value = ''
     //   this.$refs.q4.value = ''
     //   this.$emit('can', 8)
-      password.$on('phone', (data) => {
-        this.phone = data
-        console.log(this.phone)
-        console.log(data)
-      })
       if (this.$refs.q3.value === this.$refs.q4.value) {
-        console.log(123)
+        // console.log(123)
+        this.$http.put('/api/user/',
+          this.qs.stringify({
+            phone: this.phone,
+            code: this.$refs.q3.value
+          })
+        ).then(res => {
+          console.log(res)
+          if (res.status === 200) {
+            this.$router.push('/')
+          } else if (res.status === 500) {
+            this.$router.back()
+          }
+        })
       }
     }
   }
