@@ -26,6 +26,7 @@ export default{
   mounted () {
     password.$on('phone', (data) => {
       this.phone = data
+      console.log(this.phone)
     })
   },
   methods: {
@@ -40,6 +41,7 @@ export default{
     //   this.$emit('can', 8)
       if (this.$refs.q3.value === this.$refs.q4.value) {
         // console.log(123)
+        console.log(this.phone)
         this.$http.put('/api/user/',
           this.qs.stringify({
             phone: this.phone,
@@ -55,8 +57,12 @@ export default{
         })
       }
     }
+  },
+  beforeDestroy () {
+    password.$off()
   }
 }
+
 </script>
 <style scoped>
 #login{
