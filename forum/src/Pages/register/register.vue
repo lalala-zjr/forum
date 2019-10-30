@@ -20,6 +20,7 @@
                 <input type="password" placeholder="请输入密码" class="p3" ref="f3" @click="Password">
             </div>
             <div class="error" v-show="e">密码或手机错误</div>
+            <div class="error" v-show="e2">手机号或验证码错误</div>
             <div class="sure" @click="save">登录</div>
             <div class="forget" v-show="f" @click="Fsend">忘记密码?</div>
         </div>
@@ -35,7 +36,8 @@ export default{
       p: false,
       timer: 0,
       f: false,
-      e: false
+      e: false,
+      e2: false
     }
   },
   methods: {
@@ -53,6 +55,13 @@ export default{
         }
       }, 1000)
       this.timer = timer
+      this.$http.post('/api/code/send',
+        this.qs.stringify({
+          phone: this.$refs.f1.value
+        })
+      ).then(res => {
+        console.log(res)
+      })
     },
     mess () {
       this.$refs.mes.style.color = '#005fbc'
@@ -126,21 +135,23 @@ export default{
             this.$router.push('/')
           }
         }).catch((error) => {
+          console.log(error)
           if (error.response.status >= 400) {
-            this.e = true
+            this.e2 = true
           } else {
-            this.e = false
+            this.e2 = false
           }
         })
       }
     },
     Fsend () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.f1.value = ''
-      this.$refs.f2.value = ''
-      this.$refs.f3.value = ''
-      this.$emit('can', 0)
+      // this.time = '获取验证码'
+      // window.clearTimeout(this.timer)
+      // this.$refs.f1.value = ''
+      // this.$refs.f2.value = ''
+      // this.$refs.f3.value = ''
+      // this.$emit('can', 0)
+      this.$router.push('/forget')
     }
   }
 }

@@ -52,7 +52,6 @@ export default{
         }
       }, 1000)
       this.timer = timer
-      console.log(123)
       this.$http.get('/api/user/check', {
         params: {
           phone: this.$refs.q1.value

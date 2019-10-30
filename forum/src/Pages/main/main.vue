@@ -11,7 +11,7 @@
       <!-- <register v-show="reg" v-on:can="cancel"></register> -->
       <!-- <login  ></login> -->
       <!-- <router-view v-show="log"></router-view> -->
-      <forget v-show="f" v-on:can="cancel"></forget>
+      <!-- <forget v-show="f" v-on:can="cancel"></forget> -->
       <forget2 v-show="f2" v-on:can="cancel"></forget2>
       <div class="empty"></div>
     </div>
@@ -23,7 +23,7 @@ import right from './right/right.vue'
 // import person from './person/person.vue'
 // import register from './register/register.vue'
 // import login from './login/login.vue'
-import forget from './forget/forget.vue'
+// import forget from './forget/forget.vue'
 // import detail from './detail/detail.vue'
 // import send from './send/send.vue'
 // import author from './author/author.vue'
@@ -37,7 +37,7 @@ export default{
       // flag3: false,
       reg: false,
       // log: true,
-      f: false,
+      // f: false,
       f2: false
       // d: false,
       // send: false,
@@ -51,7 +51,7 @@ export default{
     // person,
     // register,
     // login,
-    forget,
+    // forget,
     forget2
     // detail,
     // send,
