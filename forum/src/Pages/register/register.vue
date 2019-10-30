@@ -87,13 +87,18 @@ export default{
     //   this.$refs.f3.value = ''
     //   this.$emit('can', 2)
       if (this.s === false) {
-        this.$http.post('/api/user/login', {
-          phone: this.$refs.f1.value,
-          password: this.$refs.f3.value
-        }
+        console.log(this.$refs.f1.value)
+        console.log(this.$refs.f3.value)
+        this.$http.post('/api/user/login',
+          this.qs.stringify({
+            phone: this.$refs.f1.value,
+            password: this.$refs.f3.value
+          })
         ).then(res => {
           console.log(res)
-        })
+        }).catch(
+          console.log(123)
+        )
       }
     },
     Fsend () {
