@@ -12,7 +12,7 @@ import detail from '../Pages/detail/detail.vue'
 import send from '../Pages/send/send.vue'
 import author from '../Pages/author/author.vue'
 import download from '../Pages/download/download.vue'
-import forget2 from '../Pages/main/forget2/forget2.vue'
+import forget2 from '../Pages/forget2/forget2.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/detail/detailComment/detailComment.vue'
 
@@ -46,15 +46,15 @@ export default new Router({
       component: forget
     },
     {
+      path: '/forget2',
+      name: 'forget2',
+      component: forget2
+    },
+    {
       path: '/',
       name: 'main',
       component: main,
       children: [
-        {
-          path: '/forget2',
-          name: 'forget2',
-          component: forget2
-        },
         {
           path: '/',
           name: 'left',
