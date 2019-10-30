@@ -11,6 +11,7 @@ import forget from '../Pages/forget/forget.vue'
 import detail from '../Pages/detail/detail.vue'
 import send from '../Pages/send/send.vue'
 import author from '../Pages/author/author.vue'
+import download from '../Pages/download/download.vue'
 import forget2 from '../Pages/main/forget2/forget2.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/detail/detailComment/detailComment.vue'
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/download',
+      name: 'download',
+      component: download
     },
     {
       path: '/register',

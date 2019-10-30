@@ -69,6 +69,8 @@ export default{
       this.s = true
       this.p = false
       this.f = false
+      this.e = false
+      this.e2 = false
     },
     phone () {
       this.e = false
@@ -79,6 +81,8 @@ export default{
       this.s = false
       this.p = true
       this.f = true
+      this.e = false
+      this.e2 = false
     },
     Password () {
       this.e = false
@@ -124,11 +128,12 @@ export default{
           }
         })
       } else {
-        this.$http.post('/api/user/login',
-          this.qs.stringify({
+        this.$http.get('/api/user/login', {
+          params: {
             phone: this.$refs.f1.value,
             code: this.$refs.f2.value
-          })
+          }
+        }
         ).then(res => {
           console.log(res)
           if (res.status === 200) {

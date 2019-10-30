@@ -11,7 +11,7 @@
                 <input type="text" placeholder="请输入验证码" class="p3" ref="f2">
                 <button class="p4" ref="get" @click="send">{{time}}</button>
             </div>
-            <div class="error" ref="e">手机号或者验证码出错</div>
+            <div class="error" ref="e" v-show="e">手机号或者验证码出错</div>
             <div class="sure" @click="save">确定</div>
         </div>
     </div>
@@ -90,6 +90,7 @@ export default{
           this.$router.push('/forget2')
         }
       }).catch(error => {
+        console.log(error)
         if (error.response.status >= 400) {
           this.e = true
         } else {
