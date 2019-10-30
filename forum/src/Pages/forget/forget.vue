@@ -11,6 +11,7 @@
                 <input type="text" placeholder="请输入验证码" class="p3" ref="f2">
                 <button class="p4" ref="get" @click="send">{{time}}</button>
             </div>
+            <div class="error" ref="e">手机号或者验证码出错</div>
             <div class="sure" @click="save">确定</div>
         </div>
     </div>
@@ -24,7 +25,8 @@ export default{
       s: true,
       p: false,
       timer: 0,
-      f: true
+      f: true,
+      e: false
     }
   },
   methods: {
@@ -44,7 +46,7 @@ export default{
       this.timer = timer
       this.$http.post('/api/code/send',
         this.qs.stringify({
-          phone: this.$refs.f2.value
+          phone: this.$refs.f1.value
         })
       ).then(res => {
         console.log(res)
@@ -77,7 +79,23 @@ export default{
       // this.$refs.f1.value = ''
       // this.$refs.f2.value = ''
       // this.$emit('can', 6)
-      
+      this.$http.get('/api/code/check', {
+        params: {
+          phone: this.$refs.f1.value,
+          code: this.$refs.f2.value
+        }
+      }).then(res => {
+        console.log(res)
+        if (res.status === 200) {
+          this.$router.push('/forget2')
+        }
+      }).catch(error => {
+        if (error.response.status >= 400) {
+          this.e = true
+        } else {
+          this.e = false
+        }
+      })
     }
   }
 }
@@ -132,6 +150,13 @@ p{
     box-sizing: border-box;
     left: 15%;
     border-bottom: 1.5px solid #f2f2f2;
+}
+.error{
+    position: absolute;
+    left: 15%;
+    top: 80px;
+    font-size: 12px;
+    color: red;
 }
 .phone{
     top: 100px;
