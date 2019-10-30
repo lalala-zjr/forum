@@ -86,12 +86,11 @@ export default{
     //   this.$refs.f2.value = ''
     //   this.$refs.f3.value = ''
     //   this.$emit('can', 2)
-      if (!this.s) {
-        this.$http.post('/api/user/login',
-          this.qs.stringify({
-            phone: this.$refs.f1.value,
-            password: this.$refs.f3.value
-          })
+      if (this.s === false) {
+        this.$http.post('/api/user/login', {
+          phone: this.$refs.f1.value,
+          password: this.$refs.f3.value
+        }
         ).then(res => {
           console.log(res)
         })
