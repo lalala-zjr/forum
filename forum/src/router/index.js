@@ -7,7 +7,7 @@ import right from '../Pages/main/right/right.vue'
 import person from '../Pages/person/person.vue'
 import register from '../Pages/register/register.vue'
 import login from '../Pages/login/login.vue'
-import forget from '../Pages/main/forget/forget.vue'
+import forget from '../Pages/forget/forget.vue'
 import detail from '../Pages/detail/detail.vue'
 import send from '../Pages/send/send.vue'
 import author from '../Pages/author/author.vue'
@@ -35,15 +35,15 @@ export default new Router({
       component: register
     },
     {
+      path: '/forget',
+      name: 'forget',
+      component: forget
+    },
+    {
       path: '/',
       name: 'main',
       component: main,
       children: [
-        {
-          path: '/forget',
-          name: 'forget',
-          component: forget
-        },
         {
           path: '/forget2',
           name: 'forget2',

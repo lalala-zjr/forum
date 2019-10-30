@@ -42,6 +42,13 @@ export default{
         }
       }, 1000)
       this.timer = timer
+      this.$http.post('/api/code/send',
+        this.qs.stringify({
+          phone: this.$refs.f2.value
+        })
+      ).then(res => {
+        console.log(res)
+      })
     },
     mess () {
       this.$refs.mes.style.color = '#005fbc'
@@ -65,11 +72,12 @@ export default{
       this.$emit('can', 5)
     },
     save () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.f1.value = ''
-      this.$refs.f2.value = ''
-      this.$emit('can', 6)
+      // this.time = '获取验证码'
+      // window.clearTimeout(this.timer)
+      // this.$refs.f1.value = ''
+      // this.$refs.f2.value = ''
+      // this.$emit('can', 6)
+      
     }
   }
 }
