@@ -28,9 +28,12 @@ export default{
       this.$emit('can', 7)
     },
     save () {
-      this.$refs.q3.value = ''
-      this.$refs.q4.value = ''
-      this.$emit('can', 8)
+    //   this.$refs.q3.value = ''
+    //   this.$refs.q4.value = ''
+    //   this.$emit('can', 8)
+      if (this.$refs.q3.value === this.$refs.q4.value) {
+        console.log(123)
+      }
     }
   }
 }
