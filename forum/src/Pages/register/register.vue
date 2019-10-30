@@ -17,7 +17,7 @@
                 <button class="p4" ref="get" @click="send">{{time}}</button>
             </div>
             <div v-show="p" class="pass2">
-                <input type="password" placeholder="请输入密码" class="p3" ref="f3">
+                <input type="password" placeholder="请输入密码" class="p3" ref="f3" @click="Password">
             </div>
             <div class="error" v-show="e">密码或手机错误</div>
             <div class="sure" @click="save">登录</div>
@@ -70,6 +70,8 @@ export default{
       this.s = false
       this.p = true
       this.f = true
+    },
+    Password () {
       this.e = false
     },
     cancel () {
@@ -102,10 +104,34 @@ export default{
           })
         ).then(res => {
           console.log(res)
-          // if(res.status)
-        }).catch(
-          this.e = true
-        )
+          if (res.status === 200) {
+            this.$router.push('/')
+          }
+        }).catch((error) => {
+          if (error.response.status >= 400) {
+            this.e = true
+          } else {
+            this.e = false
+          }
+        })
+      } else {
+        this.$http.post('/api/user/login',
+          this.qs.stringify({
+            phone: this.$refs.f1.value,
+            code: this.$refs.f2.value
+          })
+        ).then(res => {
+          console.log(res)
+          if (res.status === 200) {
+            this.$router.push('/')
+          }
+        }).catch((error) => {
+          if (error.response.status >= 400) {
+            this.e = true
+          } else {
+            this.e = false
+          }
+        })
       }
     },
     Fsend () {
