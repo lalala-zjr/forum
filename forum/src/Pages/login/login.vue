@@ -6,8 +6,9 @@
             <div class="div1">论坛账号注册</div>
             <div class="phone">
                 <div class="p1">0086</div>
-                <input type="text" placeholder="请输入常用手机号" class="p2" ref="q1">
+                <input type="text" placeholder="请输入常用手机号" class="p2" ref="q1" @click="phone">
             </div>
+            <div class="error" v-show="e">该手机号已注册</div>
             <div class="pass">
                 <input type="text" placeholder="请输入验证码" class="p3" ref="q2">
                 <button class="p4" ref="get" @click="send">{{time}}</button>
@@ -31,7 +32,8 @@ export default{
     return {
       time: '获取验证码',
       timer: 0,
-      f: ''
+      f: '',
+      e: false
     }
   },
   components: {
@@ -67,6 +69,10 @@ export default{
             console.log(res)
           })
         }
+      }).catch((error) => {
+        if (error.response.status === 400) {
+          this.e = true
+        }
       })
     },
     cancel () {
@@ -77,6 +83,9 @@ export default{
       this.$refs.q3.value = ''
       this.$refs.q4.value = ''
       this.$emit('can', 3)
+    },
+    phone () {
+      this.e = false
     },
     save () {
       // this.time = '获取验证码'
@@ -95,7 +104,9 @@ export default{
             password: this.$refs.q3.value
           })
         ).then(res => {
-          console.log(res)
+          if (res.status === 201) {
+            this.$router.push('/')
+          }
         })
       } else {
         console.log('错误')
@@ -154,6 +165,13 @@ p{
     box-sizing: border-box;
     left: 15%;
     border-bottom: 1.5px solid #f2f2f2;
+}
+.error{
+  position: absolute;
+  top: 120px;
+  left: 15%;
+  font-size: 12px;
+  color: red;
 }
 .phone{
     top: 70px;

@@ -26,6 +26,7 @@
     </div>
 </template>
 <script>
+import password from '../../assets/password.js'
 export default {
   data () {
     return {
@@ -58,6 +59,7 @@ export default {
     //   this.$refs.nav3.style.color = 'black'
     //   this.$refs.nav3.style.backgroundColor = 'white'
     //   this.$emit('personShow', 2)
+      password.$emit('type', 2)
       this.$router.push('/')
     },
     navChoose3 () {

@@ -29,6 +29,7 @@ import right from './right/right.vue'
 // import author from './author/author.vue'
 // import forget2 from './forget2/forget2.vue'
 // import qs from 'qs'
+// import password from '../../assets/password.js'
 export default{
   data () {
     return {
@@ -56,6 +57,11 @@ export default{
     // detail,
     // send,
     // author
+  },
+  created () {
+    // password.$on('type', (data) => {
+    //   password.$emit('type', data)
+    // })
   },
   methods: {
     // listen (data) {

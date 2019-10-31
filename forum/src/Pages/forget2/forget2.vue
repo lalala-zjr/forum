@@ -24,8 +24,9 @@ export default{
     }
   },
   mounted () {
+    var self = this
     password.$on('phone', (data) => {
-      this.phone = data
+      self.phone = data
       console.log(this.phone)
     })
   },
@@ -57,10 +58,10 @@ export default{
         })
       }
     }
-  },
-  beforeDestroy () {
-    password.$off()
   }
+//   beforeDestroy () {
+//     password.$off()
+//   }
 }
 
 </script>

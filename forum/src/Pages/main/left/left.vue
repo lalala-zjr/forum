@@ -26,6 +26,7 @@
 </template>
 <script>
 import leftTitle from './leftTitle/leftTitle.vue'
+// import password from '../../../assets/password.js'
 export default{
   data () {
     return {
@@ -40,6 +41,18 @@ export default{
     }
   },
   created () {
+    this.$http.get('/api/article/list',
+      this.qs.stringify({
+        type: 2
+      })
+    ).then(res => {
+      console.log(res.data)
+      this.today = res.data.sum.today
+      this.yesterday = res.data.sum.yesterday
+      this.sum = res.data.sum.total
+      this.adds = res.data.articles
+      this.years = res.data.sum.years
+    })
     this.$http.get('/api/article/list').then(res => {
       console.log(res.data)
       this.today = res.data.sum.today
