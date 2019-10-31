@@ -76,12 +76,14 @@ export default{
   },
   components: {
     Header
+  },
+  created () {
+    this.$http.get('/api/user/detail').then(res => {
+      console.log(res)
+    }).catch((error) => {
+      console.log(error)
+    })
   }
-  // created () {
-  //   this.$http.get('/api/user/detail').then(res => {
-  //     console.log(res.data)
-  //   })
-  // }
 }
 </script>
 <style scoped>
