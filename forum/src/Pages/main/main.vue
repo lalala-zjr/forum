@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-import Header from '../../components/Header/Header.vue'
+import Header from './../../components/Header/Header.vue'
 import left from './left/left.vue'
 import right from './right/right.vue'
 // import person from './person/person.vue'

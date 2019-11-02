@@ -72,6 +72,9 @@ export default {
       this.$router.push('/person')
       //   this.$emit('personShow', 3)
     },
+    // navChoose4 () {
+    //   this.$router.push('/person')
+    // },
     tail1 () {
       //   this.$emit('personShow', 4)
       this.$router.push('/login')
