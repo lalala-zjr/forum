@@ -12,6 +12,8 @@ import detail from '../Pages/detail/detail.vue'
 import send from '../Pages/send/send.vue'
 import author from '../Pages/author/author.vue'
 import download from '../Pages/download/download.vue'
+import down from '../Pages/download/down/down.vue'
+import load from '../Pages/load/load.vue'
 import forget2 from '../Pages/forget2/forget2.vue'
 import leftTitle from '../Pages/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/detail/detailComment/detailComment.vue'
@@ -31,9 +33,21 @@ export default new Router({
       component: login
     },
     {
+      path: '/load/:id',
+      name: 'load',
+      component: load
+    },
+    {
       path: '/download',
       name: 'download',
-      component: download
+      component: download,
+      children: [
+        {
+          path: '/down',
+          name: 'down',
+          component: down
+        }
+      ]
     },
     {
       path: '/register',

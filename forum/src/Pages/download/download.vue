@@ -9,10 +9,12 @@
             </div>
             <div class="sep"></div>
             <div class="title">
-                <!-- <div class="contend">{{contend}}</div> -->
                 <div class="auto">{{auto}}</div>
                 <div class="time">{{time}}</div>
                 <div class="watch">{{watch}}</div>
+            </div>
+            <div class="contend">
+                <down v-for="(source,index) in sources" :source="sources[index]" :key="index" v-on:show="show">{{source}}</down>
             </div>
         </div>
     </div>
@@ -20,6 +22,7 @@
 <script>
 import Header from '../../components/Header/Header.vue'
 import right from '../../components/right/right.vue'
+import down from './down/down.vue'
 export default {
   data () {
     return {
@@ -28,12 +31,26 @@ export default {
       contend: '作品',
       auto: '作者',
       time: '发布时间',
-      watch: '浏览量'
+      watch: '下载量',
+      sources: ''
     }
   },
   components: {
     Header,
-    right
+    right,
+    down
+  },
+  methods: {
+    show (data) {
+      this.$router.push('/load' + data)
+    }
+  },
+  created () {
+    this.$http.get('/api/source/list').then(res => {
+      console.log(res.data)
+      this.word2 = res.data.total
+      this.sources = res.data.source
+    })
   }
 }
 </script>
@@ -55,7 +72,6 @@ export default {
     position: relative;
     width: 80%;
     height: 30px;
-    /* margin-top: 20px; */
     top: 30px;
     left: 10%;
     box-sizing: border-box;
@@ -95,13 +111,11 @@ export default {
     line-height: 30px;
     opacity: 0.5;
 }
-/* .contend{
-    position: absolute;
-    width: 40%;
-    height: 30px;
-    top: 0;
-    left: 0;
-} */
+.contend{
+    width: 80%;
+    /* margin-left: 10%; */
+    margin: 70px 10%;
+}
 .auto{
     position: absolute;
     width: 15%;
