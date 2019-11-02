@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     show (data) {
-      this.$router.push('/load' + data)
+      this.$router.push('/load/' + data)
     }
   },
   created () {
