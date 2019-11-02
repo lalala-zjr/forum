@@ -118,6 +118,11 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
+            // var expdate = new Date()
+            // expdate.setTime(expdate.getTime() + 5 * 60 * 1000)
+            // document.cookie = 'phone=' + this.$refs.f1.value
+            // document.cookie = 'password=' + this.$refs.f3.value
+            // console.log(document.cookie)
             this.$router.push('/')
           }
         }).catch((error) => {
@@ -137,6 +142,11 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
+            // var expdate = new Date()
+            // expdate.setTime(expdate.getTime() + 5 * 60 * 1000)
+            // document.cookie = 'phone=' + this.$refs.f1.value
+            // document.cookie = res.headers.set-C5ookie
+            console.log(document.cookie)
             this.$router.push('/')
           }
         }).catch((error) => {

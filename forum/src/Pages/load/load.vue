@@ -41,6 +41,9 @@ export default {
     ).then(res => {
       console.log(res.data)
     })
+    // this.$http.get('/api/user/verify').then(res => {
+    //   console.log(res)
+    // })
   },
   components: {
     Header,
