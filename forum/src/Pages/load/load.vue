@@ -7,6 +7,9 @@
               <div class="word1">{{word}}</div>
               <div class="word2">123</div>
           </div>
+          <div class="head">{{name}} {{w}} {{time}}
+            <!-- <div class="inf"></div> -->
+          </div>
           <div class="baidu1">百度网盘链接：{{bai1}}</div>
           <div class="baidu2">提取码：{{bai2}}</div>
           <div class="github">github链接：{{github}}</div>
@@ -22,8 +25,22 @@ export default {
       bai1: 'https://pan.baidu.com/s/1C2v0XvDvP-dTeKKJoGDdMA',
       bai2: 'xv7i',
       github: 'https://github.com/lalala-zjr/forum',
-      word: '资料下载专区'
+      word: '资料下载专区',
+      name: 'lalala',
+      time: '2019-06-20 13:25:06',
+      w: '发表于',
+      id: this.$route.params.id
     }
+  },
+  created () {
+    console.log(this.id)
+    this.$http.get('/api/source/detail/{' + this.id + '}',
+      this.qs.stringify({
+        id: this.id
+      })
+    ).then(res => {
+      console.log(res.data)
+    })
   },
   components: {
     Header,
@@ -52,18 +69,21 @@ export default {
     height: 40px;
     margin-top: 80px;
     margin-left: 10%;
+    font-size: 16px;
 }
 .baidu2{
     width: 80%;
     height: 40px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 10%;
+    font-size: 16px;
 }
 .github{
     width: 80%;
     height: 40px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 10%;
+    font-size: 16px;
 }
 .headShow{
     position: relative;
@@ -75,13 +95,28 @@ export default {
     background-color:#f0f0f0;
     border: 1px solid #d9d9d9;
 }
+.head{
+    position: relative;
+    width: 80%;
+    height: 30px;
+    top: 30px;
+    left: 10%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d9d9d9;
+    line-height: 40px;
+    font-size: 12px;
+}
+.inf{
+  position: absolute;
+  height: 26px;
+}
 .headShow div{
     position: absolute;
     height: 26px;
     top: 2px;
     text-align: center;
     line-height: 26px;
-    font-size: 12px;
+    font-size: 13px;
 }
 .word1{
   width: 20%;
