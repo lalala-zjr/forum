@@ -118,11 +118,6 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
-            // var expdate = new Date()
-            // expdate.setTime(expdate.getTime() + 5 * 60 * 1000)
-            // document.cookie = 'phone=' + this.$refs.f1.value
-            // document.cookie = 'password=' + this.$refs.f3.value
-            // console.log(document.cookie)
             this.$router.push('/')
           }
         }).catch((error) => {
@@ -146,7 +141,6 @@ export default{
             // expdate.setTime(expdate.getTime() + 5 * 60 * 1000)
             // document.cookie = 'phone=' + this.$refs.f1.value
             // document.cookie = res.headers.set-C5ookie
-            console.log(document.cookie)
             this.$router.push('/')
           }
         }).catch((error) => {
@@ -160,12 +154,6 @@ export default{
       }
     },
     Fsend () {
-      // this.time = '获取验证码'
-      // window.clearTimeout(this.timer)
-      // this.$refs.f1.value = ''
-      // this.$refs.f2.value = ''
-      // this.$refs.f3.value = ''
-      // this.$emit('can', 0)
       this.$router.push('/forget')
     }
   }
