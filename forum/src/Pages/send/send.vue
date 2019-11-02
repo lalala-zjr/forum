@@ -62,7 +62,16 @@ export default {
     margin-left: 10%;
     margin-top: 30px;
 }
-textarea{
-    display: block;
+/* textarea{
+  display: block;
+} */
+.tox{
+  visibility: visible;
+  border: 1px solid black;
+}
+.tox-editor-container{
+  width: 80%;
+  margin-left: 10%;
+  border: 1px solid red;
 }
 </style>

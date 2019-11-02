@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import main from '../Pages/main/main.vue'
 import Header from '../components/Header/Header.vue'
 import left from '../Pages/main/left/left.vue'
-import right from '../Pages/main/right/right.vue'
+import right from '../components/right/right.vue'
 import person from '../Pages/person/person.vue'
 import register from '../Pages/register/register.vue'
 import login from '../Pages/login/login.vue'
@@ -66,13 +66,13 @@ export default new Router({
               component: leftTitle
             }
           ]
-        },
-        {
-          path: '/right',
-          name: 'right',
-          component: right
         }
       ]
+    },
+    {
+      path: '/right',
+      name: 'right',
+      component: right
     },
     {
       path: '/send',

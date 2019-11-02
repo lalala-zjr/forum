@@ -13,7 +13,7 @@
                     <div ref="nav3" @click="navChoose3">{{nav3}}</div>
                 </div>
                 <div class="li4">
-                    <div ref="nav4" @click="navChoose3">{{nav4}}</div>
+                    <div ref="nav4" @click="navChoose4">{{nav4}}</div>
                 </div>
             </div>
             <input type="search" class="search" placeholder="搜贴">
@@ -72,9 +72,9 @@ export default {
       this.$router.push('/person')
       //   this.$emit('personShow', 3)
     },
-    // navChoose4 () {
-    //   this.$router.push('/person')
-    // },
+    navChoose4 () {
+      this.$router.push('/download')
+    },
     tail1 () {
       //   this.$emit('personShow', 4)
       this.$router.push('/login')

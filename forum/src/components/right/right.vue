@@ -31,7 +31,7 @@
            </div>
        </div>
        <!-- <div class="footer"> -->
-           <img src="../../../assets/img/weixin.jpg" alt="" class="footer">
+           <img src="../../assets/img/weixin.jpg" alt="" class="footer">
        <!-- </div> -->
        <div class="FootWord">数模协会</div>
    </div>
@@ -114,7 +114,8 @@ export default{
       })
     },
     send () {
-      this.$emit('sendWord', 1)
+      // this.$emit('sendWord', 1)
+      this.$router.push('/send')
     }
   }
 }

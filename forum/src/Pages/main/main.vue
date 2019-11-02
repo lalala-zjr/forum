@@ -19,7 +19,7 @@
 <script>
 import Header from '../../components/Header/Header.vue'
 import left from './left/left.vue'
-import right from './right/right.vue'
+import right from '../../components/right/right.vue'
 // import person from './person/person.vue'
 // import register from './register/register.vue'
 // import login from './login/login.vue'
