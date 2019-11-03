@@ -114,10 +114,7 @@ export default{
           this.qs.stringify({
             phone: this.$refs.f1.value,
             password: this.$refs.f3.value
-          }), {
-            'Access-Control-Allow-Credentials': true,
-            'Origin': 'xuptyzh.xyz'
-          }
+          })
         ).then(res => {
           console.log(res)
           if (res.status === 200) {

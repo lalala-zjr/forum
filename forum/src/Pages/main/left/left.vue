@@ -48,7 +48,7 @@ export default{
         type: 2
       })
     ).then(res => {
-      console.log(res.data)
+      console.log(res)
       this.today = res.data.sum.today
       this.yesterday = res.data.sum.yesterday
       this.sum = res.data.sum.total
@@ -56,7 +56,7 @@ export default{
       this.years = res.data.sum.years
     })
     this.$http.get('/api/article/list').then(res => {
-      console.log(res.data)
+      console.log(res)
       this.today = res.data.sum.today
       this.yesterday = res.data.sum.yesterday
       this.sum = res.data.sum.total

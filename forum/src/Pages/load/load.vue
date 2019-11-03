@@ -37,7 +37,11 @@ export default {
     this.$http.get('/api/source/detail/{' + this.id + '}',
       this.qs.stringify({
         id: this.id
-      })
+      }),
+      {
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': 'localhost://8080'
+      }
     ).then(res => {
       console.log(res.data)
     })
