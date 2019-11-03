@@ -6,6 +6,7 @@ import router from './router'
 import axios from 'axios'
 import qs from 'qs'
 
+axios.defaults.withCredentials = true
 Vue.prototype.$http = axios
 Vue.prototype.qs = qs
 

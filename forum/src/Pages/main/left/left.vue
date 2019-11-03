@@ -18,7 +18,9 @@
        <div class="pages">
            <div class="pageShow">
                <div class="back"><img src="../../../assets/img/b1.png" alt=""></div>
-               <div class="content"></div>
+               <div class="content">
+                 <span v-for="(i,index) of pages" :key="index">{{i}}</span>
+               </div>
                <div class="forword"><img src="../../../assets/img/b2.png" alt=""></div>
            </div>
        </div>
@@ -64,6 +66,13 @@ export default{
   },
   components: {
     leftTitle
+  },
+  computed: {
+    pages: {
+      get () {
+        return Math.ceil(this.sum / 7)
+      }
+    }
   },
   methods: {
     sort1 () {
@@ -204,6 +213,20 @@ export default{
     left: 8%;
     width: 84%;
     height: 30px;
+}
+.content span{
+    box-sizing: border-box;
+    display: block;
+    /* position: absolute; */
+    float: left;
+    width: 10%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+}
+.content span:active{
+  color: #005fbc;
 }
 .forword{
     position: absolute;

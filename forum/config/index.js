@@ -12,14 +12,14 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/api":{
-        target:'39.105.136.112',
+        target:'http://39.105.136.112',
         changeOrigin: true,
         pathRewrite:{
           '^/api': ''
         }
       }
     },
-    // 39.105.136.112
+    // 
     // http://xuptyzh.goho.co:30303
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
