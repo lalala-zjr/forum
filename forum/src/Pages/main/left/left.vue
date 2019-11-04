@@ -45,7 +45,7 @@ export default{
   created () {
     this.$http.post('/api/article/list',
       this.qs.stringify({
-        page: 15
+        page: 1
       })
     ).then(res => {
       console.log(res)
@@ -196,6 +196,7 @@ export default{
     position: absolute;
     left: 23%;
     margin-top: 14px;
+    box-sizing: border-box;
 }
 .back{
     width: 8%;
@@ -213,6 +214,7 @@ export default{
     left: 8%;
     width: 84%;
     height: 30px;
+    overflow: hidden;
 }
 .content span{
     box-sizing: border-box;
@@ -225,8 +227,10 @@ export default{
     font-size: 12px;
     text-align: center;
 }
-.content span:active{
-  color: #005fbc;
+span:nth-child(1){
+  background-color: #005fbc;
+  color: white;
+  border-radius: 2px;
 }
 .forword{
     position: absolute;
@@ -236,5 +240,6 @@ export default{
     right: 0;
     text-align: center;
     line-height: 30px;
+    font-size: 20px;
 }
 </style>
