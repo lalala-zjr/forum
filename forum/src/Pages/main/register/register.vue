@@ -1,5 +1,6 @@
 <template>
     <div id="register">
+      <!-- <Header></Header> -->
         <div class="reg">
             <p @click="cancel">×</p>
             <div class="div1">登录</div>
@@ -27,6 +28,7 @@
     </div>
 </template>
 <script>
+// import Header from '../../components/Header/Header.vue'
 export default{
   data () {
     return {
@@ -40,6 +42,9 @@ export default{
       e2: false
     }
   },
+  // components: {
+  //   Header
+  // },
   methods: {
     send: function () {
       var t = 59
@@ -165,9 +170,9 @@ export default{
     width: 100%;
     height: 790px;
     position: absolute;
-    top: 60px;
+    /* top: 60px; */
     left: 0;
-    background-color: rgba(200, 200, 200, 0.8);
+    background-color: rgba(200, 200, 200, 0.7);
     z-index: 10;
 }
 .error{
@@ -183,7 +188,7 @@ export default{
     background-color: white;
     position: absolute;
     left: 50%;
-    top: 80px;
+    top: 50px;
     margin-left: -200px;
 }
 p{

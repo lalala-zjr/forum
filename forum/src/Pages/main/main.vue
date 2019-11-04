@@ -8,7 +8,7 @@
       <detail v-show='d'></detail>
       <send v-show="send"></send>
       <author v-show="auth"></author> -->
-      <!-- <register v-show="reg" v-on:can="cancel"></register> -->
+      <register v-show="reg"></register>
       <!-- <login  ></login> -->
       <!-- <router-view v-show="log"></router-view> -->
       <!-- <forget v-show="f" v-on:can="cancel"></forget> -->
@@ -21,7 +21,7 @@ import Header from '../../components/Header/Header.vue'
 import left from './left/left.vue'
 import right from '../../components/right/right.vue'
 // import person from './person/person.vue'
-// import register from './register/register.vue'
+import register from './register/register.vue'
 // import login from './login/login.vue'
 // import forget from './forget/forget.vue'
 // import detail from './detail/detail.vue'
@@ -34,9 +34,9 @@ export default{
   data () {
     return {
       flag1: true,
-      flag2: true
+      flag2: true,
       // flag3: false,
-      // reg: false,
+      reg: false
       // log: true,
       // f: false,
       // f2: false
@@ -48,9 +48,9 @@ export default{
   components: {
     Header,
     left,
-    right
+    right,
     // person,
-    // register,
+    register
     // login,
     // forget,
     // forget2

@@ -43,9 +43,9 @@ export default{
     }
   },
   created () {
-    this.$http.get('/api/article/list',
+    this.$http.post('/api/article/list',
       this.qs.stringify({
-        type: 2
+        page: 15
       })
     ).then(res => {
       console.log(res)
@@ -55,14 +55,14 @@ export default{
       this.adds = res.data.articles
       this.years = res.data.sum.years
     })
-    this.$http.get('/api/article/list').then(res => {
-      console.log(res)
-      this.today = res.data.sum.today
-      this.yesterday = res.data.sum.yesterday
-      this.sum = res.data.sum.total
-      this.adds = res.data.articles
-      this.years = res.data.sum.years
-    })
+    // this.$http.post('/api/article/list').then(res => {
+    //   console.log(res)
+    //   this.today = res.data.sum.today
+    //   this.yesterday = res.data.sum.yesterday
+    //   this.sum = res.data.sum.total
+    //   this.adds = res.data.articles
+    //   this.years = res.data.sum.years
+    // })
   },
   components: {
     leftTitle
