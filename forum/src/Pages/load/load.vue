@@ -5,7 +5,7 @@
         <div class="left">
           <div class="headShow">
               <div class="word1">{{word}}</div>
-              <div class="word2">123</div>
+              <div class="word2">{{title}}</div>
           </div>
           <div class="head">{{name}} {{w}} {{time}}
             <!-- <div class="inf"></div> -->
@@ -22,6 +22,7 @@ import right from '../../components/right/right.vue'
 export default {
   data () {
     return {
+      title: '',
       bai1: 'https://pan.baidu.com/s/1C2v0XvDvP-dTeKKJoGDdMA',
       bai2: 'xv7i',
       github: 'https://github.com/lalala-zjr/forum',
@@ -43,6 +44,9 @@ export default {
       this.bai1 = res.data.baiduyun
       this.bai2 = res.data.code
       this.github = res.data.github
+      this.title = res.data.sourceTitle
+      this.name = res.data.authorName
+      this.time = res.data.sourceCreate
     })
   },
   components: {
@@ -72,21 +76,21 @@ export default {
     height: 40px;
     margin-top: 80px;
     margin-left: 10%;
-    font-size: 16px;
+    font-size: 14px;
 }
 .baidu2{
     width: 80%;
     height: 40px;
     margin-top: 30px;
     margin-left: 10%;
-    font-size: 16px;
+    font-size: 14px;
 }
 .github{
     width: 80%;
     height: 40px;
     margin-top: 30px;
     margin-left: 10%;
-    font-size: 16px;
+    font-size: 14px;
 }
 .headShow{
     position: relative;

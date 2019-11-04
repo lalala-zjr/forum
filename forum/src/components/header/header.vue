@@ -129,7 +129,7 @@ export default {
     height: 30px;
     position: absolute;
     top: 10px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 30px;
     color: #0c66bf;
     text-align: center;

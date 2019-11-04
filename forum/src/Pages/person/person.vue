@@ -5,11 +5,11 @@
        <div class="peronShow">
          <div class="user">
            <p class="Pword">用户名</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="可怜且轩轩">
+           <input type="text" placeholder="输入内容" class="Pinput" value="可怜且轩轩" ref="Username">
          </div>
          <div class="userRea">
            <p class="Pword">真实姓名</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="张金蕊">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" ref="name">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -17,7 +17,7 @@
          </div>
          <div class="phone">
            <p class="Pword">手机号</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="18009240559">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" readonly ref="phone">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -25,7 +25,7 @@
          </div>
          <div class="Birth">
            <p class="Pword">生日</p>
-           <input type="date" placeholder="输入内容" class="Pinput">
+           <input type="date" placeholder="输入内容" class="Pinput" ref="birth">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -33,7 +33,7 @@
          </div>
          <div class="college">
            <p class="Pword">学院</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="理学院">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" ref="college">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -41,7 +41,7 @@
          </div>
          <div class="major">
            <p class="Pword">专业</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="信息与计算科学">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" ref="major">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -49,7 +49,7 @@
          </div>
          <div class="emil">
            <p class="Pword">邮箱</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="1365351516@qq.com">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" ref="email">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
@@ -57,13 +57,13 @@
          </div>
          <div class="like">
            <p class="Pword">兴趣</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="Coding">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" ref="like">
            <select name="" id="">
              <option value="1">公开</option>
              <option value="2">保密</option>
            </select>
          </div>
-         <button class="save">保存</button>
+         <button class="save" @click="save">保存</button>
        </div>
    </div>
 </template>
@@ -80,9 +80,62 @@ export default{
   created () {
     this.$http.get('/api/user/detail').then(res => {
       console.log(res)
+      if (res.data.hobby === null) {
+        this.$refs.like.value = ''
+      } else {
+        this.$refs.like.value = res.data.hobby
+      }
+      if (res.data.username == null) {
+        this.$refs.Username.value = ''
+      } else {
+        this.$refs.Username.value = res.data.username
+      }
+      if (res.data.realname === null) {
+        this.$refs.name.value = ''
+      } else {
+        this.$refs.name.value = res.data.realname
+      }
+      if (res.data.email === null) {
+        this.$refs.email.value = ''
+      } else {
+        this.$refs.email.value = res.data.email
+      }
+      if (res.data.college === null) {
+        this.$refs.college.value = ''
+      } else {
+        this.$refs.college.value = res.data.college
+      }
+      if (res.data.profession === null) {
+        this.$refs.major.value = ''
+      } else {
+        this.$refs.major.value = res.data.profession
+      }
+      if (res.data.birth === null) {
+        this.$refs.birth.value = ''
+      } else {
+        this.$refs.birth.value = res.data.birth
+      }
+      this.$refs.phone.value = res.data.phone
     }).catch((error) => {
       console.log(error)
     })
+  },
+  methods: {
+    save () {
+      this.$http.put('/api/user/detail',
+        this.qs.stringify({
+          username: this.$refs.Username.value,
+          realname: this.$refs.name.value,
+          birth: this.$refs.birth.value,
+          college: this.$refs.college.value,
+          profession: this.$refs.profession.value,
+          email: this.$refs.email.value,
+          hobby: this.$refs.email.hobby
+        })
+      ).then(res => {
+        console.log(res)
+      })
+    }
   }
 }
 </script>
