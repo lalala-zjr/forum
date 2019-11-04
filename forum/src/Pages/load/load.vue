@@ -40,6 +40,9 @@ export default {
       })
     ).then(res => {
       console.log(res.data)
+      this.bai1 = res.data.baiduyun
+      this.bai2 = res.data.code
+      this.github = res.data.github
     })
   },
   components: {
