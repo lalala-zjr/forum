@@ -34,20 +34,13 @@ export default {
   },
   created () {
     console.log(this.id)
-    this.$http.get('/api/source/detail/{' + this.id + '}',
+    this.$http.get('/api/source/detail/' + this.id,
       this.qs.stringify({
         id: this.id
-      }),
-      {
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Origin': 'localhost://8080'
-      }
+      })
     ).then(res => {
       console.log(res.data)
     })
-    // this.$http.get('/api/user/verify').then(res => {
-    //   console.log(res)
-    // })
   },
   components: {
     Header,
