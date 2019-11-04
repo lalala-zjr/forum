@@ -5,7 +5,7 @@
        <div class="peronShow">
          <div class="user">
            <p class="Pword">用户名</p>
-           <input type="text" placeholder="输入内容" class="Pinput" value="可怜且轩轩" ref="Username">
+           <input type="text" placeholder="输入内容" class="Pinput" value="" ref="Username">
          </div>
          <div class="userRea">
            <p class="Pword">真实姓名</p>
@@ -130,10 +130,12 @@ export default{
         college: this.$refs.college.value,
         profession: this.$refs.major.value,
         email: this.$refs.email.value,
-        hobby: this.$refs.email.hobby
+        hobby: this.$refs.like.hobby
       }).then(res => {
         console.log(res)
-        this.$router.replace('/person')
+        if (res.status === 204) {
+          this.$router.replace('/')
+        }
       })
     }
   }
