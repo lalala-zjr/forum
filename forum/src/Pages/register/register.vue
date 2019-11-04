@@ -88,17 +88,18 @@ export default{
       this.e = false
     },
     cancel () {
-      this.time = '获取验证码'
-      window.clearTimeout(this.timer)
-      this.$refs.f1.value = ''
-      this.$refs.f2.value = ''
-      this.$refs.f3.value = ''
-      this.$refs.mes.style.color = '#005fbc'
-      this.$refs.pas.style.color = 'black'
-      this.s = true
-      this.p = false
-      this.f = false
-      this.$emit('can', 1)
+      // this.time = '获取验证码'
+      // window.clearTimeout(this.timer)
+      // this.$refs.f1.value = ''
+      // this.$refs.f2.value = ''
+      // this.$refs.f3.value = ''
+      // this.$refs.mes.style.color = '#005fbc'
+      // this.$refs.pas.style.color = 'black'
+      // this.s = true
+      // this.p = false
+      // this.f = false
+      // this.$emit('can', 1)
+      this.$router.push('/')
     },
     save () {
     //   this.time = '获取验证码'

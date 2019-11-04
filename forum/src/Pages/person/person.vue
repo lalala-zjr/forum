@@ -122,18 +122,18 @@ export default{
   },
   methods: {
     save () {
-      this.$http.put('/api/user/detail',
-        this.qs.stringify({
-          username: this.$refs.Username.value,
-          realname: this.$refs.name.value,
-          birth: this.$refs.birth.value,
-          college: this.$refs.college.value,
-          profession: this.$refs.profession.value,
-          email: this.$refs.email.value,
-          hobby: this.$refs.email.hobby
-        })
-      ).then(res => {
+      this.$http.put('/api/user/detail', {
+        username: this.$refs.Username.value,
+        realname: this.$refs.name.value,
+        phone: this.$refs.phone.value,
+        birth: this.$refs.birth.value,
+        college: this.$refs.college.value,
+        profession: this.$refs.major.value,
+        email: this.$refs.email.value,
+        hobby: this.$refs.email.hobby
+      }).then(res => {
         console.log(res)
+        this.$router.replace('/person')
       })
     }
   }
