@@ -1,71 +1,121 @@
 <template>
     <div id="send">
-        <editor id="tinymce" v-model="value" :init="init"></editor>
+      <Header></Header>
+      <div class="contend">
+        <input class="title" placeholder='请填写标题' ref="title"/>
+        <textarea ref="content"></textarea>
+        <input type="radio" name="title" class="type1" value="数模论文" ref="type1" @click="t1"/>数模论文
+        <input type="radio" name="title" value="技术文" ref="type2" @click="t2"/>技术文
+        <br/>
+        <input type="file" name="img" id="file" class="oimg" multiple title="注意: 若要选择多个文件，则选择第一个图片之后，选择其他照片需要按住ctrl键">
+        <div class="save" @click="save">保存并退出</div>
+      </div>
     </div>
 </template>
 <script>
-import tinymce from 'tinymce/tinymce'
-import 'tinymce/themes/silver/theme'
-import Editor from '@tinymce/tinymce-vue'
-import 'tinymce/plugins/image'
-import 'tinymce/plugins/media'
-import 'tinymce/plugins/table'
-import 'tinymce/plugins/lists'
-import 'tinymce/plugins/contextmenu'
-import 'tinymce/plugins/wordcount'
-import 'tinymce/plugins/colorpicker'
-import 'tinymce/plugins/textcolor'
+import Header from '../../components/Header/Header.vue'
 export default {
-  props: {
-    value: {
-      type: String,
-      default: ''
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    plugins: {
-      type: [String, Array],
-      default: 'lists image media table textcolor wordcount contextmenu'
-    },
-    toolbar: {
-      type: [String, Array],
-      default: 'undo redo |  formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | lists image media table | removeformat'
-    }
-  },
   data () {
     return {
-      init: {
-        language_url: '/static/tinymce/langs/zh_CN.js',
-        language: 'zh_CN',
-        skin_url: '/static/tinymce/skins/lightgray',
-        height: 300,
-        branding: false,
-        menubar: false
+      type: 0
+    }
+  },
+  created () {
+  },
+  methods: {
+    t1 () {
+      this.type = 1
+    },
+    t2 () {
+      this.type = 2
+    },
+    save () {
+      if (this.type !== 0) {
+        this.$http.post('/api/article/post', {
+          type: this.type,
+          content: this.$refs.content.value,
+          title: this.$refs.title.value
+        }).then(res => {
+          console.log(res)
+          if (res.status === 201) {
+            this.$router.push('/')
+          }
+        })
       }
     }
   },
   components: {
-    Editor,
-    tinymce
+    Header
+    // Editor,
+    // tinymce
   },
   mounted () {
-    tinymce.init({})
+    // tinymce.init({})
   }
 }
 </script>
 <style scoped>
 #send{
-    width: 80%;
-    height: 700px;
-    margin-left: 10%;
+    width: 100%;
     margin-top: 30px;
+    height: 1200px;
+    background-color: #f0f0f0;
 }
-/* textarea{
-  display: block;
-} */
-.tox{
+.contend{
+  width: 80%;
+  /* height: 700px; */
+  margin-top: 30px;
+  margin-left: 10%;
+  background-color: white;
+  overflow: auto;
+}
+.zhuyi{
+  margin-left: 7%;
+  color: red;
+  font-size: 12px;
+}
+.title{
+  width: 60%;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 1%;
+  /* position: relative; */
+  border: 1px solid #ccc;
+  margin-top: 30px;
+  margin-left: 20%;
+  border-radius: 10px;
+  text-align: center;
+}
+.oimg{
+  margin-left: 7%;
+  margin-top: 30px;
+}
+.type1{
+  margin-left: 7%;
+}
+textarea{
+  width: 86%;
+  height: 700px;
+  display: black;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin: 20px 7%;
+  resize: none;
+  overflow: auto;
+}
+.save{
+    width: 30%;
+    height: 40px;
+    background-color: #005fbc;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    margin: 50px 35%;
+    border-radius: 40px;
+    cursor: pointer;
+}
+/* .tox{
   visibility: visible;
   border: 1px solid black;
 }
@@ -73,5 +123,5 @@ export default {
   width: 80%;
   margin-left: 10%;
   border: 1px solid red;
-}
+} */
 </style>

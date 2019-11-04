@@ -45,7 +45,7 @@ export default{
     border-bottom: 1px solid #ccc;
 }
 .user{
-    width: 7%;
+    width: 8%;
     height: 40px;
     z-index: 5;
     position: absolute;

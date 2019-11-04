@@ -240,8 +240,8 @@ p{
 }
 .footer{
     margin-top: 10px;
-    width: 60%;
-    margin-left: 20%;
+    width: 70%;
+    margin-left: 15%;
     height: 200px;
     /* border: black 1px solid; */
 }

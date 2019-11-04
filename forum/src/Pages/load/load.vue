@@ -23,12 +23,12 @@ export default {
   data () {
     return {
       title: '',
-      bai1: 'https://pan.baidu.com/s/1C2v0XvDvP-dTeKKJoGDdMA',
-      bai2: 'xv7i',
-      github: 'https://github.com/lalala-zjr/forum',
+      bai1: '',
+      bai2: '',
+      github: '',
       word: '资料下载专区',
-      name: 'lalala',
-      time: '2019-06-20 13:25:06',
+      name: '',
+      time: '',
       w: '发表于',
       id: this.$route.params.id
     }
