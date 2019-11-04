@@ -134,7 +134,7 @@ export default{
       }).then(res => {
         console.log(res)
         if (res.status === 204) {
-          this.$router.replace('/')
+          this.$router.replace('/person')
         }
       })
     }
