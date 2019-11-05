@@ -28,10 +28,11 @@ export default{
   },
   methods: {
     enter () {
-      this.$emit('Into', 1)
+    //   this.$emit('Into', 1)
+      this.$router.push('/detail')
     },
     watch () {
-      this.$emit('Into', 2)
+    //   this.$emit('Into', 2)
     }
   }
 }

@@ -1,39 +1,45 @@
 <template>
     <div id="detail">
-        <div class="head">
-            <div class="headTitle">数学建模的应用场景</div>
-            <div class="headInformation">2019 10-22</div>
-        </div>
-        <div class="content"></div>
-        <div class="like">
-            <div class="likeNum">+1985</div>
-            <img src="../../assets/img/like1.png" alt="" class="likeImg" v-show="l1" @click="like1">
-            <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
-        </div>
-        <div class="comment">
-            <input type="text" placeholder="说点什么？" maxlength="24">
-            <div>快速评论</div>
-        </div>
-        <div class="commentContend">
-            <div class="word">评论区</div>
-            <detailComment></detailComment>
-            <detailComment></detailComment>
-            <img src="../../assets/img/jian.png" alt="" class="pic">
-        </div>
-        <div class="userCom">
-            <div class="userN">
-                <img src="../../assets/img/user.png" class="userPic" alt="">
-                <div class="userName">{{user}}</div>
-                <div class="lengthCom">0/200</div>
+        <Header></Header>
+        <right></right>
+        <div id="detail2">
+            <div class="head">
+                <div class="headTitle">数学建模的应用场景</div>
+                <div class="headInformation">2019 10-22</div>
             </div>
-            <textarea placeholder="说点什么？" maxlength="200"></textarea>
-            <div class="ComSend">发表评论</div>
+            <div class="content"></div>
+            <div class="like">
+                <div class="likeNum">+1985</div>
+                <img src="../../assets/img/like1.png" alt="" class="likeImg" v-show="l1" @click="like1">
+                <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
+            </div>
+            <div class="comment">
+                <input type="text" placeholder="说点什么？" maxlength="24">
+                <div>快速评论</div>
+            </div>
+            <div class="commentContend">
+                <div class="word">评论区</div>
+                <detailComment></detailComment>
+                <detailComment></detailComment>
+                <img src="../../assets/img/jian.png" alt="" class="pic">
+            </div>
+            <div class="userCom">
+                <div class="userN">
+                    <img src="../../assets/img/user.png" class="userPic" alt="">
+                    <div class="userName">{{user}}</div>
+                    <div class="lengthCom">0/200</div>
+                </div>
+                <textarea placeholder="说点什么？" maxlength="200"></textarea>
+                <div class="ComSend">发表评论</div>
+            </div>
+            <div class="emp"></div>
         </div>
-        <div class="emp"></div>
     </div>
 </template>
 <script>
+import Header from '../../components/Header/Header.vue'
 import detailComment from './detailComment/detailComment.vue'
+import right from '../../components/right/right.vue'
 export default {
   data () {
     return {
@@ -53,12 +59,17 @@ export default {
     }
   },
   components: {
-    detailComment
+    detailComment,
+    right,
+    Header
   }
 }
 </script>
 <style scoped>
 #detail{
+    background-color: #f0f0f0;
+}
+#detail2{
     background-color: #fff;
     /* height: 1000px; */
     width: 55%;

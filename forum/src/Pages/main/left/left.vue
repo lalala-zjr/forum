@@ -1,5 +1,5 @@
 <template>
-   <div id="left">
+   <div id="left" ref="left">
        <div class="empty"></div>
        <div class="headShow">
            <div class="today">今日：{{today}}</div>
@@ -17,11 +17,11 @@
         <!-- v-on:Into="see" -->
        <div class="pages">
            <div class="pageShow">
-               <div class="back"><img src="../../../assets/img/b1.png" alt=""></div>
+               <div class="back"><img src="../../../assets/img/b1.png" alt="" @click="prev" :class="{'disabled':n==0}"></div>
                <div class="content">
-                 <span v-for="(i,index) of pages" :key="index" @click="changP(index)">{{i}}</span>
+                 <span :class="{'active':n==index}" v-for="(i,index) of pages" :key="index" @click="changP(index)">{{i}}</span>
                </div>
-               <div class="forword"><img src="../../../assets/img/b2.png" alt=""></div>
+               <div class="forword"><img src="../../../assets/img/b2.png" @click="next" :class="{'disabled':n==pages-1}"></div>
            </div>
        </div>
    </div>
@@ -39,7 +39,9 @@ export default{
       s2: '热门',
       b: 123,
       adds: '',
-      years: ''
+      years: '',
+      n: 0,
+      pages: 0
     }
   },
   created () {
@@ -54,6 +56,7 @@ export default{
       this.sum = res.data.sum.total
       this.adds = res.data.articles
       this.years = res.data.sum.years
+      this.pages = res.data.totalPage
     })
     // this.$http.post('/api/article/list').then(res => {
     //   console.log(res)
@@ -68,11 +71,6 @@ export default{
     leftTitle
   },
   computed: {
-    pages: {
-      get () {
-        return Math.ceil(this.sum / 7)
-      }
-    }
   },
   methods: {
     sort1 () {
@@ -82,21 +80,66 @@ export default{
     sort2 () {
       this.$refs.s2.style.color = '#005fbc'
       this.$refs.s1.style.color = 'black'
-      this.$http.get('/api/article/list',
+      // this.$http.get('/api/article/list',
+      //   this.qs.stringify({
+      //     ishot: false
+      //   })
+      // ).then(res => {
+      //   // console.log(23)
+      //   console.log(res.data)
+      //   this.today = res.data.sum.today
+      //   this.yesterday = res.data.sum.yesterday
+      //   this.sum = res.data.sum.total
+      //   this.adds = res.data.articles
+      //   this.years = res.data.sum.years
+      // })
+    },
+    changP (index) {
+      // this.$refs.left.style.scrollTop = 0
+      this.n = index
+      console.log(index)
+      this.$http.post('/api/article/list',
         this.qs.stringify({
-          ishot: true
+          page: index + 1
         })
       ).then(res => {
-        // console.log(23)
-        // console.log(res.data)
+        console.log(res)
+        this.today = res.data.sum.today
+        this.yesterday = res.data.sum.yesterday
+        this.sum = res.data.sum.total
         this.adds = res.data.articles
         this.years = res.data.sum.years
       })
     },
-    changP (index) {
+    prev () {
+      if (this.n > 0) {
+        this.n--
+      }
+      console.log(this.n)
       this.$http.post('/api/article/list',
         this.qs.stringify({
-          page: index
+          page: this.n + 1
+        })
+      ).then(res => {
+        console.log(res)
+        this.today = res.data.sum.today
+        this.yesterday = res.data.sum.yesterday
+        this.sum = res.data.sum.total
+        this.adds = res.data.articles
+        this.years = res.data.sum.years
+      })
+    },
+    next () {
+      if (this.n < this.pages) {
+        // if (this.n > 10) {
+        //   this.pages
+        // }
+        this.n++
+      }
+      console.log(this.n)
+      this.$http.post('/api/article/list',
+        this.qs.stringify({
+          page: this.n + 1
         })
       ).then(res => {
         console.log(res)
@@ -127,6 +170,10 @@ export default{
     height: 730px;
     top: 30px;
     bottom: 10px;
+}
+.disabled{
+  color: #ccc;
+  cursor: not-allowed;
 }
 .empty{
     width: 100%;
@@ -242,7 +289,7 @@ export default{
     text-align: center;
     cursor: pointer;
 }
-span:nth-child(1){
+.active{
   background-color: #005fbc;
   color: white;
   border-radius: 2px;
