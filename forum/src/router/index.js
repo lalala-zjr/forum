@@ -60,15 +60,15 @@ export default new Router({
       component: forget2
     },
     {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    {
       path: '/',
       name: 'main',
       component: main,
       children: [
-        {
-          path: '/register',
-          name: 'register',
-          component: register
-        },
         {
           path: '/',
           name: 'left',

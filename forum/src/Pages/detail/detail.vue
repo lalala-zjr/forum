@@ -19,9 +19,11 @@
             </div>
             <div class="commentContend">
                 <div class="word">评论区</div>
-                <detailComment></detailComment>
-                <detailComment></detailComment>
-                <img src="../../assets/img/jian.png" alt="" class="pic">
+                <div class="commentAll">
+                    <detailComment v-show="c1"></detailComment>
+                    <img src="../../assets/img/jian.png" alt="" class="pic" v-show="c3">
+                </div>
+                <div class="hollow" v-show="c2">快来抢沙发！！</div>
             </div>
             <div class="userCom">
                 <div class="userN">
@@ -31,9 +33,10 @@
                 </div>
                 <textarea placeholder="说点什么？" maxlength="200"></textarea>
                 <div class="ComSend">发表评论</div>
+                <div class="emp2"></div>
             </div>
-            <div class="emp"></div>
         </div>
+        <div class="emp"></div>
     </div>
 </template>
 <script>
@@ -43,7 +46,7 @@ import right from '../../components/right/right.vue'
 export default {
   data () {
     return {
-      user: '可怜且轩轩',
+      user: '游客',
       l1: true,
       l2: false,
       id: this.$route.params.id,
@@ -51,7 +54,11 @@ export default {
       time: '',
       cnt: 0,
       e: false,
-      title: ''
+      title: '',
+      c1: false,
+      c2: true,
+      c3: true,
+      content: ''
     }
   },
   created () {
@@ -61,11 +68,16 @@ export default {
       })
     ).then(res => {
       console.log(res.data)
-      this.user = res.data.authorName
+      //   this.user = res.data.authorName
       this.con = res.data.content
       this.time = res.data.create
       this.cnt = res.data.like
       this.title = res.data.title
+      if (res.data.comments !== '') {
+        this.c1 = true
+        this.c2 = false
+        this.content = res.data.comments
+      }
     })
   },
   methods: {
@@ -109,6 +121,16 @@ export default {
     position: relative;
     top: 30px;
     bottom: 10px;
+}
+.hollow{
+    width: 80%;
+    height: 50px;
+    /* background-color: red; */
+    margin-left: 10%;
+    font-size: 12px;
+    line-height: 50px;
+    text-align: center;
+    color: #ccc;
 }
 .head{
     width: 80%;
@@ -226,7 +248,11 @@ export default {
     width: 100%;
     height: 50px;
     margin-top: 10px;
-    background-color: white;
+    background-color: #f0f0f0;
+}
+.emp2{
+    width: 100%;
+    height: 50px;
 }
 .pic{
     width: 30px;
