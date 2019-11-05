@@ -7,11 +7,11 @@
         <div class="body">{{c.comContent}}</div>
         <div class="foot">
             <div class="like">
-                <img src="../../../assets/img/likeC.png" alt="" class="likeC">
+                <img src="../../../assets/img/likeC.png" alt="" class="likeC" title="点赞">
                 <div class="likeWord">{{c.comLike}}</div>
             </div>
             <div class="com">
-                <img src="../../../assets/img/C.png" alt="" class="likeC">
+                <img src="../../../assets/img/C.png" alt="" class="likeC" title="评论">
                 <div class="likeWord">{{c.repCount}}</div>
             </div>
         </div>

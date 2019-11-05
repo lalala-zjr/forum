@@ -2,6 +2,7 @@
    <div id="leftTitle">
        <img src="../../../../assets/img/user.png" alt="" class="user" @click="watch">
        <div class="title" @click="enter">{{ad.title}}</div>
+       <div class="top" v-show="t">[置顶]</div>
        <div class="information">
            <div class="username">{{ad.authorName}}</div>
            <div class="time">{{ad.create}}</div>
@@ -24,6 +25,12 @@ export default{
   },
   data () {
     return {
+      t: false
+    }
+  },
+  mounted () {
+    if (this.ad.istop) {
+      this.t = true
     }
   },
   methods: {
@@ -64,6 +71,17 @@ export default{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.top{
+    width: 50%;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: left;
+    color: red;
 }
 .title:hover{
     color: #005fbc;

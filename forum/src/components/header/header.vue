@@ -42,10 +42,10 @@ export default {
   },
   methods: {
     navChoose1 () {
-      this.$router.push('/' + 1)
+      this.$router.push('/')
     },
     navChoose2 () {
-      this.$router.push('/' + 2)
+      this.$router.push('/')
     },
     navChoose3 () {
     //   this.$refs.nav3.style.color = 'white'

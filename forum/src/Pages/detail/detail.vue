@@ -11,11 +11,11 @@
             <div class="like">
                 <div class="likeNum">+{{cnt}}</div>
                 <img src="../../assets/img/like1.png" title="一天只能点赞一次哦！" class="likeImg" v-show="l1" @click="like1">
-                <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
+                <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2">
             </div>
             <div class="comment">
                 <input type="text" placeholder="说点什么？" maxlength="24">
-                <div>快速评论</div>
+                <div @click="review1" ref="re1">快速评论</div>
             </div>
             <div class="commentContend">
                 <div class="word">评论区</div>
@@ -29,10 +29,10 @@
                 <div class="userN">
                     <img src="../../assets/img/user.png" class="userPic" alt="">
                     <div class="userName">{{user}}</div>
-                    <div class="lengthCom">0/200</div>
+                    <div class="lengthCom">小于200字</div>
                 </div>
-                <textarea placeholder="说点什么？" maxlength="200"></textarea>
-                <div class="ComSend">发表评论</div>
+                <textarea placeholder="说点什么？" maxlength="200" ref="re2"></textarea>
+                <div class="ComSend" @click="review2">发表评论</div>
                 <div class="emp2"></div>
             </div>
         </div>
@@ -88,7 +88,7 @@ export default {
     like1 () {
       this.$http.put('/api/like', {
         type: 1,
-        told: this.id
+        toId: this.id
       }).then(res => {
         console.log(res.data)
       }).catch((e) => {
@@ -101,9 +101,24 @@ export default {
         }
       })
     },
-    like2 () {
-    //   this.l2 = false
-    //   this.l1 = true
+    review1 () {
+      this.$http.post('/api/comment', {
+        content: this.$refs.re1.value,
+        toId: this.id
+      }).then(res => {
+        console.log(res)
+      })
+    },
+    review2 () {
+      console.log(this.$refs.re2.value)
+      console.log(this.id)
+      this.$http.post('/api/comment', {
+        type: 1,
+        content: this.$refs.re2.value,
+        toId: Number(this.id)
+      }).then(res => {
+        console.log(res)
+      })
     }
   },
   components: {
@@ -171,12 +186,15 @@ export default {
     width: 80%;
     height: 600px;
     /* background-color: yellow; */
+    box-sizing: border-box;
+    padding: 1%;
     border: 1px solid #ccc;
     position: relative;
     left: 10%;
     top: 5%;
     font-size: 14px;
     text-indent: 2em;
+    overflow: auto;
 }
 .like{
     width: 80%;
@@ -294,7 +312,7 @@ export default {
     line-height: 36px;
 }
 .lengthCom{
-    width: 50px;
+    width: 80px;
     height: 30px;
     /* background-color: rebeccapurple; */
     position: absolute;

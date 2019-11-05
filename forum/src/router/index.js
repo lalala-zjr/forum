@@ -5,7 +5,7 @@ import Header from '../components/Header/Header.vue'
 import left from '../Pages/main/left/left.vue'
 import right from '../components/right/right.vue'
 import person from '../Pages/person/person.vue'
-import register from '../Pages/main/register/register.vue'
+import register from '../Pages/register/register.vue'
 import login from '../Pages/login/login.vue'
 import forget from '../Pages/forget/forget.vue'
 import detail from '../Pages/detail/detail.vue'
@@ -65,7 +65,7 @@ export default new Router({
       component: register
     },
     {
-      path: '/:content',
+      path: '/',
       name: 'main',
       component: main,
       children: [
