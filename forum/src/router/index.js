@@ -65,7 +65,7 @@ export default new Router({
       component: register
     },
     {
-      path: '/',
+      path: '/:content',
       name: 'main',
       component: main,
       children: [

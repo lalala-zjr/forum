@@ -26,7 +26,7 @@
     </div>
 </template>
 <script>
-import password from '../../assets/password.js'
+// import password from '../../assets/password.js'
 export default {
   data () {
     return {
@@ -42,25 +42,10 @@ export default {
   },
   methods: {
     navChoose1 () {
-    //   this.$refs.nav1.style.color = 'white'
-    //   this.$refs.nav1.style.backgroundColor = '#005fbc'
-    //   this.$refs.nav2.style.color = 'black'
-    //   this.$refs.nav2.style.backgroundColor = 'white'
-    //   this.$refs.nav3.style.color = 'black'
-    //   this.$refs.nav3.style.backgroundColor = 'white'
-    //   this.$emit('personShow', 1)
-      this.$router.push('/')
+      this.$router.push('/' + 1)
     },
     navChoose2 () {
-    //   this.$refs.nav2.style.color = 'white'
-    //   this.$refs.nav2.style.backgroundColor = '#005fbc'
-    //   this.$refs.nav1.style.color = 'black'
-    //   this.$refs.nav1.style.backgroundColor = 'white'
-    //   this.$refs.nav3.style.color = 'black'
-    //   this.$refs.nav3.style.backgroundColor = 'white'
-    //   this.$emit('personShow', 2)
-      password.$emit('type', 2)
-      this.$router.push('/')
+      this.$router.push('/' + 2)
     },
     navChoose3 () {
     //   this.$refs.nav3.style.color = 'white'

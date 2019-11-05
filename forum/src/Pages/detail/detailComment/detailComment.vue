@@ -85,9 +85,9 @@ export default {
 }
 .likeC{
     width: 30%;
-    height: 14px;
+    height:20px;
     position: absolute;
-    top: 6px;
+    top: 3px;
     left: 0px;
 }
 .likeWord{

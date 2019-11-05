@@ -123,7 +123,7 @@ export default{
 <style scoped>
 #right{
     position: absolute;
-    top: 90px;
+    top: 104px;
     right: 4%;
     width: 28%;
     height: 730px;
@@ -242,7 +242,7 @@ p{
     margin-top: 10px;
     width: 70%;
     margin-left: 15%;
-    height: 200px;
+    height: 220px;
     /* border: black 1px solid; */
 }
 .FootWord{
