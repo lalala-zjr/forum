@@ -4,7 +4,7 @@
         <right></right>
         <div id="detail2">
             <div class="head">
-                <div class="headTitle">数学建模的应用场景</div>
+                <div class="headTitle">{{title}}</div>
                 <div class="headInformation">{{time}}</div>
             </div>
             <div class="content">{{con}}</div>
@@ -50,7 +50,8 @@ export default {
       con: '',
       time: '',
       cnt: 0,
-      e: false
+      e: false,
+      title: ''
     }
   },
   created () {
@@ -64,6 +65,7 @@ export default {
       this.con = res.data.content
       this.time = res.data.create
       this.cnt = res.data.like
+      this.title = res.data.title
     })
   },
   methods: {
