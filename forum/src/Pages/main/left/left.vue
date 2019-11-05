@@ -19,7 +19,7 @@
            <div class="pageShow">
                <div class="back"><img src="../../../assets/img/b1.png" alt=""></div>
                <div class="content">
-                 <span v-for="(i,index) of pages" :key="index">{{i}}</span>
+                 <span v-for="(i,index) of pages" :key="index" @click="changP(index)">{{i}}</span>
                </div>
                <div class="forword"><img src="../../../assets/img/b2.png" alt=""></div>
            </div>
@@ -89,6 +89,20 @@ export default{
       ).then(res => {
         // console.log(23)
         // console.log(res.data)
+        this.adds = res.data.articles
+        this.years = res.data.sum.years
+      })
+    },
+    changP (index) {
+      this.$http.post('/api/article/list',
+        this.qs.stringify({
+          page: index
+        })
+      ).then(res => {
+        console.log(res)
+        this.today = res.data.sum.today
+        this.yesterday = res.data.sum.yesterday
+        this.sum = res.data.sum.total
         this.adds = res.data.articles
         this.years = res.data.sum.years
       })
@@ -226,6 +240,7 @@ export default{
     line-height: 30px;
     font-size: 12px;
     text-align: center;
+    cursor: pointer;
 }
 span:nth-child(1){
   background-color: #005fbc;
