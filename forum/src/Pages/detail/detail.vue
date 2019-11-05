@@ -5,12 +5,12 @@
         <div id="detail2">
             <div class="head">
                 <div class="headTitle">数学建模的应用场景</div>
-                <div class="headInformation">2019 10-22</div>
+                <div class="headInformation">{{time}}</div>
             </div>
-            <div class="content"></div>
+            <div class="content">{{con}}</div>
             <div class="like">
-                <div class="likeNum">+1985</div>
-                <img src="../../assets/img/like1.png" alt="" class="likeImg" v-show="l1" @click="like1">
+                <div class="likeNum">+{{cnt}}</div>
+                <img src="../../assets/img/like1.png" title="一天只能点赞一次哦！" class="likeImg" v-show="l1" @click="like1">
                 <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2" @click="like2">
             </div>
             <div class="comment">
@@ -45,17 +45,47 @@ export default {
     return {
       user: '可怜且轩轩',
       l1: true,
-      l2: false
+      l2: false,
+      id: this.$route.params.id,
+      con: '',
+      time: '',
+      cnt: 0,
+      e: false
     }
+  },
+  created () {
+    this.$http.get('/api/article/' + this.id,
+      this.qs.stringify({
+        id: this.id
+      })
+    ).then(res => {
+      console.log(res.data)
+      this.user = res.data.authorName
+      this.con = res.data.content
+      this.time = res.data.create
+      this.cnt = res.data.like
+    })
   },
   methods: {
     like1 () {
-      this.l2 = true
-      this.l1 = false
+      this.$http.put('/api/like', {
+        type: 1,
+        told: this.id
+      }).then(res => {
+        console.log(res.data)
+      }).catch((e) => {
+        // console.log(e)
+        if (e.response.status === 400) {
+          this.e = true
+        } else {
+          this.l2 = true
+          this.l1 = false
+        }
+      })
     },
     like2 () {
-      this.l2 = false
-      this.l1 = true
+    //   this.l2 = false
+    //   this.l1 = true
     }
   },
   components: {
@@ -117,6 +147,8 @@ export default {
     position: relative;
     left: 10%;
     top: 5%;
+    font-size: 14px;
+    text-indent: 2em;
 }
 .like{
     width: 80%;

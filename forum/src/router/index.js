@@ -104,7 +104,7 @@ export default new Router({
       component: person
     },
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       component: detail,
       children: [

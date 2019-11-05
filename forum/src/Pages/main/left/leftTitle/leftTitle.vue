@@ -29,7 +29,7 @@ export default{
   methods: {
     enter () {
     //   this.$emit('Into', 1)
-      this.$router.push('/detail')
+      this.$router.push('/detail/' + this.ad.id)
     },
     watch () {
     //   this.$emit('Into', 2)
