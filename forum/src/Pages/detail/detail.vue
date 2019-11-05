@@ -20,7 +20,7 @@
             <div class="commentContend">
                 <div class="word">评论区</div>
                 <div class="commentAll">
-                    <detailComment v-show="c1"></detailComment>
+                    <detailComment v-show="c1" v-for="(con,index) in content" :c="content[index]" :key="index"></detailComment>
                     <img src="../../assets/img/jian.png" alt="" class="pic" v-show="c3">
                 </div>
                 <div class="hollow" v-show="c2">快来抢沙发！！</div>
@@ -57,7 +57,7 @@ export default {
       title: '',
       c1: false,
       c2: true,
-      c3: true,
+      c3: false,
       content: ''
     }
   },
@@ -73,10 +73,14 @@ export default {
       this.time = res.data.create
       this.cnt = res.data.like
       this.title = res.data.title
-      if (res.data.comments !== '') {
+      if (res.data.comments.length > 0) {
         this.c1 = true
         this.c2 = false
+        this.c3 = true
         this.content = res.data.comments
+        console.log(1)
+      } else {
+        console.log(0)
       }
     })
   },

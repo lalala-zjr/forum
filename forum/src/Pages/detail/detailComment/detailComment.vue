@@ -2,23 +2,26 @@
     <div id="detailComment">
         <div class="head">
             <img src="../../../assets/img/user.png" alt="" class="user">
-            <div class="headword">扬扬叉会腰</div>
+            <div class="headword">{{c.comAuthorName}}</div>
         </div>
-        <div class="body">写的写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错写的真不错真不错</div>
+        <div class="body">{{c.comContent}}</div>
         <div class="foot">
             <div class="like">
                 <img src="../../../assets/img/likeC.png" alt="" class="likeC">
-                <div class="likeWord">12</div>
+                <div class="likeWord">{{c.comLike}}</div>
             </div>
             <div class="com">
                 <img src="../../../assets/img/C.png" alt="" class="likeC">
-                <div class="likeWord">12</div>
+                <div class="likeWord">{{c.repCount}}</div>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
+  props: {
+    c: ''
+  },
   data () {
     return {
     }
@@ -82,10 +85,10 @@ export default {
 }
 .likeC{
     width: 30%;
-    height: 20px;
+    height: 14px;
     position: absolute;
-    top: 3px;
-    left: 0;
+    top: 6px;
+    left: 0px;
 }
 .likeWord{
     width: 64%;
