@@ -53,7 +53,6 @@ export default {
       con: '',
       time: '',
       cnt: 0,
-      e: false,
       title: '',
       c1: false,
       c2: true,
@@ -90,14 +89,12 @@ export default {
         type: 1,
         toId: this.id
       }).then(res => {
-        console.log(res.data)
+        console.log(res)
+        this.l2 = true
+        this.l1 = false
       }).catch((e) => {
-        // console.log(e)
         if (e.response.status === 400) {
           this.e = true
-        } else {
-          this.l2 = true
-          this.l1 = false
         }
       })
     },

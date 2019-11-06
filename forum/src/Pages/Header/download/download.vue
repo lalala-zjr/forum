@@ -42,7 +42,12 @@ export default {
   },
   methods: {
     show (data) {
-      this.$router.push('/load/' + data)
+      this.$http.get('/api/user/verify').then(res => {
+        console.log(res)
+        this.$router.push('/load/' + data)
+      }).catch((e) => {
+        alert('请先登录')
+      })
     }
   },
   created () {

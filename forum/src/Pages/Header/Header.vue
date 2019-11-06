@@ -14,9 +14,7 @@
                     </router-link>
                 </div>
                 <div class="li3">
-                    <router-link to="/person">
-                        <div ref="nav3">{{nav3}}</div>
-                    </router-link>
+                    <div ref="nav3" @click="nav">{{nav3}}</div>
                 </div>
                 <div class="li4">
                     <router-link to="/download">
@@ -49,6 +47,14 @@ export default {
     }
   },
   methods: {
+    nav () {
+      this.$http.get('/api/user/verify').then(res => {
+        console.log(res)
+        this.$router.push('/person')
+      }).catch((e) => {
+        alert('请先登录')
+      })
+    },
     tail1 () {
       this.$router.push('/login')
     },

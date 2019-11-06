@@ -130,11 +130,11 @@ export default{
         college: this.$refs.college.value,
         profession: this.$refs.major.value,
         email: this.$refs.email.value,
-        hobby: this.$refs.like.hobby
+        hobby: this.$refs.like.value
       }).then(res => {
         console.log(res)
         if (res.status === 204) {
-          this.$router.replace('/person')
+          this.$router.push('/')
         }
       })
     }

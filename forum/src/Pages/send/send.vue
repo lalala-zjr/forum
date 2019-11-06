@@ -51,6 +51,10 @@ export default {
             if (res.status === 201) {
               this.$router.push('/')
             }
+          }).catch((e) => {
+            if (e.response.status === 401) {
+              alert('请先登录')
+            }
           })
         } else {
           this.w = '请选择数模论文还是技术文'

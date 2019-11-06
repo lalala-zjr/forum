@@ -93,26 +93,9 @@ export default{
       this.e = false
     },
     cancel () {
-      // this.time = '获取验证码'
-      // window.clearTimeout(this.timer)
-      // this.$refs.f1.value = ''
-      // this.$refs.f2.value = ''
-      // this.$refs.f3.value = ''
-      // this.$refs.mes.style.color = '#005fbc'
-      // this.$refs.pas.style.color = 'black'
-      // this.s = true
-      // this.p = false
-      // this.f = false
-      // this.$emit('can', 1)
       this.$router.push('/')
     },
     save () {
-    //   this.time = '获取验证码'
-    //   window.clearTimeout(this.timer)
-    //   this.$refs.f1.value = ''
-    //   this.$refs.f2.value = ''
-    //   this.$refs.f3.value = ''
-    //   this.$emit('can', 2)
       if (this.s === false) {
         console.log(this.$refs.f1.value)
         console.log(this.$refs.f3.value)
@@ -124,10 +107,10 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
-            this.$router.push('/')
+            this.$router.go(-1)
           }
-        }).catch((error) => {
-          if (error.response.status >= 400) {
+        }).catch((e) => {
+          if (e.response.status >= 400) {
             this.e = true
           } else {
             this.e = false
@@ -143,15 +126,11 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
-            // var expdate = new Date()
-            // expdate.setTime(expdate.getTime() + 5 * 60 * 1000)
-            // document.cookie = 'phone=' + this.$refs.f1.value
-            // document.cookie = res.headers.set-C5ookie
-            this.$router.push('/')
+            this.$router.go(-1)
           }
-        }).catch((error) => {
-          console.log(error)
-          if (error.response.status >= 400) {
+        }).catch((e) => {
+          console.log(e)
+          if (e.response.status >= 400) {
             this.e2 = true
           } else {
             this.e2 = false
