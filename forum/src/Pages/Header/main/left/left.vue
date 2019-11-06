@@ -28,10 +28,9 @@
 </template>
 <script>
 import leftTitle from './leftTitle/leftTitle.vue'
-// import password from '../../../assets/password.js'
 export default{
   props: {
-    content: ''
+    // content: ''
   },
   data () {
     return {
@@ -48,7 +47,6 @@ export default{
     }
   },
   created () {
-    // if (this.content === 1) {
     this.$http.post('/api/article/list').then(res => {
       console.log(res)
       this.today = res.data.sum.today
@@ -56,7 +54,9 @@ export default{
       this.sum = res.data.sum.total
       this.adds = res.data.articles
       this.years = res.data.sum.years
+      this.pages = res.data.totalPage
     })
+    // if (this.content === 1) {
     // }
     // if (this.content === 2) {
     //   this.$http.post('/api/article/list',
@@ -83,23 +83,38 @@ export default{
     sort1 () {
       this.$refs.s1.style.color = '#005fbc'
       this.$refs.s2.style.color = 'black'
+      this.$http.post('/api/article/list',
+        this.qs.stringify({
+          ishot: false
+        })
+      ).then(res => {
+        console.log(23)
+        console.log(res.data)
+        this.today = res.data.sum.today
+        this.yesterday = res.data.sum.yesterday
+        this.sum = res.data.sum.total
+        this.adds = res.data.articles
+        this.years = res.data.sum.years
+        this.pages = res.data.totalPage
+      })
     },
     sort2 () {
       this.$refs.s2.style.color = '#005fbc'
       this.$refs.s1.style.color = 'black'
-      // this.$http.get('/api/article/list',
-      //   this.qs.stringify({
-      //     ishot: false
-      //   })
-      // ).then(res => {
-      //   // console.log(23)
-      //   console.log(res.data)
-      //   this.today = res.data.sum.today
-      //   this.yesterday = res.data.sum.yesterday
-      //   this.sum = res.data.sum.total
-      //   this.adds = res.data.articles
-      //   this.years = res.data.sum.years
-      // })
+      this.$http.post('/api/article/list',
+        this.qs.stringify({
+          ishot: true
+        })
+      ).then(res => {
+        console.log(23)
+        console.log(res.data)
+        this.today = res.data.sum.today
+        this.yesterday = res.data.sum.yesterday
+        this.sum = res.data.sum.total
+        this.adds = res.data.articles
+        this.years = res.data.sum.years
+        this.pages = res.data.totalPage
+      })
     },
     changP (index) {
       // this.$refs.left.style.scrollTop = 0

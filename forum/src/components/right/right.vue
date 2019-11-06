@@ -115,8 +115,12 @@ export default{
       })
     },
     send () {
-      // this.$emit('sendWord', 1)
-      this.$router.push('/send')
+      this.$http.get('/api/user/verify').then(res => {
+        console.log(res)
+        this.$router.push('/send')
+      }).catch((e) => {
+        alert('请先登录')
+      })
     }
   }
 }

@@ -45,7 +45,7 @@ export default new Router({
           component: person
         },
         {
-          path: '/main/:con',
+          path: '/',
           name: 'main',
           component: main,
           children: [

@@ -14,8 +14,8 @@
                 <img src="../../assets/img/like2.png" alt="" class="likeImg" v-show="l2">
             </div>
             <div class="comment">
-                <input type="text" placeholder="说点什么？" maxlength="24">
-                <div @click="review1" ref="re1">快速评论</div>
+                <input type="text" placeholder="说点什么？" ref="re1" maxlength="24">
+                <div @click="review1">快速评论</div>
             </div>
             <div class="commentContend">
                 <div class="word">评论区</div>
@@ -46,7 +46,7 @@ import right from '../../components/right/right.vue'
 export default {
   data () {
     return {
-      user: '游客',
+      user: '我',
       l1: true,
       l2: false,
       id: this.$route.params.id,
@@ -102,22 +102,25 @@ export default {
       })
     },
     review1 () {
+      console.log(this.$refs.re1.value)
+      console.log(Number(this.id))
       this.$http.post('/api/comment', {
+        type: 1,
         content: this.$refs.re1.value,
-        toId: this.id
+        toId: Number(this.id)
       }).then(res => {
         console.log(res)
+        this.$refs.re1.value = ''
       })
     },
     review2 () {
-      console.log(this.$refs.re2.value)
-      console.log(this.id)
       this.$http.post('/api/comment', {
         type: 1,
         content: this.$refs.re2.value,
         toId: Number(this.id)
       }).then(res => {
         console.log(res)
+        this.$refs.re2.value = ''
       })
     }
   },

@@ -31,12 +31,10 @@
             </div>
         </div>
         <div id="head2"></div>
-        <main></main>
         <router-view></router-view>
     </div>
 </template>
 <script>
-// import password from '../../assets/password.js'
 export default {
   data () {
     return {

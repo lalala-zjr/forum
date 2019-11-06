@@ -1,8 +1,8 @@
 <template>
     <div id="main" ref="main">
-      <left v-show="flag1" :content="this.con"></left>
-      <right v-show="flag2" v-on:sendWord="sendW"></right>
-      <register v-show="reg"></register>
+      <left></left>
+      <right></right>
+      <!-- <register v-show="reg"></register> -->
       <div class="empty"></div>
     </div>
 </template>
@@ -13,9 +13,6 @@ import register from '../../register/register.vue'
 export default{
   data () {
     return {
-      flag1: true,
-      flag2: true,
-      reg: false,
       con: this.$route.params.con
     }
   },

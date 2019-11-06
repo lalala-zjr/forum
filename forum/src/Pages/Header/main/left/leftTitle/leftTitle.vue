@@ -33,8 +33,8 @@ export default{
     if (this.ad.istop) {
       this.t = true
     }
-    console.log(this.index)
-    console.log(this.ad.istop)
+    // console.log(this.index)
+    // console.log(this.ad.istop)
   },
   destroyed () {
 
