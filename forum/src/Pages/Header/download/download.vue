@@ -20,8 +20,8 @@
     </div>
 </template>
 <script>
-import Header from '../../components/Header/Header.vue'
-import right from '../../components/right/right.vue'
+// import Header from '../../components/Header/Header.vue'
+import right from '../../../components/right/right.vue'
 import down from './down/down.vue'
 export default {
   data () {
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    Header,
+    // Header,
     right,
     down
   },

@@ -1,6 +1,6 @@
 <template>
     <div id="detail">
-        <Header></Header>
+        <!-- <Header></Header> -->
         <right></right>
         <div id="detail2">
             <div class="head">
@@ -40,7 +40,7 @@
     </div>
 </template>
 <script>
-import Header from '../../components/Header/Header.vue'
+// import Header from '../../components/Header/Header.vue'
 import detailComment from './detailComment/detailComment.vue'
 import right from '../../components/right/right.vue'
 export default {
@@ -123,8 +123,8 @@ export default {
   },
   components: {
     detailComment,
-    right,
-    Header
+    right
+    // Header
   }
 }
 </script>

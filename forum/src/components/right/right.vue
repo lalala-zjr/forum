@@ -60,6 +60,7 @@ export default{
       this.w3 = res.data.titles[2]
       this.w4 = res.data.titles[3]
       this.w5 = res.data.titles[4]
+      console.log(res)
     })
   },
   methods: {

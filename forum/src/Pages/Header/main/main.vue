@@ -1,62 +1,27 @@
 <template>
     <div id="main" ref="main">
-      <Header></Header>
-      <!-- <router-view v-on:personShow="listen"></router-view> -->
       <left v-show="flag1" v-on:see="go"></left>
       <right v-show="flag2" v-on:sendWord="sendW"></right>
-      <!-- <person v-show="flag3"></person>
-      <detail v-show='d'></detail>
-      <send v-show="send"></send>
-      <author v-show="auth"></author> -->
       <register v-show="reg"></register>
-      <!-- <login  ></login> -->
-      <!-- <router-view v-show="log"></router-view> -->
-      <!-- <forget v-show="f" v-on:can="cancel"></forget> -->
-      <!-- <forget2 v-show="f2" v-on:can="cancel"></forget2> -->
       <div class="empty"></div>
     </div>
 </template>
 <script>
-import Header from '../../components/Header/Header.vue'
 import left from './left/left.vue'
-import right from '../../components/right/right.vue'
-// import person from './person/person.vue'
-import register from '../register/register.vue'
-// import login from './login/login.vue'
-// import forget from './forget/forget.vue'
-// import detail from './detail/detail.vue'
-// import send from './send/send.vue'
-// import author from './author/author.vue'
-// import forget2 from './forget2/forget2.vue'
-// import qs from 'qs'
-// import password from '../../assets/password.js'
+import right from '../../../components/right/right.vue'
+import register from '../../register/register.vue'
 export default{
   data () {
     return {
       flag1: true,
       flag2: true,
-      // flag3: false,
       reg: false
-      // log: true,
-      // f: false,
-      // f2: false
-      // d: false,
-      // send: false,
-      // auth: false,
     }
   },
   components: {
-    Header,
     left,
     right,
-    // person,
     register
-    // login,
-    // forget,
-    // forget2
-    // detail,
-    // send,
-    // author
   },
   created () {
     // password.$on('type', (data) => {

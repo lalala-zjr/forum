@@ -26,7 +26,7 @@
     </div>
 </template>
 <script>
-import Header from '../../components/Header/Header.vue'
+// import Header from '../../components/Header/Header.vue'
 export default{
   data () {
     return {
@@ -37,7 +37,7 @@ export default{
     }
   },
   components: {
-    Header
+    // Header
   },
   methods: {
     send: function () {

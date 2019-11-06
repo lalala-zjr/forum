@@ -17,11 +17,11 @@
         <!-- v-on:Into="see" -->
        <div class="pages">
            <div class="pageShow">
-               <div class="back"><img src="../../../assets/img/b1.png" alt="" @click="prev" :class="{'disabled':n==0}"></div>
+               <div class="back"><img src="../../../../assets/img/b1.png" alt="" @click="prev" :class="{'disabled':n==0}"></div>
                <div class="content">
                  <span :class="{'active':n==index}" v-for="(i,index) of pages" :key="index" @click="changP(index)">{{i}}</span>
                </div>
-               <div class="forword"><img src="../../../assets/img/b2.png" @click="next" :class="{'disabled':n==pages-1}"></div>
+               <div class="forword"><img src="../../../../assets/img/b2.png" @click="next" :class="{'disabled':n==pages-1}"></div>
            </div>
        </div>
    </div>

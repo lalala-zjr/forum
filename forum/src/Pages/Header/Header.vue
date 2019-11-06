@@ -23,6 +23,7 @@
             </div>
         </div>
         <div id="head2"></div>
+        <router-view></router-view>
     </div>
 </template>
 <script>
@@ -72,9 +73,9 @@ export default {
 }
 </script>
 <style scoped>
-#header{
+/* #header{
     height: 60px;
-}
+} */
 #head1{
     width: 100%;
     height: 40px;

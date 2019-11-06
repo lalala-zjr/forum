@@ -1,6 +1,6 @@
 <template>
    <div id="leftTitle">
-       <img src="../../../../assets/img/user.png" alt="" class="user" @click="watch">
+       <img src="../../../../../assets/img/user.png" alt="" class="user" @click="watch">
        <div class="title" @click="enter">{{ad.title}}</div>
        <div class="top" v-show="t">[置顶]</div>
        <div class="information">
@@ -8,11 +8,11 @@
            <div class="time">{{ad.create}}</div>
        </div>
        <div class="eye">
-           <img src="../../../../assets/img/eye.png" alt="" class="eyeShow">
+           <img src="../../../../../assets/img/eye.png" alt="" class="eyeShow">
            <div class="eyeCount">{{ad.click}}</div>
        </div>
         <div class="com">
-            <img src="../../../../assets/img/com.png" alt="" class="comShow">
+            <img src="../../../../../assets/img/com.png" alt="" class="comShow">
             <div class="comCount">{{ad.commentCount}}</div>
         </div>
    </div>
@@ -29,9 +29,15 @@ export default{
     }
   },
   mounted () {
+    this.t = false
     if (this.ad.istop) {
       this.t = true
     }
+    console.log(this.index)
+    console.log(this.ad.istop)
+  },
+  destroyed () {
+
   },
   methods: {
     enter () {

@@ -1,6 +1,6 @@
 <template>
     <div id="send">
-      <Header></Header>
+      <!-- <Header></Header> -->
       <div class="contend">
         <input class="title" placeholder='请填写标题' ref="title" @click="write"/>
         <textarea ref="content" @click="write"></textarea>
@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-import Header from '../../components/Header/Header.vue'
+// import Header from '../../components/Header/Header.vue'
 export default {
   data () {
     return {
@@ -63,7 +63,7 @@ export default {
     }
   },
   components: {
-    Header
+    // Header
     // Editor,
     // tinymce
   },
