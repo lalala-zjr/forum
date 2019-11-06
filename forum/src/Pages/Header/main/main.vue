@@ -1,15 +1,17 @@
 <template>
     <div id="main" ref="main">
+      <!-- <register></register> -->
       <left></left>
       <right></right>
-      <!-- <register v-show="reg"></register> -->
       <div class="empty"></div>
     </div>
 </template>
 <script>
 import left from './left/left.vue'
 import right from '../../../components/right/right.vue'
-import register from '../../register/register.vue'
+import register from '../register/register.vue'
+import login from '../login/login.vue'
+// import password from '../../../assets/password.js'
 export default{
   data () {
     return {
@@ -18,69 +20,8 @@ export default{
   components: {
     left,
     right,
-    register
-  },
-  methods: {
-    sendW (data) {
-      if (data === 1) {
-        this.flag1 = false
-        this.flag2 = false
-        this.flag3 = false
-        this.d = false
-        this.send = true
-      }
-    },
-    cancel (data) {
-      switch (data) {
-        case 0: { // 点击登录的忘记密码
-          this.reg = false
-          this.f = true
-          break
-        }
-        case 1: //  登陆取消
-        case 2: { //  登陆保存
-          this.reg = false
-          break
-        }
-        case 3: //  注册取消
-        case 4: {
-          //  注册保存
-          this.log = false
-          break
-        }
-        case 5: { //  重置密码 取消
-          this.f = false
-          break
-        }
-        case 6: { //  重置密码 确定
-          this.f = false
-          this.f2 = true
-          break
-        }
-        case 7: { //  重置密码2 取消
-          this.f2 = false
-          break
-        }
-        case 8: { //  重置密码2 确定
-          this.f2 = false
-          break
-        }
-      }
-    },
-    go (data) {
-      if (data === 1) {
-        this.flag1 = false
-        this.d = true
-      }
-      if (data === 2) {
-        // this.auth = true
-        this.flag1 = false
-        this.flag2 = false
-        this.$router.push({
-          path: '/author'
-        })
-      }
-    }
+    register,
+    login
   }
 }
 </script>

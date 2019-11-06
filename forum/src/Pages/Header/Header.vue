@@ -13,9 +13,7 @@
                     <div ref="nav3" @click="nav33">{{nav3}}</div>
                 </div>
                 <div class="li4">
-                    <router-link to="/download">
-                        <div ref="nav4">{{nav4}}</div>
-                    </router-link>
+                    <div ref="nav4" @click="nav44">{{nav4}}</div>
                 </div>
             </div>
             <input type="search" class="search" placeholder="搜贴">
@@ -43,6 +41,10 @@ export default {
       flag: true
     }
   },
+  mounted () {
+    password.$emit('type', 1)
+    // this.$router.push('/')
+  },
   methods: {
     nav33 () {
       this.$http.get('/api/user/verify').then(res => {
@@ -54,9 +56,14 @@ export default {
     },
     nav11 () {
       password.$emit('type', 1)
+      this.$router.push('/')
     },
     nav22 () {
       password.$emit('type', 2)
+      this.$router.push('/')
+    },
+    nav44 () {
+      this.$router.push('/download')
     },
     tail1 () {
       this.$router.push('/login')

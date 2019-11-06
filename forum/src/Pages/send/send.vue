@@ -79,7 +79,8 @@ export default {
 <style scoped>
 #send{
     width: 100%;
-    margin-top: 30px;
+    /* position: relative; */
+    /* top: 30px; */
     height: 1200px;
     background-color: #f0f0f0;
 }
@@ -96,7 +97,7 @@ p{
 .contend{
   width: 80%;
   /* height: 700px; */
-  margin-top: 30px;
+  top: 30px;
   margin-left: 10%;
   background-color: white;
   overflow: auto;

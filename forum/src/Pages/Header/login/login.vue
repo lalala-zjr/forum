@@ -121,7 +121,7 @@ export default{
     width: 100%;
     height: 790px;
     position: absolute;
-    top: 60px;
+    /* top: 60px; */
     left: 0;
     background-color: rgba(200, 200, 200, 0.8);
     z-index: 10;

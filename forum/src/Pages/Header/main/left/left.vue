@@ -44,7 +44,7 @@ export default{
       pages: 0
     }
   },
-  created () {
+  mounted () {
     password.$on('type', (data) => {
       console.log(data)
       if (data === 2) {
@@ -73,23 +73,6 @@ export default{
         })
       }
     })
-    // if (this.content === 1) {
-    // }
-    // if (this.content === 2) {
-    //   this.$http.post('/api/article/list',
-    //     this.qs.stringify({
-    //       type: 1
-    //     })
-    //   ).then(res => {
-    //     console.log(res)
-    //     this.today = res.data.sum.today
-    //     this.yesterday = res.data.sum.yesterday
-    //     this.sum = res.data.sum.total
-    //     this.adds = res.data.articles
-    //     this.years = res.data.sum.years
-    //     this.pages = res.data.totalPage
-    //   })
-    // }
   },
   components: {
     leftTitle

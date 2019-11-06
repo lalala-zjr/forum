@@ -1,6 +1,5 @@
 <template>
     <div id="register">
-      <!-- <Header></Header> -->
         <div class="reg">
             <p @click="cancel">×</p>
             <div class="div1">登录</div>
@@ -28,7 +27,6 @@
     </div>
 </template>
 <script>
-// import Header from '../../components/Header/Header.vue'
 export default{
   data () {
     return {
