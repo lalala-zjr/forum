@@ -4,16 +4,24 @@
             <div class="word">{{word}}</div>
             <div class="nav">
                 <div class="li1">
-                    <div ref="nav1" @click="navChoose1">{{nav1}}</div>
+                    <router-link to="/">
+                        <div ref="nav1">{{nav1}}</div>
+                    </router-link>
                 </div>
                 <div class="li2">
-                    <div ref="nav2" @click="navChoose2">{{nav2}}</div>
+                    <router-link to="/">
+                        <div ref="nav2">{{nav2}}</div>
+                    </router-link>
                 </div>
                 <div class="li3">
-                    <div ref="nav3" @click="navChoose3">{{nav3}}</div>
+                    <router-link to="/person">
+                        <div ref="nav3">{{nav3}}</div>
+                    </router-link>
                 </div>
                 <div class="li4">
-                    <div ref="nav4" @click="navChoose4">{{nav4}}</div>
+                    <router-link to="/download">
+                        <div ref="nav4" @click="navChoose4">{{nav4}}</div>
+                    </router-link>
                 </div>
             </div>
             <input type="search" class="search" placeholder="搜贴">
@@ -43,39 +51,27 @@ export default {
   },
   methods: {
     navChoose1 () {
-      this.$router.push('/')
+      this.$router.push('/:1')
     },
     navChoose2 () {
-      this.$router.push('/')
+      this.$router.push('/:2')
     },
     navChoose3 () {
-    //   this.$refs.nav3.style.color = 'white'
-    //   this.$refs.nav3.style.backgroundColor = '#005fbc'
-    //   this.$refs.nav2.style.color = 'black'
-    //   this.$refs.nav2.style.backgroundColor = 'white'
-    //   this.$refs.nav1.style.color = 'black'
-    //   this.$refs.nav1.style.backgroundColor = 'white'
       this.$router.push('/person')
-      //   this.$emit('personShow', 3)
     },
     navChoose4 () {
       this.$router.push('/download')
     },
     tail1 () {
-      //   this.$emit('personShow', 4)
       this.$router.push('/login')
     },
     tail2 () {
-    //   this.$emit('personShow', 5)
       this.$router.push('/register')
     }
   }
 }
 </script>
 <style scoped>
-/* #header{
-    height: 60px;
-} */
 #head1{
     width: 100%;
     height: 40px;

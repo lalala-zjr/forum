@@ -24,33 +24,8 @@ export default{
     register
   },
   created () {
-    // password.$on('type', (data) => {
-    //   password.$emit('type', data)
-    // })
   },
   methods: {
-    // listen (data) {
-    //   if (data === 3) {
-    //     this.flag3 = true
-    //     this.flag1 = false
-    //     this.flag2 = false
-    //   } else if (data === 5) {
-    //     this.reg = true
-    //     this.log = false
-    //   } else if (data === 4) {
-    //     this.reg = false
-    //     this.log = true
-    //   } else {
-    //     this.flag1 = true
-    //     this.flag2 = true
-    //     this.flag3 = false
-    //   }
-    //   this.d = false
-    //   this.auth = false
-    // },
-    // turn () {
-    //   this.$router.go(-1)
-    // },
     sendW (data) {
       if (data === 1) {
         this.flag1 = false
