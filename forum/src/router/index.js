@@ -17,6 +17,7 @@ import load from '../Pages/Header/load/load.vue'
 import forget2 from '../Pages/forget2/forget2.vue'
 import leftTitle from '../Pages/Header/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/detail/detailComment/detailComment.vue'
+import like from '../Pages/detail/detailComment/like/like.vue'
 
 Vue.use(Router)
 
@@ -101,7 +102,14 @@ export default new Router({
             {
               path: '/',
               name: 'detailComment',
-              component: detailComment
+              component: detailComment,
+              children: [
+                {
+                  path: '/',
+                  name: 'like',
+                  component: like
+                }
+              ]
             }
           ]
         }

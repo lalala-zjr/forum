@@ -75,7 +75,6 @@ export default {
       if (res.data.comments.length > 0) {
         this.c1 = true
         this.c2 = false
-        this.c3 = true
         this.content = res.data.comments
         console.log(1)
       } else {
@@ -193,7 +192,7 @@ export default {
     left: 10%;
     top: 5%;
     font-size: 14px;
-    text-indent: 2em;
+    /* text-indent: 2em; */
     overflow: auto;
 }
 .like{

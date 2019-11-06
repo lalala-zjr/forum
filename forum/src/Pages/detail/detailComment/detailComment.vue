@@ -7,12 +7,14 @@
         <div class="body">{{c.comContent}}</div>
         <div class="foot">
             <div class="like">
-                <img src="../../../assets/img/likeC.png" alt="" class="likeC" title="点赞">
+                <img src="../../../assets/img/likeC.png" class="likeC" title="点赞" @click="tit">
                 <div class="likeWord">{{c.comLike}}</div>
             </div>
             <div class="com">
-                <img src="../../../assets/img/C.png" alt="" class="likeC" title="评论">
+                <img src="../../../assets/img/C.png" class="likeC" title="评论" @click="likeC">
                 <div class="likeWord">{{c.repCount}}</div>
+                <!-- like -->
+                <!-- <router-view v-show="like"></router-view> -->
             </div>
         </div>
     </div>
@@ -24,6 +26,22 @@ export default {
   },
   data () {
     return {
+      like: false
+    }
+  },
+  methods: {
+    tit () {
+      this.$http.put('/api/like', {
+        type: 2,
+        toId: Number(this.c.id)
+      }).then(res => {
+        console.log(res)
+      })
+    },
+    likeC () {
+      if (this.c.repCount !== 0) {
+        this.like = true
+      }
     }
   }
 }

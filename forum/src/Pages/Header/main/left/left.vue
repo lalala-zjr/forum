@@ -272,10 +272,10 @@ export default{
     bottom: 0;
 }
 .pageShow{
-    width: 54%;
+    width: 100%;
     height: 30px;
     position: absolute;
-    left: 23%;
+    left: 0;
     margin-top: 14px;
     box-sizing: border-box;
 }
@@ -284,7 +284,7 @@ export default{
     height: 30px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 17%;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
@@ -292,8 +292,8 @@ export default{
 .content{
     position: absolute;
     top: 0;
-    left: 8%;
-    width: 84%;
+    left: 25%;
+    width: 40%;
     height: 30px;
     overflow: hidden;
 }
@@ -319,7 +319,7 @@ export default{
     width: 8%;
     height: 30px;
     top: 0;
-    right: 0;
+    left: 65%;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
