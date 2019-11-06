@@ -1,6 +1,6 @@
 <template>
     <div id="main" ref="main">
-      <left v-show="flag1" v-on:see="go"></left>
+      <left v-show="flag1" :content="this.con"></left>
       <right v-show="flag2" v-on:sendWord="sendW"></right>
       <register v-show="reg"></register>
       <div class="empty"></div>
@@ -15,7 +15,8 @@ export default{
     return {
       flag1: true,
       flag2: true,
-      reg: false
+      reg: false,
+      con: this.$route.params.con
     }
   },
   components: {

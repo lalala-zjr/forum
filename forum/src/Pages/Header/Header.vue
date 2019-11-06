@@ -20,7 +20,7 @@
                 </div>
                 <div class="li4">
                     <router-link to="/download">
-                        <div ref="nav4" @click="navChoose4">{{nav4}}</div>
+                        <div ref="nav4">{{nav4}}</div>
                     </router-link>
                 </div>
             </div>
@@ -31,6 +31,7 @@
             </div>
         </div>
         <div id="head2"></div>
+        <main></main>
         <router-view></router-view>
     </div>
 </template>
@@ -50,18 +51,6 @@ export default {
     }
   },
   methods: {
-    navChoose1 () {
-      this.$router.push('/:1')
-    },
-    navChoose2 () {
-      this.$router.push('/:2')
-    },
-    navChoose3 () {
-      this.$router.push('/person')
-    },
-    navChoose4 () {
-      this.$router.push('/download')
-    },
     tail1 () {
       this.$router.push('/login')
     },

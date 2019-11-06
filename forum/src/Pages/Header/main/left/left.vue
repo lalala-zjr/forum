@@ -30,6 +30,9 @@
 import leftTitle from './leftTitle/leftTitle.vue'
 // import password from '../../../assets/password.js'
 export default{
+  props: {
+    content: ''
+  },
   data () {
     return {
       today: 0,
@@ -45,27 +48,31 @@ export default{
     }
   },
   created () {
-    this.$http.post('/api/article/list',
-      this.qs.stringify({
-        page: 1
-      })
-    ).then(res => {
+    // if (this.content === 1) {
+    this.$http.post('/api/article/list').then(res => {
       console.log(res)
       this.today = res.data.sum.today
       this.yesterday = res.data.sum.yesterday
       this.sum = res.data.sum.total
       this.adds = res.data.articles
       this.years = res.data.sum.years
-      this.pages = res.data.totalPage
     })
-    // this.$http.post('/api/article/list').then(res => {
-    //   console.log(res)
-    //   this.today = res.data.sum.today
-    //   this.yesterday = res.data.sum.yesterday
-    //   this.sum = res.data.sum.total
-    //   this.adds = res.data.articles
-    //   this.years = res.data.sum.years
-    // })
+    // }
+    // if (this.content === 2) {
+    //   this.$http.post('/api/article/list',
+    //     this.qs.stringify({
+    //       type: 1
+    //     })
+    //   ).then(res => {
+    //     console.log(res)
+    //     this.today = res.data.sum.today
+    //     this.yesterday = res.data.sum.yesterday
+    //     this.sum = res.data.sum.total
+    //     this.adds = res.data.articles
+    //     this.years = res.data.sum.years
+    //     this.pages = res.data.totalPage
+    //   })
+    // }
   },
   components: {
     leftTitle
