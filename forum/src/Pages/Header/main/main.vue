@@ -13,15 +13,12 @@ import register from '../../register/register.vue'
 export default{
   data () {
     return {
-      con: this.$route.params.con
     }
   },
   components: {
     left,
     right,
     register
-  },
-  created () {
   },
   methods: {
     sendW (data) {

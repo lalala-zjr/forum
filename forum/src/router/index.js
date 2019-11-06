@@ -13,7 +13,7 @@ import send from '../Pages/send/send.vue'
 import author from '../Pages/author/author.vue'
 import download from '../Pages/Header/download/download.vue'
 import down from '../Pages/Header/download/down/down.vue'
-import load from '../Pages/load/load.vue'
+import load from '../Pages/Header/load/load.vue'
 import forget2 from '../Pages/forget2/forget2.vue'
 import leftTitle from '../Pages/Header/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/detail/detailComment/detailComment.vue'
@@ -27,6 +27,11 @@ export default new Router({
       name: 'Header',
       component: Header,
       children: [
+        {
+          path: '/load/:id',
+          name: 'load',
+          component: load
+        },
         {
           path: '/download',
           name: 'download',
@@ -96,11 +101,6 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
-    },
-    {
-      path: '/load/:id',
-      name: 'load',
-      component: load
     },
     {
       path: '/forget',

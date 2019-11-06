@@ -16,19 +16,11 @@
     </div>
 </template>
 <script>
-import password from '../../assets/password.js'
 export default{
   data () {
     return {
       phone: ''
     }
-  },
-  mounted () {
-    var self = this
-    password.$on('phone', (data) => {
-      self.phone = data
-      console.log(this.phone)
-    })
   },
   methods: {
     cancel () {
@@ -37,11 +29,7 @@ export default{
       this.$emit('can', 7)
     },
     save () {
-    //   this.$refs.q3.value = ''
-    //   this.$refs.q4.value = ''
-    //   this.$emit('can', 8)
       if (this.$refs.q3.value === this.$refs.q4.value) {
-        // console.log(123)
         console.log(this.phone)
         this.$http.put('/api/user/',
           this.qs.stringify({
@@ -59,11 +47,7 @@ export default{
       }
     }
   }
-//   beforeDestroy () {
-//     password.$off()
-//   }
 }
-
 </script>
 <style scoped>
 #login{

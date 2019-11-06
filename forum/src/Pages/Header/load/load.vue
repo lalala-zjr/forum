@@ -18,7 +18,7 @@
 </template>
 <script>
 // import Header from '../../components/Header/Header.vue'
-import right from '../../components/right/right.vue'
+import right from '../../../components/right/right.vue'
 export default {
   data () {
     return {

@@ -4,17 +4,13 @@
             <div class="word">{{word}}</div>
             <div class="nav">
                 <div class="li1">
-                    <router-link to="/">
-                        <div ref="nav1">{{nav1}}</div>
-                    </router-link>
+                    <div ref="nav1" @click="nav11">{{nav1}}</div>
                 </div>
                 <div class="li2">
-                    <router-link to="/">
-                        <div ref="nav2">{{nav2}}</div>
-                    </router-link>
+                    <div ref="nav2" @click="nav22">{{nav2}}</div>
                 </div>
                 <div class="li3">
-                    <div ref="nav3" @click="nav">{{nav3}}</div>
+                    <div ref="nav3" @click="nav33">{{nav3}}</div>
                 </div>
                 <div class="li4">
                     <router-link to="/download">
@@ -33,6 +29,7 @@
     </div>
 </template>
 <script>
+import password from '../../assets/password.js'
 export default {
   data () {
     return {
@@ -47,13 +44,19 @@ export default {
     }
   },
   methods: {
-    nav () {
+    nav33 () {
       this.$http.get('/api/user/verify').then(res => {
         console.log(res)
         this.$router.push('/person')
       }).catch((e) => {
         alert('请先登录')
       })
+    },
+    nav11 () {
+      password.$emit('type', 1)
+    },
+    nav22 () {
+      password.$emit('type', 2)
     },
     tail1 () {
       this.$router.push('/login')
