@@ -16,17 +16,23 @@
     </div>
 </template>
 <script>
+import password from '../../../assets/password.js'
 export default{
   data () {
     return {
       phone: ''
     }
   },
+  mounted () {
+    password.$on('phone', (data) => {
+      this.phone = data
+      console.log(this.phone)
+    })
+  },
   methods: {
     cancel () {
       this.$refs.q3.value = ''
       this.$refs.q4.value = ''
-      this.$emit('can', 7)
     },
     save () {
       if (this.$refs.q3.value === this.$refs.q4.value) {

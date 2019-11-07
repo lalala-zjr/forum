@@ -22,6 +22,11 @@
                  <span :class="{'active':n==index}" v-for="(i,index) of pages" :key="index" @click="changP(index)">{{i}}</span>
                </div>
                <div class="forword"><img src="../../../../assets/img/b2.png" @click="next" :class="{'disabled':n==pages-1}"></div>
+               <div class="turn">
+                 <input type="text" class="search" ref="sear">
+                 <button class="search2" @click="turn">跳转</button>
+                 <div class="see">共{{pages}}页</div>
+               </div>
            </div>
        </div>
    </div>
@@ -42,6 +47,7 @@ export default{
       years: '',
       n: 0,
       pages: 0
+      // p: this.$route.params.page
     }
   },
   mounted () {
@@ -113,6 +119,23 @@ export default{
         this.years = res.data.sum.years
         this.pages = res.data.totalPage
       })
+    },
+    turn () {
+      if (Number(this.$refs.sear.value) > 0 && Number(this.$refs.sear.value) <= this.pages) {
+        this.n = Number(this.$refs.sear.value) - 1
+        this.$http.post('/api/article/list',
+          this.qs.stringify({
+            page: Number(this.$refs.sear.value)
+          })
+        ).then(res => {
+          console.log(res)
+          this.today = res.data.sum.today
+          this.yesterday = res.data.sum.yesterday
+          this.sum = res.data.sum.total
+          this.adds = res.data.articles
+          this.years = res.data.sum.years
+        })
+      }
     },
     changP (index) {
       // this.$refs.left.style.scrollTop = 0
@@ -280,11 +303,11 @@ export default{
     box-sizing: border-box;
 }
 .back{
-    width: 8%;
+    width: 5%;
     height: 30px;
     position: absolute;
     top: 0;
-    left: 17%;
+    left: 10%;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
@@ -292,7 +315,7 @@ export default{
 .content{
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 15%;
     width: 40%;
     height: 30px;
     overflow: hidden;
@@ -316,12 +339,54 @@ export default{
 }
 .forword{
     position: absolute;
-    width: 8%;
+    width: 5%;
     height: 30px;
     top: 0;
-    left: 65%;
+    left: 55%;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
+}
+.turn{
+    width: 20%;
+    height: 30px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    position: absolute;
+    left: 64%;
+}
+.search{
+    text-decoration: none;
+    padding: 5%;
+    width: 26%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 20px;
+    top: 5px;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+}
+.search2{
+    text-decoration: none;
+    padding: 5%;
+    width: 30%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 20px;
+    top: 5px;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    left: 26%;
+}
+.see{
+  width: 40%;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  position: absolute;
+  left: 60%;
 }
 </style>

@@ -28,16 +28,14 @@ export default{
       t: false
     }
   },
-  mounted () {
+  created () {
     this.t = false
-    if (this.ad.istop) {
+    console.log(this.ad.istop)
+    if (this.ad.istop === true) {
       this.t = true
     }
-    // console.log(this.index)
-    // console.log(this.ad.istop)
   },
-  destroyed () {
-
+  computed: {
   },
   methods: {
     enter () {

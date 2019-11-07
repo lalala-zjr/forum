@@ -13,21 +13,26 @@
             <div class="com">
                 <img src="../../../assets/img/C.png" class="likeC" title="评论" @click="likeC">
                 <div class="likeWord">{{c.repCount}}</div>
-                <!-- like -->
                 <!-- <router-view v-show="like"></router-view> -->
             </div>
         </div>
+        <like v-show="l" class="likE" :com="commit[index]" v-for="(com,index) in commit" :key="index"></like>
     </div>
 </template>
 <script>
+import like from './like/like.vue'
 export default {
   props: {
     c: ''
   },
   data () {
     return {
-      like: false
+      l: false,
+      commit: ''
     }
+  },
+  components: {
+    like
   },
   methods: {
     tit () {
@@ -40,7 +45,15 @@ export default {
     },
     likeC () {
       if (this.c.repCount !== 0) {
-        this.like = true
+        this.l = !this.l
+        if (this.l) {
+          this.$http.get('/api/reply/' + this.c.id, {
+            commentId: Number(this.c.id)
+          }).then(res => {
+            console.log(res)
+            this.commit = res.data
+          })
+        }
       }
     }
   }
@@ -79,6 +92,9 @@ export default {
     font-size: 14px;
     top: 0;
     left: 12%;
+}
+.likE{
+  margin-bottom: 10px;
 }
 .foot{
     width: 100%;

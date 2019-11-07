@@ -76,13 +76,6 @@ export default{
       })
     },
     cancel () {
-      // this.time = '获取验证码'
-      // window.clearTimeout(this.timer)
-      // this.$refs.q1.value = ''
-      // this.$refs.q2.value = ''
-      // this.$refs.q3.value = ''
-      // this.$refs.q4.value = ''
-      // this.$emit('can', 3)
       this.$router.push('/')
     },
     phone () {

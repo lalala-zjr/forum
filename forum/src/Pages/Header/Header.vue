@@ -18,8 +18,12 @@
             </div>
             <input type="search" class="search" placeholder="搜贴">
             <div class="tail">
-                <button class="tail1" @click="tail1">{{t1}}</button>
-                <button class="tail2" @click="tail2">{{t2}}</button>
+                <router-link to="/login">
+                    <button class="tail1">{{t1}}</button>
+                </router-link>
+                <router-link to="register">
+                    <button class="tail2" :forget="forget">{{t2}}</button>
+                </router-link>
             </div>
         </div>
         <div id="head2"></div>
@@ -65,12 +69,16 @@ export default {
     nav44 () {
       this.$router.push('/download')
     },
-    tail1 () {
-      this.$router.push('/login')
-    },
-    tail2 () {
-      this.$router.push('/register')
+    forget (data) {
+      console.log(data)
+      this.$router.replace('/forget')
     }
+    // tail1 () {
+    //   this.$router.push('/login')
+    // },
+    // tail2 () {
+    //   this.$router.push('/register')
+    // }
   }
 }
 </script>

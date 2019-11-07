@@ -7,14 +7,14 @@ import right from '../components/right/right.vue'
 import person from '../Pages/person/person.vue'
 import register from '../Pages/Header/register/register.vue'
 import login from '../Pages/Header/login/login.vue'
-import forget from '../Pages/forget/forget.vue'
+import forget from '../Pages/Header/forget/forget.vue'
 import detail from '../Pages/detail/detail.vue'
 import send from '../Pages/send/send.vue'
 import author from '../Pages/author/author.vue'
 import download from '../Pages/Header/download/download.vue'
 import down from '../Pages/Header/download/down/down.vue'
 import load from '../Pages/Header/load/load.vue'
-import forget2 from '../Pages/forget2/forget2.vue'
+import forget2 from '../Pages/Header/forget2/forget2.vue'
 import leftTitle from '../Pages/Header/main/left/leftTitle/leftTitle.vue'
 import detailComment from '../Pages/detail/detailComment/detailComment.vue'
 import like from '../Pages/detail/detailComment/like/like.vue'
@@ -28,6 +28,16 @@ export default new Router({
       name: 'Header',
       component: Header,
       children: [
+        {
+          path: '/forget',
+          name: 'forget',
+          component: forget
+        },
+        {
+          path: '/forget2',
+          name: 'forget2',
+          component: forget2
+        },
         {
           path: '/login',
           name: 'login',
@@ -114,16 +124,6 @@ export default new Router({
           ]
         }
       ]
-    },
-    {
-      path: '/forget',
-      name: 'forget',
-      component: forget
-    },
-    {
-      path: '/forget2',
-      name: 'forget2',
-      component: forget2
     }
   ]
 })

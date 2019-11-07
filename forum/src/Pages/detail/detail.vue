@@ -101,22 +101,60 @@ export default {
       console.log(this.$refs.re1.value)
       console.log(Number(this.id))
       this.$http.post('/api/comment', {
-        type: 1,
         content: this.$refs.re1.value,
-        toId: Number(this.id)
+        articleId: Number(this.id)
       }).then(res => {
         console.log(res)
         this.$refs.re1.value = ''
+        this.$http.get('/api/article/' + this.id,
+          this.qs.stringify({
+            id: this.id
+          })
+        ).then(res => {
+          console.log(res.data)
+          //   this.user = res.data.authorName
+          this.con = res.data.content
+          this.time = res.data.create
+          this.cnt = res.data.like
+          this.title = res.data.title
+          if (res.data.comments.length > 0) {
+            this.c1 = true
+            this.c2 = false
+            this.content = res.data.comments
+            console.log(1)
+          } else {
+            console.log(0)
+          }
+        })
       })
     },
     review2 () {
       this.$http.post('/api/comment', {
-        type: 1,
         content: this.$refs.re2.value,
-        toId: Number(this.id)
+        articleId: Number(this.id)
       }).then(res => {
         console.log(res)
         this.$refs.re2.value = ''
+        this.$http.get('/api/article/' + this.id,
+          this.qs.stringify({
+            id: this.id
+          })
+        ).then(res => {
+          console.log(res.data)
+          //   this.user = res.data.authorName
+          this.con = res.data.content
+          this.time = res.data.create
+          this.cnt = res.data.like
+          this.title = res.data.title
+          if (res.data.comments.length > 0) {
+            this.c1 = true
+            this.c2 = false
+            this.content = res.data.comments
+            console.log(1)
+          } else {
+            console.log(0)
+          }
+        })
       })
     }
   },

@@ -137,7 +137,8 @@ export default{
       }
     },
     Fsend () {
-      this.$router.push('/forget')
+      // this.$emit('forget', 1)
+      this.$router.replace('/forget')
     }
   }
 }

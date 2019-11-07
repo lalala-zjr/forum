@@ -5,10 +5,10 @@
             <div class="div1">忘记密码</div>
             <div class="phone">
                 <div class="p1">0086</div>
-                <input type="text" placeholder="手机号" class="p2" ref="f1">
+                <input type="text" placeholder="手机号" class="p2" ref="f1" @click="can">
             </div>
             <div class="pass" v-show="s">
-                <input type="text" placeholder="请输入验证码" class="p3" ref="f2">
+                <input type="text" placeholder="请输入验证码" class="p3" ref="f2" @click="can">
                 <button class="p4" ref="get" @click="send">{{time}}</button>
             </div>
             <div class="error" ref="e" v-show="e">手机号或者验证码出错</div>
@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-import password from '../../assets/password.js'
+import password from '../../../assets/password.js'
 export default{
   data () {
     return {
@@ -53,6 +53,9 @@ export default{
         console.log(res)
       })
     },
+    can () {
+      this.e = false
+    },
     mess () {
       this.$refs.mes.style.color = '#005fbc'
       this.$refs.pas.style.color = 'black'
@@ -75,12 +78,8 @@ export default{
       this.$emit('can', 5)
     },
     save () {
+      console.log(this.$refs.f1.value)
       password.$emit('phone', this.$refs.f1.value)
-      // this.time = '获取验证码'
-      // window.clearTimeout(this.timer)
-      // this.$refs.f1.value = ''
-      // this.$refs.f2.value = ''
-      // this.$emit('can', 6)
       this.$http.get('/api/code/check', {
         params: {
           phone: this.$refs.f1.value,
@@ -157,7 +156,7 @@ p{
 .error{
     position: absolute;
     left: 15%;
-    top: 80px;
+    top: 200px;
     font-size: 12px;
     color: red;
 }

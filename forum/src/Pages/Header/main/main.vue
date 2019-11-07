@@ -1,13 +1,14 @@
 <template>
     <div id="main" ref="main">
       <!-- <register></register> -->
-      <left></left>
+      <!-- <left></left> -->
+      <router-view></router-view>
       <right></right>
       <div class="empty"></div>
     </div>
 </template>
 <script>
-import left from './left/left.vue'
+// import left from './left/left.vue'
 import right from '../../../components/right/right.vue'
 import register from '../register/register.vue'
 import login from '../login/login.vue'
@@ -18,11 +19,14 @@ export default{
     }
   },
   components: {
-    left,
+    // left,
     right,
     register,
     login
   }
+  // created () {
+  //   this.$router.push('/:0')
+  // }
 }
 </script>
 <style scored>
