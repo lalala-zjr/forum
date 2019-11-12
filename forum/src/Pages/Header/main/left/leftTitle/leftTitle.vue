@@ -30,7 +30,14 @@ export default{
   },
   created () {
     this.t = false
-    console.log(this.ad.istop)
+    // console.log(this.ad.istop)
+    if (this.ad.istop === true) {
+      this.t = true
+    }
+  },
+  updated () {
+    this.t = false
+    // console.log(this.ad.istop)
     if (this.ad.istop === true) {
       this.t = true
     }

@@ -50,7 +50,7 @@ export default{
       // p: this.$route.params.page
     }
   },
-  mounted () {
+  created () {
     password.$on('type', (data) => {
       console.log(data)
       if (data === 2) {
