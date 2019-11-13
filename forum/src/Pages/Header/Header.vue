@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     nav33 () {
+      this.$cookies.set('XUSM_TOKEN', '/', -1)
       this.$http.get('/api/user/verify').then(res => {
         console.log(res)
         this.$router.push('/person')
