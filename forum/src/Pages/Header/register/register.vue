@@ -105,6 +105,7 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
+            this.$emit('success', 6)
             this.$router.go(-1)
           }
         }).catch((e) => {
@@ -124,6 +125,7 @@ export default{
         ).then(res => {
           console.log(res)
           if (res.status === 200) {
+            this.$emit('success', 6)
             this.$router.go(-1)
           }
         }).catch((e) => {
@@ -137,7 +139,6 @@ export default{
       }
     },
     Fsend () {
-      // this.$emit('forget', 1)
       this.$router.replace('/forget')
     }
   }

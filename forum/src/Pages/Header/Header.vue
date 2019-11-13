@@ -17,13 +17,13 @@
                 </div>
             </div>
             <input type="search" class="search" placeholder="搜贴">
-            <div class="tail">
-                <router-link to="/login">
-                    <button class="tail1">{{t1}}</button>
-                </router-link>
-                <router-link to="register">
-                    <button class="tail2" :forget="forget">{{t2}}</button>
-                </router-link>
+            <div class="tail" v-show="ta1">
+                <!-- <router-link to="/login"> -->
+                    <button class="tail1" @click="tt1">{{t1}}</button>
+                <!-- </router-link> -->
+                <!-- <router-link to="/register"> -->
+                    <button class="tail2" @click="tt2" :forget="forget" :success="success">{{t2}}</button>
+                <!-- </router-link> -->
             </div>
         </div>
         <div id="head2"></div>
@@ -42,12 +42,12 @@ export default {
       nav4: '下载专区',
       t1: '注册',
       t2: '登录',
-      flag: true
+      flag: true,
+      ta1: true
     }
   },
   mounted () {
     password.$emit('type', 1)
-    // this.$router.push('/')
   },
   methods: {
     nav33 () {
@@ -57,6 +57,17 @@ export default {
       }).catch((e) => {
         alert('请先登录')
       })
+    },
+    tt1 () {
+      this.$router.push('/login')
+    },
+    tt2 () {
+      this.$router.push('/register')
+    },
+    success (data) {
+      if (data === 6) {
+        this.ta1 = false
+      }
     },
     nav11 () {
       password.$emit('type', 1)
@@ -73,12 +84,6 @@ export default {
       console.log(data)
       this.$router.replace('/forget')
     }
-    // tail1 () {
-    //   this.$router.push('/login')
-    // },
-    // tail2 () {
-    //   this.$router.push('/register')
-    // }
   }
 }
 </script>
